@@ -9,16 +9,16 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export const signupSchema = z.object({
-  name: z.string().min(1, 'O nome é obrigatório'),
-  email: z.string().email('Email inválido'),
-  company: z.string().min(1, 'A empresa é obrigatória'),
-  phone: z.string().min(1, 'O telefone é obrigatório'),
-  description: z.string().min(1, 'A descrição é obrigatória'),
-})
-export type SignupFormData = z.infer<typeof signupSchema>
-
 export default function Contato() {
+  const signupSchema = z.object({
+    name: z.string().min(1, 'O nome é obrigatório'),
+    email: z.string().email('Email inválido'),
+    company: z.string().min(1, 'A empresa é obrigatória'),
+    phone: z.string().min(1, 'O telefone é obrigatório'),
+    description: z.string().min(1, 'A descrição é obrigatória'),
+  })
+  type SignupFormData = z.infer<typeof signupSchema>
+
   const {
     register,
     handleSubmit,
