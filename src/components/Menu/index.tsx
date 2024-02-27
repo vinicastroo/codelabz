@@ -9,7 +9,7 @@ export function Menu() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="m-auto flex w-full items-center justify-between gap-4 py-6 lg:px-0">
+    <div className="m-auto flex w-full items-center justify-between gap-4 py-2 px-4 lg:px-1">
       <Link href="/" className="hover:opacity-80">
         <Logo />
       </Link>
