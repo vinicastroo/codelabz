@@ -4,7 +4,7 @@ export function Cases() {
   return (
     <section
       id="cases"
-      className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-16 lg:space-y-16 lg:px-0 lg:py-32"
+      className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-8 lg:space-y-16 lg:py-32"
     >
       <div className="flex flex-col ">
         <span className="text-lg text-sapphire-950">Nossos cases</span>
@@ -23,10 +23,10 @@ export function Cases() {
             <span className="font-mono text-xl font-bold text-sapphire-950 ">
               Auros corretora imobiliaria
             </span>
-            <p className="text-start">
+            <p className="text-sm lg:text-base text-start">
               Foi desenvolvida uma solução que atendesse as necessidades do
-              setor imobiliário, com um sistema de gestão de imóveis, e um site.
-              O sistema de gestão de imoveis foi desenvolvido com o intuito de
+              setor imobiliário, utilizando um sistema interno de gestão de
+              imóveis, e um site. Este sistema foi desenvolvido com o intuito de
               facilitar o gerenciamento do site. E o site foi desenvolvido com
               as mais novas tecnologias, para que o site seja rápido e
               responsivo.
@@ -51,9 +51,9 @@ export function Cases() {
             <span className="text-start font-mono text-xl font-bold text-sapphire-950 ">
               Fidliz
             </span>
-            <p className="text-start">
+            <p className="text-sm lg:text-base text-start">
               Consiste em um plataforma de fidelização de clientes, onde o foco
-              é abandonar com o uso de cartoes fisícos de fidelização, assim
+              é abandonar com o uso de cartões fisícos de fidelização, assim
               evitando o problema de ir ao um estabelicento e ter esquecido o
               cartão para pontuar. Sendo uma solução 100% digital.
             </p>
@@ -77,11 +77,11 @@ export function Cases() {
             <span className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
               Unidavi - Minha Reserva <small>(Sistema Interno)</small>
             </span>
-            <p className="text-start">
+            <p className="text-sm lg:text-base text-start">
               Consiste em um sistema de gerenciamento de reservas de salas de
               aula, onde o foco é facilitar a reserva de salas de aula, e evitar
               conflitos de horários. Possibilitando que os professores realizem
-              os agendamentos de uma sala com todos os recursos.
+              os agendamentos de uma sala com todos os equipamentos necessários.
             </p>
           </div>
         </div>

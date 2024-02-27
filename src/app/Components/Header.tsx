@@ -7,15 +7,15 @@ import { Button } from '@/components/Button'
 
 export function Header() {
   return (
-    <header className="lg:0 m-auto flex min-h-screen max-w-[1300px] flex-col lg:px-0">
+    <header className="lg:0 m-auto flex h-screen max-w-[1300px] flex-col lg:px-0">
       <Menu />
-      <div className="flex flex-1 p-4 flex-col-reverse items-center justify-center gap-1 lg:gap-8 lg:grid lg:grid-cols-app">
+      <div className="flex flex-1 px-4 flex-col-reverse justify-end lg:gap-8 lg:grid lg:grid-cols-app lg:items-center lg:px-4">
         <div className="flex flex-col items-start gap-2 lg:gap-4">
-          <h1 className="text-2xl font-black text-sapphire-950 lg:text-6xl">
+          <h1 className="text-xl font-black text-sapphire-950 lg:text-6xl">
             Transformando <strong className="text-ruby-600">ideias</strong> em
             realidade
           </h1>
-          <p className="text-base lg:text-lg">
+          <p className="text-base  lg:text-lg">
             Vamos além da criação de sites, entregando soluções digitais que
             geram resultados concretos, do aumento de leads ao crescimento das
             vendas
@@ -34,7 +34,7 @@ export function Header() {
           </motion.div>
         </div>
 
-        <div className="lg:flex-1 p-8">
+        <div className="lg:flex-1">
           <IlustrationHome />
         </div>
       </div>

@@ -5,12 +5,12 @@ export function Footer() {
   return (
     <>
       <footer className="bg-sapphire-950 py-20">
-        <div className="m-auto flex max-w-[1300px] flex-col gap-8 px-4 lg:flex-row lg:items-start lg:justify-between lg:gap-16 lg:p-0  ">
+        <div className="m-auto flex max-w-[1300px] flex-col gap-8 px-4 lg:flex-row lg:items-start lg:justify-between lg:gap-16 ">
           <div className="flex w-full items-center justify-center self-center">
             <LogoWhite />
           </div>
 
-          <div className="m-auto flex w-3/5 flex-col items-start justify-start gap-3 text-white  lg:m-0 lg:w-full  ">
+          <div className="m-auto flex w-4/6 flex-col items-start justify-start gap-3 text-white  lg:m-0 lg:w-full  ">
             <span className="mb-2 border-b  border-white text-lg font-bold">
               Menus
             </span>
@@ -37,7 +37,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="m-auto flex w-3/5 flex-col items-start justify-start gap-3 text-white lg:m-0  lg:w-full ">
+          <div className="m-auto flex w-4/6 flex-col items-start justify-start gap-3 text-white lg:m-0  lg:w-full ">
             <span className="mb-2 border-b  border-white text-lg font-bold">
               Redes sociais
             </span>
@@ -57,7 +57,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="m-auto flex w-3/5 flex-col items-start justify-start gap-3 text-white lg:m-0 lg:w-full ">
+          <div className="m-auto flex w-4/6 flex-col items-start justify-start gap-3 text-white lg:m-0 lg:w-full ">
             <span className="mb-2 border-b border-white text-lg font-bold">
               Fale com a gente
             </span>
@@ -81,7 +81,7 @@ export function Footer() {
 
       <div className="bg-ruby-500 p-4 text-white">
         <div className="m-auto flex max-w-[1300px] items-center justify-center ">
-          <span className="text-sm font-bold">
+          <span className="text-sm font-bold text-center">
             © {new Date().getFullYear()} - Code Labz. Todos os direitos
             reservados
           </span>

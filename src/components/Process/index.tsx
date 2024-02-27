@@ -23,7 +23,7 @@ export function ProcessCard() {
         <ProcessTabs tab={currentTab} onChangeTab={onChangeTab} />
       </div>
 
-      <div className="flex items-center justify-center border-zinc-200 p-8 lg:border-l">
+      <div className="flex items-center justify-center border-zinc-200  lg:border-l">
         {currentTab === 'begin' && (
           <motion.div
             initial={{ opacity: 0 }}

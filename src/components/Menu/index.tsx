@@ -1,5 +1,5 @@
 'use client'
-import { LucideMenu } from 'lucide-react'
+import { LucideMenu, LucideX } from 'lucide-react'
 import { Button } from '../Button'
 import { Logo } from './logo'
 import { useState } from 'react'
@@ -9,7 +9,7 @@ export function Menu() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="m-auto flex w-full items-center justify-between gap-4 py-2 px-4 lg:px-1">
+    <div className="m-auto flex w-full items-center justify-between gap-4 p-4 lg:px-4">
       <Link href="/" className="hover:opacity-80">
         <Logo />
       </Link>
@@ -40,7 +40,7 @@ export function Menu() {
       </div>
 
       {open && (
-        <div className="fixed bottom-0 left-0 right-0 top-0 z-30 h-screen w-full bg-white px-4 py-6">
+        <div className="fixed flex gap-4 flex-col bottom-0 left-0 right-0 top-0 z-30 h-screen w-full bg-white px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="hover:opacity-80">
               <Logo />
@@ -51,17 +51,38 @@ export function Menu() {
               className="flex items-center justify-center  lg:sr-only"
               onClick={() => setOpen(false)}
             >
-              <LucideMenu className="h-6 w-6" />
+              <LucideX className="h-6 w-6" />
             </Button>
           </div>
 
-          <div className="mt-20 flex flex-col items-start justify-start space-y-6 ">
-            <a href="" className="">
-              Cases
+          <div className="flex flex-1 flex-col items-start justify-start space-y-4 divide-y">
+            <a
+              href="#processos"
+              className="w-full pt-4"
+              onClick={() => setOpen(false)}
+            >
+              Nossos processos
             </a>
-            <Button variant="primary" className="w-auto">
+
+            <a
+              href="#servicos"
+              className="w-full pt-4"
+              onClick={() => setOpen(false)}
+            >
+              Nossos serviços
+            </a>
+
+            <a
+              href="#cases"
+              className="w-full pt-4"
+              onClick={() => setOpen(false)}
+            >
+              Nossos cases
+            </a>
+
+            <a href="" className="w-full pt-4 text-ruby-700 font-bold">
               Iniciar um projeto
-            </Button>
+            </a>
           </div>
         </div>
       )}

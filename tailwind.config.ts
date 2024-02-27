@@ -10,7 +10,7 @@ const config: Config = {
           'linear-gradient(94.3deg,  rgb(224, 2, 77) 1%, rgba(26,33,64,1) 99% );',
       },
       gridTemplateColumns: {
-        app: '0.9fr 0.1fr',
+        app: '1fr 0.1fr',
         contact: '0.3fr 0.7fr',
       },
       keyframes: {
