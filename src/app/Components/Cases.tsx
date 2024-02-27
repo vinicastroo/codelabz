@@ -3,7 +3,7 @@ import { LogoAuros, LogoFidliz, LogoUnidavi } from '@/assets/logo'
 export function Cases() {
   return (
     <section
-      id="#cases"
+      id="cases"
       className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-16 lg:space-y-16 lg:px-0 lg:py-32"
     >
       <div className="flex flex-col ">

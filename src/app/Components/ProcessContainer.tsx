@@ -3,7 +3,7 @@ import { ProcessCard } from '@/components/Process'
 export function ProcessContainer() {
   return (
     <section
-      id="#processos"
+      id="processos"
       className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4  py-16 lg:px-0"
     >
       <div className="flex flex-col">
