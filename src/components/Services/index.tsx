@@ -9,7 +9,7 @@ import {
   IlustrationResponsive,
 } from '@/assets/ilustrations'
 import { ServiceItem } from './ServiceItem'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Button } from '../Button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -19,23 +19,27 @@ export function Services() {
 
   const [direction, setDirection] = useState('right')
 
-  const [size] = useState(() => {
-    const width = window.innerWidth
+  const [size, setSize] = useState(1)
 
-    if (width < 640) {
-      return 1
-    } else if (width >= 640 && width < 768) {
-      return 1
-    } else if (width >= 768 && width < 1024) {
-      return 2
-    } else if (width >= 1024 && width < 1280) {
-      return 4
-    } else if (width >= 1280 && width < 1536) {
-      return 4
-    } else {
-      return 4
+  useEffect(() => {
+    if (window) {
+      const width = window.innerWidth
+
+      if (width < 640) {
+        setSize(1)
+      } else if (width >= 640 && width < 768) {
+        setSize(1)
+      } else if (width >= 768 && width < 1024) {
+        setSize(2)
+      } else if (width >= 1024 && width < 1280) {
+        setSize(4)
+      } else if (width >= 1280 && width < 1536) {
+        setSize(4)
+      } else {
+        setSize(4)
+      }
     }
-  })
+  }, [])
 
   const services = useMemo(() => {
     return [
@@ -147,7 +151,7 @@ export function Services() {
           disabled={step - 1 < 0}
           className="text-zinc-600 disabled:cursor-not-allowed disabled:text-zinc-300"
         >
-          <ChevronLeft className="h-6 w-6 " />
+          <ChevronLeft className="h-6 w-6" />
         </Button>
         <Button
           variant="ghost"

@@ -1,22 +1,22 @@
-"use client";
-import { Menu } from "@/components/Menu";
-import { Footer } from "../Components/Footer";
-import { MessagesSquare, ShieldCheck } from "lucide-react";
+'use client'
+import { Menu } from '@/components/Menu'
+import { Footer } from '../Components/Footer'
+import { MessagesSquare, ShieldCheck } from 'lucide-react'
 
-import { Button } from "@/components/Button";
-import { useForm } from "react-hook-form";
+import { Button } from '@/components/Button'
+import { useForm } from 'react-hook-form'
 
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 export const signupSchema = z.object({
-  name: z.string().min(1, "O nome é obrigatório"),
-  email: z.string().email("Email inválido"),
-  company: z.string().min(1, "A empresa é obrigatória"),
-  phone: z.string().min(1, "O telefone é obrigatório"),
-  description: z.string().min(1, "A descrição é obrigatória"),
-});
-export type SignupFormData = z.infer<typeof signupSchema>;
+  name: z.string().min(1, 'O nome é obrigatório'),
+  email: z.string().email('Email inválido'),
+  company: z.string().min(1, 'A empresa é obrigatória'),
+  phone: z.string().min(1, 'O telefone é obrigatório'),
+  description: z.string().min(1, 'A descrição é obrigatória'),
+})
+export type SignupFormData = z.infer<typeof signupSchema>
 
 export default function Contato() {
   const {
@@ -25,11 +25,11 @@ export default function Contato() {
     formState: { errors },
   } = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
-  });
+  })
 
   const onSubmit = async (data: SignupFormData) => {
     // Aqui você pode enviar os dados para a API
-    console.log(data);
+    console.log(data)
 
     // Exemplo de chamada para a API
     // const response = await fetch('/api/signup', {
@@ -39,7 +39,7 @@ export default function Contato() {
     // })
 
     // Tratamento da resposta...
-  };
+  }
 
   return (
     <>
@@ -97,7 +97,7 @@ export default function Contato() {
                 <input
                   id="name"
                   className="flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
-                  {...register("name")}
+                  {...register('name')}
                 />
               </div>
 
@@ -119,7 +119,7 @@ export default function Contato() {
                   id="email"
                   className="flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
                   placeholder="exemplo@email.com.br"
-                  {...register("email")}
+                  {...register('email')}
                 />
               </div>
               {errors.email && (
@@ -140,7 +140,7 @@ export default function Contato() {
                   <input
                     id="company"
                     className="w-full flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600  outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
-                    {...register("company")}
+                    {...register('company')}
                   />
                 </div>
 
@@ -164,7 +164,7 @@ export default function Contato() {
                     id="phone"
                     className="w-full flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
                     placeholder="(99) 9 9999-9999"
-                    {...register("phone")}
+                    {...register('phone')}
                   />
                 </div>
                 {errors.phone && (
@@ -184,7 +184,7 @@ export default function Contato() {
               <textarea
                 className="min-h-[120px] w-full resize-y rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-sapphire-200 focus:ring-4 focus:ring-sapphire-100 "
                 id="description"
-                {...register("description")}
+                {...register('description')}
               />
               {errors.description && (
                 <p className="text-sm text-red-500">
@@ -204,5 +204,5 @@ export default function Contato() {
 
       <Footer />
     </>
-  );
+  )
 }

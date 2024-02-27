@@ -7,7 +7,7 @@ import { Button } from '@/components/Button'
 
 export function Header() {
   return (
-    <head className="lg:0 m-auto flex h-screen max-w-[1300px] flex-col px-4 lg:px-0">
+    <header className="lg:0 m-auto flex h-screen max-w-[1300px] flex-col px-4 lg:px-0">
       <Menu />
       <div className="flex flex-1 flex-col-reverse items-center justify-center gap-8 lg:grid lg:grid-cols-app">
         <div className="flex flex-col items-start gap-4">
@@ -38,6 +38,6 @@ export function Header() {
           <IlustrationHome />
         </div>
       </div>
-    </head>
+    </header>
   )
 }
