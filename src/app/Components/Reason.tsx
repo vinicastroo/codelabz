@@ -1,6 +1,6 @@
 export function Reason() {
   return (
-    <div className="bg-gradient-linear py-10">
+    <div className="bg-gradient-linear py-10 mt-2">
       <div className="m-auto flex w-full max-w-[1300px] flex-col items-center justify-between gap-8 px-4  lg:flex-row lg:px-0">
         <h2 className="font-mono text-3xl text-white lg:text-5xl">
           Por que preciso estar na internet ?
