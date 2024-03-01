@@ -34,7 +34,7 @@ export async function POST(req: Request) {
       },
     })
 
-    Response.json(
+    return Response.json(
       { message: 'Cliente criado com sucesso' },
       {
         status: 200,
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     )
   } catch (error) {
     console.error('Falha ao criar usuário: ', error)
-    Response.json(
+    return Response.json(
       { error: 'Falha ao criar usuário' },
       {
         status: 500,
@@ -55,5 +55,4 @@ export async function POST(req: Request) {
       },
     )
   }
-  return Response.json({ message: 'Hello from Next.js!' })
 }
