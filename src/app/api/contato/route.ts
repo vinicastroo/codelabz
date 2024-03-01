@@ -4,14 +4,18 @@ export const dynamic = 'force-dynamic'
 
 const prisma = new PrismaClient()
 export async function POST(req: Request) {
-  const data = await req.json()
-  const { name, email, company, phone, description } = data
-
+  const response = await req.json()
+  const { name, email, company, phone, description } = response.data
   try {
     const emailAlreadyExists = await prisma.clients.findFirst({
-      where: { email },
+      where: {
+        email: {
+          equals: email,
+        },
+      },
     })
 
+    console.log(emailAlreadyExists)
     if (emailAlreadyExists) {
       return Response.json(
         { error: 'Email já cadastrado' },
