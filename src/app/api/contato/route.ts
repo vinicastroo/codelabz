@@ -1,5 +1,6 @@
 // defaults to auto
 import { PrismaClient } from '@prisma/client'
+import nodemailer from 'nodemailer'
 export const dynamic = 'force-dynamic'
 
 const prisma = new PrismaClient()
@@ -15,7 +16,6 @@ export async function POST(req: Request) {
       },
     })
 
-    console.log(emailAlreadyExists)
     if (emailAlreadyExists) {
       return Response.json(
         { error: 'Email já cadastrado' },
@@ -36,6 +36,48 @@ export async function POST(req: Request) {
         phone,
         description,
       },
+    })
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.zoho.com',
+      secure: true,
+      port: 465,
+      auth: {
+        user: process.env.USER_EMAIL,
+        pass: process.env.USER_EMAIL_PASSWORD,
+      },
+    })
+
+    const toMeMailOptions = {
+      from: process.env.USER_EMAIL, // sender address
+      to: 'viniciusc.d.c@hotmail.com',
+      subject: `Proposta de ${name}`,
+      html: `<div>
+        <h1>Proposta de ${name}</h1>
+        <p>Email: ${email}</p>
+        <p>Empresa: ${company}</p>
+        <p>Telefone: ${phone}</p>
+        <p>${description}</p>
+      </div>`,
+    }
+
+    const emailOptions = {
+      from: process.env.USER_EMAIL, // sender address
+      to: email,
+      subject: `Proposta de enviada com sucesso !`,
+      html: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
+    }
+
+    transporter.sendMail(toMeMailOptions, function (err) {
+      if (err) {
+        console.error(err)
+      }
+    })
+
+    transporter.sendMail(emailOptions, function (err) {
+      if (err) {
+        console.error(err)
+      }
     })
 
     return Response.json(
