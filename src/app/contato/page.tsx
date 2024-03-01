@@ -9,6 +9,8 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'react-toastify'
+import api from '@/lib/api'
+import { AxiosError } from 'axios'
 
 export default function Contato() {
   const signupSchema = z.object({
@@ -23,27 +25,32 @@ export default function Contato() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
   })
 
   const onSubmit = async (data: SignupFormData) => {
     try {
-      await fetch('/api/contato', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+      await api.post('/contato', {
+        data,
       })
 
       toast.success(
         'Proposta enviada com sucesso, entraremos em contato o mais rápido possível!',
       )
+      reset()
     } catch (err) {
-      console.error(err)
-      toast.error(
-        'Aconteceu algum problema no envio da proposta, tente novamente mais tarde!',
-      )
+      const error = err as AxiosError<{ error: string }>
+
+      if (error.response && error.response.data && error.response.data.error) {
+        toast.error(error.response.data.error)
+      } else {
+        toast.error(
+          'Aconteceu algum problema no envio da proposta, tente novamente mais tarde!',
+        )
+      }
     }
   }
 
@@ -200,8 +207,12 @@ export default function Contato() {
             </div>
 
             <div className="flex justify-end">
-              <Button variant="fill" className="px-6">
-                Enviar
+              <Button
+                variant="fill"
+                className={`px-6 ${isSubmitting && 'bg-slate-400 hover:bg-slate-400 cursor-not-allowed'}`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Carregando...' : 'Enviar'}
               </Button>
             </div>
           </form>

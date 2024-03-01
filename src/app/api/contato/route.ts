@@ -8,6 +8,22 @@ export async function POST(req: Request) {
   const { name, email, company, phone, description } = data
 
   try {
+    const emailAlreadyExists = await prisma.clients.findFirst({
+      where: { email },
+    })
+
+    if (emailAlreadyExists) {
+      return Response.json(
+        { error: 'Email já cadastrado' },
+        {
+          status: 400,
+          headers: {
+            'content-type': 'application/json',
+          },
+        },
+      )
+    }
+
     await prisma.clients.create({
       data: {
         name,
