@@ -56,33 +56,36 @@ export function Menu() {
           </div>
 
           <div className="flex flex-1 flex-col items-start justify-start space-y-4 divide-y">
-            <a
-              href="#processos"
+            <Link
+              href="/#processos"
               className="w-full pt-4"
               onClick={() => setOpen(false)}
             >
               Nossos processos
-            </a>
+            </Link>
 
-            <a
-              href="#servicos"
+            <Link
+              href="/#servicos"
               className="w-full pt-4"
               onClick={() => setOpen(false)}
             >
               Nossos serviços
-            </a>
+            </Link>
 
-            <a
-              href="#cases"
+            <Link
+              href="/#cases"
               className="w-full pt-4"
               onClick={() => setOpen(false)}
             >
               Nossos cases
-            </a>
+            </Link>
 
-            <a href="" className="w-full pt-4 text-ruby-700 font-bold">
+            <Link
+              href="/contato"
+              className="w-full pt-4 text-ruby-700 font-bold"
+            >
               Iniciar um projeto
-            </a>
+            </Link>
           </div>
         </div>
       )}

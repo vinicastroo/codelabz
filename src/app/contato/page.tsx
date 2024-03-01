@@ -8,11 +8,12 @@ import { useForm } from 'react-hook-form'
 
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'react-toastify'
 
 export default function Contato() {
   const signupSchema = z.object({
     name: z.string().min(1, 'O nome é obrigatório'),
-    email: z.string().email('Email inválido'),
+    email: z.string().email('Email inválido').min(1, 'O email é obrigatório'),
     company: z.string().min(1, 'A empresa é obrigatória'),
     phone: z.string().min(1, 'O telefone é obrigatório'),
     description: z.string().min(1, 'A descrição é obrigatória'),
@@ -28,17 +29,22 @@ export default function Contato() {
   })
 
   const onSubmit = async (data: SignupFormData) => {
-    // Aqui você pode enviar os dados para a API
-    console.log(data)
+    try {
+      await fetch('/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
 
-    // Exemplo de chamada para a API
-    // const response = await fetch('/api/signup', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data),
-    // })
-
-    // Tratamento da resposta...
+      toast.success(
+        'Proposta enviada com sucesso, entraremos em contato o mais rápido possível!',
+      )
+    } catch (err) {
+      console.error(err)
+      toast.error(
+        'Aconteceu algum problema no envio da proposta, tente novamente mais tarde!',
+      )
+    }
   }
 
   return (

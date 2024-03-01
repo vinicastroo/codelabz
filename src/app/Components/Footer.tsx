@@ -1,5 +1,6 @@
 import { LogoWhite } from '@/assets/LogoWhite'
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react'
+import Link from 'next/link'
 
 export function Footer() {
   return (
@@ -7,7 +8,9 @@ export function Footer() {
       <footer className="bg-sapphire-950 py-20">
         <div className="m-auto flex max-w-[1300px] flex-col gap-8 px-4 lg:flex-row lg:items-start lg:justify-between lg:gap-16 ">
           <div className="flex w-full items-center justify-center self-center">
-            <LogoWhite />
+            <Link href="/">
+              <LogoWhite />
+            </Link>
           </div>
 
           <div className="m-auto flex w-4/6 flex-col items-start justify-start gap-3 text-white  lg:m-0 lg:w-full  ">

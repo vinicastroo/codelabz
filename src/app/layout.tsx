@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
+const roboto = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Code labz',
@@ -17,10 +18,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className="antialiased">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <div className="min-h-screen">
           {/* <Menu /> */}
           <main className="max-w-screen">{children}</main>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </div>
       </body>
     </html>

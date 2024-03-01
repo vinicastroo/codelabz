@@ -4,18 +4,18 @@ export function Cases() {
   return (
     <section
       id="cases"
-      className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-8 lg:space-y-16 lg:py-32"
+      className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-12 lg:space-y-16 lg:py-32"
     >
-      <div className="flex flex-col ">
+      <div className="flex flex-col">
         <span className="text-lg text-sapphire-950">Nossos cases</span>
         <strong className="text-4xl text-sapphire-950">
           Veja nossos sucessos
         </strong>
       </div>
 
-      <div className="flex flex-col space-y-6 divide-y lg:space-y-12">
+      <div className="flex flex-col space-y-8 divide-y lg:space-y-12">
         <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-start ">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-8 lg:w-auto lg:p-4">
+          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
             <LogoAuros />
           </div>
 
@@ -42,8 +42,8 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-6 lg:flex-row lg:items-start lg:pt-12">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-8 lg:w-auto lg:p-4">
+        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
+          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
             <LogoFidliz />
           </div>
 
@@ -68,8 +68,8 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-6 lg:flex-row lg:items-start lg:pt-12">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-8 lg:w-auto lg:p-4">
+        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
+          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
             <LogoUnidavi />
           </div>
 

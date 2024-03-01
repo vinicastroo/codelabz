@@ -4,14 +4,15 @@ import { motion } from 'framer-motion'
 import { IlustrationHome } from '@/assets/ilustrations'
 
 import { Button } from '@/components/Button'
-
+import { useRouter } from 'next/navigation'
 export function Header() {
+  const router = useRouter()
   return (
     <header className="lg:0 m-auto flex h-screen max-w-[1300px] flex-col lg:px-0">
       <Menu />
       <div className="flex flex-1 px-4 flex-col-reverse justify-end lg:gap-8 lg:grid lg:grid-cols-app lg:items-center lg:px-4">
         <div className="flex flex-col items-start gap-2 lg:gap-4">
-          <h1 className="text-xl font-black text-sapphire-950 lg:text-6xl">
+          <h1 className="text-2xl font-extrabold text-sapphire-950 lg:text-6xl">
             Transformando <strong className="text-ruby-600">ideias</strong> em
             realidade
           </h1>
@@ -22,12 +23,16 @@ export function Header() {
           </p>
 
           <motion.div
-            animate={{ rotate: [0, 0, 0, 3, 0, -3, 0, 0, 0] }}
+            animate={{ rotate: [0, 0, 0, 1, 0, -1, 0, 0, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
             <Button
               variant="fill"
               className="px-4 py-2 mt-2 text-base font-bold shadow-sm lg:text-xl lg:py-4 lg:px-8"
+              onClick={(e) => {
+                e.preventDefault()
+                router.push('/contato')
+              }}
             >
               Começar um projeto
             </Button>
