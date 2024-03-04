@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       host: 'smtp.zoho.com',
       secure: true,
-      port: 587,
+      port: 465,
       auth: {
         user: process.env.USER_EMAIL,
         pass: process.env.USER_EMAIL_PASSWORD,
@@ -69,14 +69,18 @@ export async function POST(req: Request) {
     }
 
     await Promise.all([
-      transporter.sendMail(toMeMailOptions, function (err) {
+      transporter.sendMail(toMeMailOptions, function (err, info) {
         if (err) {
-          console.error(err)
+          console.log(err)
+        } else {
+          console.log(info)
         }
       }),
-      transporter.sendMail(emailOptions, function (err) {
+      transporter.sendMail(emailOptions, function (err, info) {
         if (err) {
-          console.error(err)
+          console.log(err)
+        } else {
+          console.log(info)
         }
       }),
     ])
