@@ -68,17 +68,18 @@ export async function POST(req: Request) {
       html: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
     }
 
-    transporter.sendMail(toMeMailOptions, function (err) {
-      if (err) {
-        console.error(err)
-      }
-    })
-
-    transporter.sendMail(emailOptions, function (err) {
-      if (err) {
-        console.error(err)
-      }
-    })
+    await Promise.all([
+      transporter.sendMail(toMeMailOptions, function (err) {
+        if (err) {
+          console.error(err)
+        }
+      }),
+      transporter.sendMail(emailOptions, function (err) {
+        if (err) {
+          console.error(err)
+        }
+      }),
+    ])
 
     return Response.json(
       { message: 'Cliente criado com sucesso' },
