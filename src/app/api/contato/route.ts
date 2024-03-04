@@ -66,23 +66,21 @@ export async function POST(req: Request) {
       html: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
     }
 
-    await Promise.all([
-      transporter.sendMail(toMeMailOptions, function (err, info) {
-        if (err) {
-          console.log(err)
-        } else {
-          console.log(info)
-        }
-      }),
-      transporter.sendMail(emailOptions, function (err, info) {
-        if (err) {
-          console.log(err)
-        } else {
-          console.log(info)
-        }
-      }),
-    ])
+    await transporter.sendMail(toMeMailOptions, function (err, info) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(info)
+      }
+    })
 
+    await transporter.sendMail(emailOptions, function (err, info) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(info)
+      }
+    })
     return Response.json(
       { message: 'Cliente criado com sucesso' },
       {
