@@ -61,12 +61,12 @@ export async function POST(req: Request) {
       </div>`,
     }
 
-    // const emailOptions = {
-    //   from: process.env.USER_EMAIL,
-    //   to: email,
-    //   subject: `Proposta de enviada com sucesso !`,
-    //   html: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
-    // }
+    const emailOptions = {
+      from: process.env.USER_EMAIL,
+      to: email,
+      subject: `Proposta de enviada com sucesso !`,
+      html: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
+    }
 
     await Promise.all([
       transporter.sendMail(toMeMailOptions, function (err) {
@@ -74,11 +74,11 @@ export async function POST(req: Request) {
           console.error(err)
         }
       }),
-      // transporter.sendMail(emailOptions, function (err) {
-      //   if (err) {
-      //     console.error(err)
-      //   }
-      // }),
+      transporter.sendMail(emailOptions, function (err) {
+        if (err) {
+          console.error(err)
+        }
+      }),
     ])
 
     return Response.json(
