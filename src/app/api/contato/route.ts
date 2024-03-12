@@ -53,6 +53,50 @@ export async function POST(req: Request) {
          </div>`,
     })
 
+    await resend.emails.send({
+      from: 'Code labz <contato@codelabz.com.br>',
+      to: email,
+      subject: `Próximas Etapas: Informações Importantes em Breve`,
+      html: `<!DOCTYPE html>
+      <html>
+      <head>
+          <title>Email de Agradecimento</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  line-height: 1.6;
+              }
+              .container {
+                  width: 80%;
+                  margin: auto;
+                  padding: 20px;
+              }
+              .signature {
+                  margin-top: 50px;
+              }
+          </style>
+      </head>
+      <body>
+          <div class="container">
+              <p>Prezado(a) ${name},</p>
+              
+              <p>Espero que esta mensagem o(a) encontre bem.</p>
+      
+              <p>Estou no processo de compilar/organizar as informações necessárias e pretendo entrar em contato em breve com mais detalhes. Acredito que nossa futura parceria tem um grande potencial, e estou ansioso(a) para explorar as possibilidades.</p>
+      
+              <p>Por favor, sinta-se à vontade para entrar em contato caso tenha alguma dúvida em contato@codelabz.com.br ou necessidade adicional no ínterim. Estou à disposição para quaisquer esclarecimentos ou discussões adicionais.</p>
+      
+              <p>Mais uma vez, agradeço sinceramente pelo seu tempo e consideração. Aguardo com expectativa a nossa próxima interação.</p>
+      
+              <div class="signature">
+                  <p>Atenciosamente,</p>
+                  <p>Vinicius Castro / Code labz</p>
+              </div>
+          </div>
+      </body>
+      </html>`,
+    })
+
     return Response.json(
       { message: 'Cliente criado com sucesso' },
       {
