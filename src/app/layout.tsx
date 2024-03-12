@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 const roboto = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
   title: 'Code labz',
   description:
@@ -33,6 +33,8 @@ export default function RootLayout({
             draggable
             pauseOnHover
           />
+
+          <SpeedInsights />
         </div>
       </body>
     </html>
