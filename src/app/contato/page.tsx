@@ -60,7 +60,7 @@ export default function Contato() {
         <Menu />
       </div>
 
-      <div className="m-auto mt-16 grid min-h-screen max-w-[1300px] grid-cols-contact gap-16 px-4 lg:px-0">
+      <div className="m-auto mt-8 mb-32 lg:mb-0 lg:mt-16 flex flex-col-reverse lg:grid min-h-screen max-w-[1300px] grid-cols-contact gap-4 lg:gap-16 px-4 lg:px-0">
         <aside className="flex h-auto flex-col gap-8 divide-y-[1px] ">
           <div className="flex flex-col">
             <span>É relevante estar ciente</span>
