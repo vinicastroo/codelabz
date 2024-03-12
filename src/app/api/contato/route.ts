@@ -1,6 +1,6 @@
 // defaults to auto
 import { PrismaClient } from '@prisma/client'
-import nodemailer from 'nodemailer'
+import mailgun from 'mailgun-js'
 export const dynamic = 'force-dynamic'
 
 const prisma = new PrismaClient()
@@ -38,49 +38,43 @@ export async function POST(req: Request) {
       },
     })
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.USER_EMAIL,
-        pass: process.env.USER_EMAIL_PASSWORD,
+    const DOMAIN = 'sandboxb119293e63f14ec8979f8825aa51ecef.mailgun.org'
+    const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY!, domain: DOMAIN })
+
+    mg.messages().send(
+      {
+        from: 'Mailgun Sandbox <postmaster@sandboxb119293e63f14ec8979f8825aa51ecef.mailgun.org>',
+        to: 'viniciusc.d.c@hotmail.com',
+        subject: `Proposta de ${name}`,
+        text: `<div>
+      <h1>Proposta de ${name}</h1>
+      <p>Email: ${email}</p>
+      <p>Empresa: ${company}</p>
+      <p>Telefone: ${phone}</p>
+      <p>${description}</p>
+    </div>`,
       },
-    })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (error: any, body: any) => {
+        console.log(body)
+        console.log(error)
+      },
+    )
 
-    const toMeMailOptions = {
-      from: process.env.USER_EMAIL,
-      to: 'viniciusc.d.c@hotmail.com',
-      subject: `Proposta de ${name}`,
-      html: `<div>
-        <h1>Proposta de ${name}</h1>
-        <p>Email: ${email}</p>
-        <p>Empresa: ${company}</p>
-        <p>Telefone: ${phone}</p>
-        <p>${description}</p>
-      </div>`,
-    }
+    mg.messages().send(
+      {
+        from: 'Mailgun Sandbox <postmaster@sandboxb119293e63f14ec8979f8825aa51ecef.mailgun.org>',
+        to: email,
+        subject: `Proposta de enviada com sucesso !`,
+        text: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (error: any, body: any) => {
+        console.log(body)
+        console.log(error)
+      },
+    )
 
-    const emailOptions = {
-      from: process.env.USER_EMAIL,
-      to: email,
-      subject: `Proposta de enviada com sucesso !`,
-      html: `<p>Muito obrigado por entrar em contato, entraremos em contato o mais rápido possível </p>`,
-    }
-
-    await transporter.sendMail(toMeMailOptions, function (err, info) {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(info)
-      }
-    })
-
-    await transporter.sendMail(emailOptions, function (err, info) {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(info)
-      }
-    })
     return Response.json(
       { message: 'Cliente criado com sucesso' },
       {
