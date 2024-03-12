@@ -59,7 +59,18 @@ export async function POST(req: Request) {
       </div>`,
       })
       .then((msg) => console.log(msg)) // logs response data
-      .catch((err) => console.log(err)) // logs any error
+      .catch((err) => {
+        console.log(err)
+        return Response.json(
+          { error: 'Erro ao enviar email', description: err },
+          {
+            status: 400,
+            headers: {
+              'content-type': 'application/json',
+            },
+          },
+        )
+      }) // logs any error
     // mg.messages
     //   .create('sandbox-123.mailgun.org', {
     //     from: 'Codelabz <contato@codelabz.com.br>',
