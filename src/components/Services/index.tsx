@@ -150,6 +150,8 @@ export function Services() {
           onClick={() => onRemoveStep()}
           disabled={step - 1 < 0}
           className="text-zinc-600 disabled:cursor-not-allowed disabled:text-zinc-300"
+          aria-labelledby="Retroceder"
+          title="Retroceder"
         >
           <ChevronLeft className="h-6 w-6" />
         </Button>
@@ -158,6 +160,8 @@ export function Services() {
           onClick={() => onAddStep()}
           disabled={step + 1 + size > services.length}
           className="text-zinc-600 disabled:cursor-not-allowed disabled:text-zinc-300"
+          aria-labelledby="Avançar"
+          title="Avançar"
         >
           <ChevronRight className="h-6 w-6 " />
         </Button>

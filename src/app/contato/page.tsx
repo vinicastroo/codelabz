@@ -211,6 +211,8 @@ export default function Contato() {
                 variant="fill"
                 className={`px-6 ${isSubmitting && 'bg-slate-400 hover:bg-slate-400 cursor-not-allowed'}`}
                 disabled={isSubmitting}
+                aria-labelledby="Finalizar formulário"
+                title="Enviar formulário"
               >
                 {isSubmitting ? 'Carregando...' : 'Enviar'}
               </Button>

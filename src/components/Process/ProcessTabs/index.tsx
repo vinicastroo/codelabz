@@ -67,10 +67,20 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             </p>
 
             <div className="flex items-end justify-end">
-              <Button variant="ghost" onClick={() => onChangeTab('deploy')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('deploy')}
+                aria-labelledby="Retroceder"
+                title="Retroceder"
+              >
                 <ChevronLeft className="h-6 w-6 text-zinc-600" />
               </Button>
-              <Button variant="ghost" onClick={() => onChangeTab('desing')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('desing')}
+                aria-labelledby="Avançar"
+                title="Avançar"
+              >
                 <ChevronRight className="h-6 w-6 text-zinc-600" />
               </Button>
             </div>
@@ -94,10 +104,20 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             </p>
 
             <div className="flex items-end justify-end">
-              <Button variant="ghost" onClick={() => onChangeTab('begin')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('begin')}
+                aria-labelledby="Retroceder"
+                title="Retroceder"
+              >
                 <ChevronLeft className="h-6 w-6 text-zinc-600" />
               </Button>
-              <Button variant="ghost" onClick={() => onChangeTab('code')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('code')}
+                aria-labelledby="Avançar"
+                title="Avançar"
+              >
                 <ChevronRight className="h-6 w-6 text-zinc-600" />
               </Button>
             </div>
@@ -121,10 +141,20 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             </p>
 
             <div className="flex items-end justify-end">
-              <Button variant="ghost" onClick={() => onChangeTab('desing')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('desing')}
+                aria-labelledby="Retroceder"
+                title="Retroceder"
+              >
                 <ChevronLeft className="h-6 w-6 text-zinc-600" />
               </Button>
-              <Button variant="ghost" onClick={() => onChangeTab('deploy')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('deploy')}
+                aria-labelledby="Avançar"
+                title="Avançar"
+              >
                 <ChevronRight className="h-6 w-6 text-zinc-600" />
               </Button>
             </div>
@@ -147,10 +177,20 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             </p>
 
             <div className="flex items-end justify-end">
-              <Button variant="ghost" onClick={() => onChangeTab('code')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('code')}
+                aria-labelledby="Retroceder"
+                title="Retroceder"
+              >
                 <ChevronLeft className="h-6 w-6 text-zinc-600" />
               </Button>
-              <Button variant="ghost" onClick={() => onChangeTab('begin')}>
+              <Button
+                variant="ghost"
+                onClick={() => onChangeTab('begin')}
+                aria-labelledby="Avançar"
+                title="Avançar"
+              >
                 <ChevronRight className="h-6 w-6 text-zinc-600" />
               </Button>
             </div>

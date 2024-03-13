@@ -33,6 +33,8 @@ export function Header() {
                 e.preventDefault()
                 router.push('/contato')
               }}
+              aria-labelledby="Começar um projeto"
+              title="Começar um projeto"
             >
               Começar um projeto
             </Button>

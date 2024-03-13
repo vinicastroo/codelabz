@@ -8,7 +8,7 @@ export function Footer() {
       <footer className="bg-sapphire-950 py-20">
         <div className="m-auto flex max-w-[1300px] flex-col gap-8 px-4 lg:flex-row lg:items-start lg:justify-between lg:gap-16 ">
           <div className="flex w-full items-center justify-center self-center">
-            <Link href="/">
+            <Link href="/" title="Início">
               <LogoWhite />
             </Link>
           </div>

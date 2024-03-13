@@ -5,6 +5,7 @@ import { Cases } from './Components/Cases'
 import { Footer } from './Components/Footer'
 import { Reason } from './Components/Reason'
 
+export const revalidate = 3600
 export default function Home() {
   return (
     <>
