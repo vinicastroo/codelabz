@@ -9,6 +9,27 @@ export const metadata: Metadata = {
   title: 'Code labz',
   description:
     'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
+  openGraph: {
+    title: 'Codelabz',
+    description:
+      'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites ou desenvolvimento de sistemas, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
+    url: 'https://www.codelabz.com.br/',
+    siteName: 'Codelabz',
+    images: [
+      {
+        url: 'https://www.codelabz.com.br/logo.png',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://www.codelabz.com.br/logo.png',
+        width: 1800,
+        height: 1600,
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
