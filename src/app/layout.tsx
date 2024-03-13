@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: 'Code labz',
   description:
     'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
+  alternates: {
+    canonical: '/',
+    languages: {
+      'pt-BR': '/pt-BR',
+    },
+  },
   openGraph: {
     title: 'Codelabz',
     description:
