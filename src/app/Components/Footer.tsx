@@ -1,5 +1,5 @@
 import { LogoWhite } from '@/assets/LogoWhite'
-import { Facebook, Instagram, Mail, Phone } from 'lucide-react'
+import { Instagram, Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 export function Footer() {
@@ -44,13 +44,13 @@ export function Footer() {
             <span className="mb-2 border-b  border-white text-lg font-bold">
               Redes sociais
             </span>
-            <a
+            {/* <a
               href="https://www.instagram.com/codelabz.com.br"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Facebook className="h-5 w-5  " />
               Facebook
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/codelabz.com.br"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
