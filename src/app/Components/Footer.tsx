@@ -45,14 +45,14 @@ export function Footer() {
               Redes sociais
             </span>
             <a
-              href=""
+              href="https://www.instagram.com/codelabz.com.br"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Facebook className="h-5 w-5  " />
               Facebook
             </a>
             <a
-              href=""
+              href="https://www.instagram.com/codelabz.com.br"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Instagram className="h-5 w-5 " />
@@ -65,14 +65,14 @@ export function Footer() {
               Fale com a gente
             </span>
             <a
-              href=""
+              href="mailto:contato@codelabz.com"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Mail className="h-5 w-5" />
               contato@codelabz.com
             </a>
             <a
-              href=""
+              href="https://api.whatsapp.com/send?phone=5547996164275"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Phone className="h-5 w-5" />
