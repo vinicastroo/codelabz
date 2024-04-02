@@ -4,6 +4,8 @@ import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Suspense } from 'react'
+import { FacebookPixelEvents } from './Components/FacebookPixelEvents'
 const roboto = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Code labz',
@@ -66,6 +68,10 @@ export default function RootLayout({
 
           <SpeedInsights />
         </div>
+
+        <Suspense fallback={null}>
+          <FacebookPixelEvents />
+        </Suspense>
       </body>
     </html>
   )

@@ -1,5 +1,5 @@
 import { LogoWhite } from '@/assets/LogoWhite'
-import { Instagram, Mail, Phone } from 'lucide-react'
+import { Instagram, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 export function Footer() {
@@ -65,11 +65,10 @@ export function Footer() {
               Fale com a gente
             </span>
             <a
-              href="mailto:contato@codelabz.com"
+              href="/contato"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
-              <Mail className="h-5 w-5" />
-              contato@codelabz.com
+              Iniciar um projeto
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=5547996164275"
