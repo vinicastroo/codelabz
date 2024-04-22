@@ -1,4 +1,9 @@
-import { LogoAuros, LogoFidliz, LogoUnidavi } from '@/assets/logo'
+import {
+  LogoAlienForce,
+  LogoAuros,
+  LogoFidliz,
+  LogoUnidavi,
+} from '@/assets/logo'
 
 export function Cases() {
   return (
@@ -53,8 +58,8 @@ export function Cases() {
             </span>
             <p className="text-sm lg:text-base text-start">
               Consiste em um plataforma de fidelização de clientes, onde o foco
-              é abandonar com o uso de cartões fisícos de fidelização, assim
-              evitando o problema de ir ao um estabelicento e ter esquecido o
+              é abandonar com o uso de cartões físicos de fidelização, assim
+              evitando o problema de ir ao um estabelecimento e ter esquecido o
               cartão para pontuar. Sendo uma solução 100% digital.
             </p>
 
@@ -83,6 +88,47 @@ export function Cases() {
               conflitos de horários. Possibilitando que os professores realizem
               os agendamentos de uma sala com todos os equipamentos necessários.
             </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
+          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
+            <LogoUnidavi />
+          </div>
+
+          <div className="flex flex-col items-center gap-2 lg:items-start">
+            <span className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+              Unidavi - Minha Prova <small>(Sistema Interno)</small>
+            </span>
+            <p className="text-sm lg:text-base text-start">
+              Consiste em um sistema de provas, onde o foco é facilitar a
+              criação de provas e gerar provas personalizadas, gerando a nota em
+              tempo real após a finalização da prova.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
+          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
+            <LogoAlienForce />
+          </div>
+
+          <div className="flex flex-col items-center gap-2 lg:items-start">
+            <span className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+              Alien Force
+            </span>
+            <p className="text-sm lg:text-base text-start">
+              Consiste em um site para uma marca de roupas minimalistas, com a
+              ideia de ser um site simples e objetivo, com o foco em mostrar os
+              produtos de forma clara e objetiva.
+            </p>
+            <a
+              href="https://alienforce.lojavirtualnuvem.com.br/"
+              target="_blank"
+              className="text-start text-sm font-bold text-sapphire-950 hover:underline"
+            >
+              Acesse aqui
+            </a>
           </div>
         </div>
       </div>
