@@ -11,8 +11,12 @@ export const metadata: Metadata = {
   title: 'Code labz',
   keywords: [
     'Criação de sites',
-    'Desenvolvimento de sitemas',
+    'Desenvolvimento de sistemas',
     'Rio do sul',
+    'Santa Catarina',
+    'Codelabz',
+    'Crição de sites em Rio do Sul',
+    'Sistemas em Rio do Sul',
     'Desenvolvimento de API',
     'Deploy de aplicações',
     'Integração de Sistemas',

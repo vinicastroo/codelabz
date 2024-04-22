@@ -82,12 +82,12 @@ export function Footer() {
       </footer>
 
       <div className="bg-ruby-500 p-4 text-white">
-        <div className="m-auto flex max-w-[1300px] items-center justify-center ">
+        <div className="m-auto flex max-w-[1300px] items-center justify-between ">
           <span className="text-sm ">
             © {new Date().getFullYear()} - Code Labz. Todos os direitos
             reservados
           </span>
-          {/* <span className="text-sm ">Rio do Sul - SC</span> */}
+          <span className="text-sm ">Rio do Sul - SC</span>
         </div>
       </div>
     </>
