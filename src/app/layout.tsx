@@ -6,6 +6,8 @@ import { ToastContainer } from 'react-toastify'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Suspense } from 'react'
 import { FacebookPixelEvents } from './Components/FacebookPixelEvents'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const roboto = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Code labz',
@@ -75,6 +77,8 @@ export default function RootLayout({
 
         <Suspense fallback={null}>
           <FacebookPixelEvents />
+
+          <GoogleAnalytics gaId="G-ZMSWXB8HFV" />
         </Suspense>
       </body>
     </html>
