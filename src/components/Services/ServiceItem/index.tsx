@@ -12,7 +12,7 @@ export function ServiceItem({
 }: ServiceItemProps) {
   return (
     <div className="flex h-full flex-col gap-4">
-      <div className="flex h-64 items-center justify-center rounded-md bg-white p-6 shadow-sm">
+      <div className="flex h-64 items-center justify-center rounded-md bg-white p-6 border border-zinc-100 shadow-sm">
         <Icon />
       </div>
 

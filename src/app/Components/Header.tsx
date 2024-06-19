@@ -5,6 +5,7 @@ import { IlustrationHome } from '@/assets/ilustrations'
 
 import { Button } from '@/components/Button'
 import { useRouter } from 'next/navigation'
+import { Rocket } from 'lucide-react'
 export function Header() {
   const router = useRouter()
   return (
@@ -28,7 +29,7 @@ export function Header() {
           >
             <Button
               variant="fill"
-              className="px-4 py-2 mt-2 text-base font-bold shadow-sm lg:text-xl lg:py-4 lg:px-8"
+              className="px-4 py-2 mt-2 text-base flex items-center font-bold shadow-sm lg:text-xl lg:py-4 lg:px-8"
               onClick={(e) => {
                 e.preventDefault()
                 router.push('/contato')
@@ -36,6 +37,7 @@ export function Header() {
               aria-labelledby="Começar um projeto"
               title="Começar um projeto"
             >
+              <Rocket className="h-5 w-5 mr-2" />
               Começar um projeto
             </Button>
           </motion.div>

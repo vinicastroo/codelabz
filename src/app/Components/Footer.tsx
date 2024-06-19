@@ -1,5 +1,5 @@
 import { LogoWhite } from '@/assets/LogoWhite'
-import { Instagram, Phone } from 'lucide-react'
+import { AtSign, Facebook, Instagram, Phone, Rocket } from 'lucide-react'
 import Link from 'next/link'
 
 export function Footer() {
@@ -44,13 +44,13 @@ export function Footer() {
             <span className="mb-2 border-b  border-white text-lg font-bold">
               Redes sociais
             </span>
-            {/* <a
-              href="https://www.instagram.com/codelabz.com.br"
+            <a
+              href="https://www.facebook.com/profile.php?id=61557445902721"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
-              <Facebook className="h-5 w-5  " />
+              <Facebook className="h-5 w-5" />
               Facebook
-            </a> */}
+            </a>
             <a
               href="https://www.instagram.com/codelabz.com.br"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
@@ -68,6 +68,7 @@ export function Footer() {
               href="/contato"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
+              <Rocket className="h-5 w-5" />
               Iniciar um projeto
             </a>
             <a
@@ -76,6 +77,13 @@ export function Footer() {
             >
               <Phone className="h-5 w-5" />
               (47) 996164275
+            </a>
+            <a
+              href="mailto:contato@codelabz.com.br"
+              className="flex items-center gap-3 text-white transition hover:text-ruby-500"
+            >
+              <AtSign className="h-5 w-5" />
+              contato@codelabz.com.br
             </a>
           </div>
         </div>

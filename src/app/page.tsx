@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Header />
       <Reason />
-      <ProcessContainer />
       <ServicesContainer />
+      <ProcessContainer />
       <Cases />
       <Footer />
     </>

@@ -56,7 +56,7 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             <span className="font-mono text-2xl lg:text-4xl font-bold text-ruby-500">
               Onde Tudo Começa
             </span>
-            <p className="text-sm lg:text-lg">
+            <p className="text-sm lg:text-base">
               Na etapa inicial, concentramos nossos esforços em construir uma
               compreensão profunda do seu projeto. Realizamos reuniões
               colaborativas para explorar suas ideias e objetivos, trocando
@@ -92,7 +92,7 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             <span className="font-mono  text-2xl lg:text-4xl font-bold text-ruby-500">
               Dando Vida às Ideias
             </span>
-            <p className="text-sm lg:text-lg">
+            <p className="text-sm lg:text-base">
               A fase de design é onde a criatividade encontra a funcionalidade.
               Nesta etapa, nossos designers trabalham com base briefing inicial
               em visuais impressionantes. Realizamos sessões de brainstorming,
@@ -129,7 +129,7 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             <span className="font-mono text-2xl lg:text-4xl font-bold text-ruby-500">
               Hora de codar!
             </span>
-            <p className="text-sm lg:text-lg">
+            <p className="text-sm lg:text-base">
               Quando se trata de codificação, precisão e eficiência são
               fundamentais. Nossos desenvolvedores transformam designs em
               realidade, escrevendo códigos limpos e otimizados. Nesta fase,
@@ -166,7 +166,7 @@ export function ProcessTabs({ tab, onChangeTab }: ProcessTabsProps) {
             <span className="font-mono text-2xl lg:text-4xl font-bold text-ruby-500">
               Concretizando ideias
             </span>
-            <p className="text-sm lg:text-lg ">
+            <p className="text-sm lg:text-base ">
               A última etapa do nosso processo é a entrega. Aqui, fazemos os
               ajustes finais e preparamos tudo para o lançamento. Esta fase não
               é apenas sobre entregar o projeto concluído, mas garantir que ele

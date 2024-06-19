@@ -18,7 +18,7 @@ export function ProcessCard() {
   }
 
   return (
-    <div className="flex flex-col-reverse rounded-md border border-zinc-200 shadow-sm lg:flex-row">
+    <div className="flex flex-col-reverse rounded-md border bg-white border-zinc-200 px-4 shadow-sm lg:flex-row">
       <div className="flex flex-col">
         <ProcessTabs tab={currentTab} onChangeTab={onChangeTab} />
       </div>
