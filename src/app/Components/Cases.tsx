@@ -12,7 +12,7 @@ export function Cases() {
       className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-12 lg:space-y-16 lg:py-32"
     >
       <div className="flex flex-col">
-        <span className="text-lg text-sapphire-950">Nossos cases</span>
+        <h2 className="text-lg text-sapphire-950">Nossos cases</h2>
         <strong className="text-4xl text-sapphire-950">
           Veja nossos sucessos
         </strong>
@@ -25,9 +25,9 @@ export function Cases() {
           </div>
 
           <div className="flex flex-col items-start gap-2">
-            <span className="font-mono text-xl font-bold text-sapphire-950 ">
+            <h3 className="font-mono text-xl font-bold text-sapphire-950 ">
               Auros corretora imobiliaria
-            </span>
+            </h3>
             <p className="text-sm lg:text-base text-start">
               Foi desenvolvida uma solução que atendesse as necessidades do
               setor imobiliário, utilizando um sistema interno de gestão de
@@ -40,6 +40,7 @@ export function Cases() {
             <a
               href="https://www.aurosimobiliaria.com.br/"
               target="_blank"
+              title="Auros Corretora Imobiliaria"
               className="text-sm font-bold text-sapphire-950 hover:underline"
             >
               Acesse aqui
@@ -53,9 +54,9 @@ export function Cases() {
           </div>
 
           <div className="flex flex-col  items-start gap-2">
-            <span className="text-start font-mono text-xl font-bold text-sapphire-950 ">
+            <h3 className="text-start font-mono text-xl font-bold text-sapphire-950 ">
               Fidliz
-            </span>
+            </h3>
             <p className="text-sm lg:text-base text-start">
               Consiste em um plataforma de fidelização de clientes, onde o foco
               é abandonar com o uso de cartões físicos de fidelização, assim
@@ -66,6 +67,7 @@ export function Cases() {
             <a
               href="https://www.fidliz.com.br/"
               target="_blank"
+              title="Fidliz - Plataforma de fidelização de clientes"
               className="text-start text-sm font-bold text-sapphire-950 hover:underline"
             >
               Acesse aqui
@@ -79,9 +81,9 @@ export function Cases() {
           </div>
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
-            <span className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+            <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
               Unidavi - Minha Reserva <small>(Sistema Interno)</small>
-            </span>
+            </h3>
             <p className="text-sm lg:text-base text-start">
               Consiste em um sistema de gerenciamento de reservas de salas de
               aula, onde o foco é facilitar a reserva de salas de aula, e evitar
@@ -97,9 +99,9 @@ export function Cases() {
           </div>
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
-            <span className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+            <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
               Unidavi - Minha Prova <small>(Sistema Interno)</small>
-            </span>
+            </h3>
             <p className="text-sm lg:text-base text-start">
               Consiste em um sistema de provas, onde o foco é facilitar a
               criação de provas e gerar provas personalizadas, gerando a nota em
@@ -114,9 +116,9 @@ export function Cases() {
           </div>
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
-            <span className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+            <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
               Alien Force
-            </span>
+            </h3>
             <p className="text-sm lg:text-base text-start">
               Consiste em um site para uma marca de roupas minimalistas, com a
               ideia de ser um site simples e objetivo, com o foco em mostrar os
@@ -125,6 +127,7 @@ export function Cases() {
             <a
               href="https://alienforce.lojavirtualnuvem.com.br/"
               target="_blank"
+              title="Alien Force - Marca de roupa minimalista"
               className="text-start text-sm font-bold text-sapphire-950 hover:underline"
             >
               Acesse aqui

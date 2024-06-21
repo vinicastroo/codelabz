@@ -17,9 +17,9 @@ export function ServiceItem({
       </div>
 
       <div className="flex flex-col gap-4">
-        <span className="font-mono text-2xl text-sapphire-950 font-bold">
+        <h3 className="font-mono text-2xl text-sapphire-950 font-bold">
           {title}
-        </span>
+        </h3>
         <p className="flex-1 break-words text-zinc-700 text-sm lg:text-base">
           {description}
         </p>

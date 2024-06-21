@@ -18,73 +18,81 @@ export function Footer() {
               Menus
             </span>
 
-            <a
-              href="#processos"
+            <Link
+              href="/#processos"
+              title="Nossos processos"
               className="block text-start transition hover:text-ruby-500"
             >
               Nossos processos
-            </a>
+            </Link>
 
-            <a
-              href="#servicos"
+            <Link
+              href="/#servicos"
+              title="Nossos serviços"
               className="block text-start transition hover:text-ruby-500"
             >
               Nossos serviços
-            </a>
+            </Link>
 
-            <a
-              href="#cases"
+            <Link
+              href="/#cases"
+              title="Nossos cases"
               className="block text-start transition hover:text-ruby-500"
             >
               Nossos cases
-            </a>
+            </Link>
           </div>
 
           <div className="m-auto flex w-4/6 flex-col items-start justify-start gap-3 text-white lg:m-0  lg:w-full ">
             <span className="mb-2 border-b  border-white text-lg font-bold">
               Redes sociais
             </span>
-            <a
+            <Link
               href="https://www.facebook.com/profile.php?id=61557445902721"
+              title="Facebook Codelabz"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Facebook className="h-5 w-5" />
               Facebook
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/codelabz.com.br"
+              title="Instagram Codelabz"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Instagram className="h-5 w-5 " />
               Instagram
-            </a>
+            </Link>
           </div>
 
           <div className="m-auto flex w-4/6 flex-col items-start justify-start gap-3 text-white lg:m-0 lg:w-full ">
             <span className="mb-2 border-b border-white text-lg font-bold">
               Fale com a gente
             </span>
-            <a
+            <Link
               href="/contato"
+              title=" Iniciar um projeto"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Rocket className="h-5 w-5" />
               Iniciar um projeto
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://api.whatsapp.com/send?phone=5547996164275"
+              title="Entrar em contato whatsapp"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <Phone className="h-5 w-5" />
               (47) 996164275
-            </a>
-            <a
+            </Link>
+            <Link
               href="mailto:contato@codelabz.com.br"
+              title="Entrar em contato por email"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
               <AtSign className="h-5 w-5" />
               contato@codelabz.com.br
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
