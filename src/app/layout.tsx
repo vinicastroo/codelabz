@@ -10,7 +10,8 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 const roboto = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
-  title: 'Code labz',
+  title:
+    'Codelabz - Criação de sites, Desenvolvimento de sistemas, criação de landing pages. Rio do sul / Santa Catarina',
   keywords: [
     'Criação de sites',
     'Desenvolvimento de sistemas',
