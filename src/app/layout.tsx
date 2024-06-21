@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Rio do sul',
     'Santa Catarina',
     'Codelabz',
-    'Crição de sites em Rio do Sul',
+    'Criação de sites em Rio do Sul',
     'Sistemas em Rio do Sul',
     'Desenvolvimento de API',
     'Deploy de aplicações',
