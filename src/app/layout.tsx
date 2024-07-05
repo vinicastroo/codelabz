@@ -7,7 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Suspense } from 'react'
 import { FacebookPixelEvents } from './Components/FacebookPixelEvents'
 import { GoogleAnalytics } from '@next/third-parties/google'
-
+import { Analytics } from '@vercel/analytics/react'
 const roboto = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Codelabz - Criação de sites em Rio do Sul / Santa Catarina',
@@ -73,6 +73,7 @@ export default function RootLayout({
           />
 
           <SpeedInsights />
+          <Analytics />
         </div>
 
         <Suspense fallback={null}>
