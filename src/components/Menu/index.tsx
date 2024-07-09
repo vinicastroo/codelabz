@@ -31,7 +31,10 @@ export function Menu() {
           </Button>
         </Link>
 
-        <Link href="/contato" title="Iniciar um projeto">
+        <Link
+          href="https://api.whatsapp.com/send?phone=5547996164275&text=Ol%C3%A1,%20vim%20pelo%20site,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+          title="Iniciar um projeto"
+        >
           <Button
             variant="fill"
             className="hidden lg:block bg-sapphire-950  hover:bg-sapphire-950 hover:opacity-80"
@@ -103,7 +106,7 @@ export function Menu() {
             </Link>
 
             <Link
-              href="/contato"
+              href="https://api.whatsapp.com/send?phone=5547996164275&text=Ol%C3%A1,%20vim%20pelo%20site,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
               className="w-full pt-4 text-ruby-700 font-bold"
               aria-labelledby="Iniciar um projeto"
               title="Iniciar um projeto"

@@ -32,7 +32,9 @@ export function Header() {
               className="px-4 py-2 mt-2 text-base flex items-center font-bold shadow-sm lg:text-xl lg:py-4 lg:px-8"
               onClick={(e) => {
                 e.preventDefault()
-                router.push('/contato')
+                router.push(
+                  'https://api.whatsapp.com/send?phone=5547996164275&text=Ol%C3%A1,%20vim%20pelo%20site,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es',
+                )
               }}
               aria-labelledby="Começar um projeto"
               title="Começar um projeto"

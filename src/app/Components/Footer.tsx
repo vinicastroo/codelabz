@@ -70,7 +70,7 @@ export function Footer() {
               Fale com a gente
             </span>
             <Link
-              href="/contato"
+              href="https://api.whatsapp.com/send?phone=5547996164275&text=Ol%C3%A1,%20vim%20pelo%20site,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
               title=" Iniciar um projeto"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
