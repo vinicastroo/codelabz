@@ -2,6 +2,7 @@ import {
   LogoAlienForce,
   LogoAuros,
   LogoFidliz,
+  LogoGuilherme,
   LogoUnidavi,
 } from '@/assets/logo'
 
@@ -20,6 +21,32 @@ export function Cases() {
 
       <div className="flex flex-col space-y-8 divide-y lg:space-y-12">
         <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-start ">
+          <div className="flex items-center justify-center rounded-md w-full bg-sapphire-950 p-12 lg:w-auto lg:p-4">
+            <LogoGuilherme />
+          </div>
+
+          <div className="flex flex-col items-start gap-2">
+            <h3 className="font-mono text-xl font-bold text-sapphire-950 ">
+              Guilherme Schulze
+            </h3>
+            <p className="text-sm lg:text-base text-start">
+              Foi desenvolvida uma solução que atendesse as necessidades do
+              fotógrafo / videomaker, um site que seria possivel visualizar seus
+              projetos, serviços e seu portifolio.
+            </p>
+
+            <a
+              href="https://www.guilhermeschulze.com.br/"
+              target="_blank"
+              title="Auros Corretora Imobiliaria"
+              className="text-sm font-bold text-sapphire-950 hover:underline"
+            >
+              Acesse aqui
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
           <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
             <LogoAuros />
           </div>
@@ -110,7 +137,7 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
+        {/* <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
           <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
             <LogoAlienForce />
           </div>
@@ -133,7 +160,7 @@ export function Cases() {
               Acesse aqui
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* <div className="flex items-center justify-center">
