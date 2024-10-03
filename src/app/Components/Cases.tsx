@@ -1,5 +1,4 @@
 import {
-  LogoAlienForce,
   LogoAuros,
   LogoFidliz,
   LogoGuilherme,
