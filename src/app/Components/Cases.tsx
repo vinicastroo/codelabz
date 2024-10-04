@@ -1,9 +1,4 @@
-import {
-  LogoAuros,
-  LogoFidliz,
-  LogoGuilherme,
-  LogoUnidavi,
-} from '@/assets/logo'
+import Image from 'next/image'
 
 export function Cases() {
   return (
@@ -18,17 +13,15 @@ export function Cases() {
         </strong>
       </div>
 
-      <div className="flex flex-col space-y-8 divide-y lg:space-y-12">
-        <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-start ">
-          <div className="flex items-center justify-center rounded-md w-full bg-sapphire-950 p-12 lg:w-auto lg:p-4">
-            <LogoGuilherme />
-          </div>
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+        <div className="flex flex-col items-start gap-4  ">
+          <Image src="/banner-guilherme.png" width={408} height={408} alt="" />
 
           <div className="flex flex-col items-start gap-2">
             <h3 className="font-mono text-xl font-bold text-sapphire-950 ">
               Guilherme Schulze
             </h3>
-            <p className="text-sm lg:text-base text-start">
+            <p className="text-sm text-start">
               Foi desenvolvida uma solução que atendesse as necessidades do
               fotógrafo / videomaker, um site que seria possivel visualizar seus
               projetos, serviços e seu portifolio.
@@ -45,16 +38,14 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
-            <LogoAuros />
-          </div>
+        <div className="flex flex-col items-start gap-4 lg:items-start ">
+          <Image src="/banner-auros.png" width={408} height={408} alt="" />
 
           <div className="flex flex-col items-start gap-2">
-            <h3 className="font-mono text-xl font-bold text-sapphire-950 ">
+            <h3 className="font-mono text-xl font-bold text-sapphire-950 text-start ">
               Auros corretora imobiliaria
             </h3>
-            <p className="text-sm lg:text-base text-start">
+            <p className="text-sm text-start">
               Foi desenvolvida uma solução que atendesse as necessidades do
               setor imobiliário, utilizando um sistema interno de gestão de
               imóveis, e um site. Este sistema foi desenvolvido com o intuito de
@@ -74,16 +65,14 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
-            <LogoFidliz />
-          </div>
+        <div className="flex flex-col items-start gap-4 lg:items-start ">
+          <Image src="/banner-fidliz.png" width={408} height={408} alt="" />
 
-          <div className="flex flex-col  items-start gap-2">
+          <div className="flex flex-col items-start gap-2">
             <h3 className="text-start font-mono text-xl font-bold text-sapphire-950 ">
               Fidliz
             </h3>
-            <p className="text-sm lg:text-base text-start">
+            <p className="text-sm text-start">
               Consiste em um plataforma de fidelização de clientes, onde o foco
               é abandonar com o uso de cartões físicos de fidelização, assim
               evitando o problema de ir ao um estabelecimento e ter esquecido o
@@ -101,16 +90,19 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
-            <LogoUnidavi />
-          </div>
+        <div className="flex flex-col items-start gap-4 lg:items-start ">
+          <Image
+            src="/banner-minha-reserva.png"
+            width={408}
+            height={408}
+            alt=""
+          />
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
-            <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+            <h3 className="font-mono  text-xl text-start font-bold text-sapphire-950 ">
               Unidavi - Minha Reserva <small>(Sistema Interno)</small>
             </h3>
-            <p className="text-sm lg:text-base text-start">
+            <p className="text-sm text-start">
               Consiste em um sistema de gerenciamento de reservas de salas de
               aula, onde o foco é facilitar a reserva de salas de aula, e evitar
               conflitos de horários. Possibilitando que os professores realizem
@@ -119,16 +111,19 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
-          <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
-            <LogoUnidavi />
-          </div>
+        <div className="flex flex-col items-start gap-4 lg:items-start ">
+          <Image
+            src="/banner-minha-prova.png"
+            width={408}
+            height={408}
+            alt=""
+          />
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
             <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
               Unidavi - Minha Prova <small>(Sistema Interno)</small>
             </h3>
-            <p className="text-sm lg:text-base text-start">
+            <p className="text-sm text-start">
               Consiste em um sistema de provas, onde o foco é facilitar a
               criação de provas e gerar provas personalizadas, gerando a nota em
               tempo real após a finalização da prova.
@@ -145,7 +140,7 @@ export function Cases() {
             <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
               Alien Force
             </h3>
-            <p className="text-sm lg:text-base text-start">
+            <p className="text-sm text-start">
               Consiste em um site para uma marca de roupas minimalistas, com a
               ideia de ser um site simples e objetivo, com o foco em mostrar os
               produtos de forma clara e objetiva.

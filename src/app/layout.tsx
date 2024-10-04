@@ -10,7 +10,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 const roboto = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
-  title: 'Codelabz - Criação de sites em Rio do Sul / Santa Catarina',
+  title: 'Codelabz - Criação de sites e Desenvolvimento de sistemas',
   keywords: [
     'Criação de sites',
     'Desenvolvimento de sistemas',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
   openGraph: {
-    title: 'Codelabz - Criação de sites em Rio do Sul / Santa Catarina',
+    title: 'Codelabz - Criação de sites e Desenvolvimento de sistemas',
     description:
       'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites ou desenvolvimento de sistemas, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
     url: 'https://www.codelabz.com.br/',
