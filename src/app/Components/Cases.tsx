@@ -15,7 +15,13 @@ export function Cases() {
 
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
         <div className="flex flex-col items-start gap-4  ">
-          <Image src="/banner-guilherme.png" width={408} height={408} alt="" />
+          <Image
+            src="/banner-guilherme.png"
+            width={408}
+            height={408}
+            alt=""
+            quality={100}
+          />
 
           <div className="flex flex-col items-start gap-2">
             <h3 className="font-mono text-xl font-bold text-sapphire-950 ">
@@ -39,7 +45,13 @@ export function Cases() {
         </div>
 
         <div className="flex flex-col items-start gap-4 lg:items-start ">
-          <Image src="/banner-auros.png" width={408} height={408} alt="" />
+          <Image
+            src="/banner-auros.png"
+            width={408}
+            height={408}
+            alt=""
+            quality={100}
+          />
 
           <div className="flex flex-col items-start gap-2">
             <h3 className="font-mono text-xl font-bold text-sapphire-950 text-start ">
@@ -66,7 +78,13 @@ export function Cases() {
         </div>
 
         <div className="flex flex-col items-start gap-4 lg:items-start ">
-          <Image src="/banner-fidliz.png" width={408} height={408} alt="" />
+          <Image
+            src="/banner-fidliz.png"
+            width={408}
+            height={408}
+            alt=""
+            quality={100}
+          />
 
           <div className="flex flex-col items-start gap-2">
             <h3 className="text-start font-mono text-xl font-bold text-sapphire-950 ">
@@ -96,6 +114,7 @@ export function Cases() {
             width={408}
             height={408}
             alt=""
+            quality={100}
           />
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
@@ -117,6 +136,7 @@ export function Cases() {
             width={408}
             height={408}
             alt=""
+            quality={100}
           />
 
           <div className="flex flex-col items-center gap-2 lg:items-start">
