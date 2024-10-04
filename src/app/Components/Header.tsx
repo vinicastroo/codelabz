@@ -33,7 +33,7 @@ export function Header() {
               onClick={(e) => {
                 e.preventDefault()
                 router.push(
-                  'https://api.whatsapp.com/send?phone=5547996164275&text=Ol%C3%A1,%20vim%20pelo%20site,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es',
+                  'https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações',
                 )
               }}
               aria-labelledby="Começar um projeto"
