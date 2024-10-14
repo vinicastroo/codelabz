@@ -8,6 +8,7 @@ import { Suspense } from 'react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
+import Head from 'next/head'
 const roboto = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -57,6 +58,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className="antialiased">
+      <Head>
+        <meta
+          name="facebook-domain-verification"
+          content="6kezk737zh1ph4vvms50b6iv1cjro4"
+        />
+      </Head>
       <body className={roboto.className}>
         <div className="min-h-screen">
           {/* <Menu /> */}
