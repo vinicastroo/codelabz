@@ -56,7 +56,7 @@ export function Footer() {
               Facebook
             </Link>
             <Link
-              href="https://www.instagram.com/codelabz.com.br"
+              href="https://www.instagram.com/code.labz/"
               title="Instagram Codelabz"
               className="flex items-center gap-3 text-white transition hover:text-ruby-500"
             >
