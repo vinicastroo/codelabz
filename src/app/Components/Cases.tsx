@@ -151,6 +151,27 @@ export function Cases() {
           </div>
         </div>
 
+        <div className="flex flex-col items-start gap-4 lg:items-start ">
+          <Image
+            src="/banner-magaventures.png"
+            width={408}
+            height={408}
+            alt=""
+            quality={100}
+          />
+
+          <div className="flex flex-col items-center gap-2 lg:items-start">
+            <h3 className="text-start font-mono  text-xl font-bold text-sapphire-950 ">
+              Magazord - Magaventures <small>(Sistema Interno)</small>
+            </h3>
+            <p className="text-sm text-start">
+              Consiste em um sistema de gerenciador de startups, que tem como
+              objetivo facilitar o gerenciamento, visualização de indicadores e
+              o desempenho de cada startup investida.
+            </p>
+          </div>
+        </div>
+
         {/* <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
           <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
             <LogoAlienForce />
