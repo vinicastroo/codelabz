@@ -63,6 +63,11 @@ export default function RootLayout({
           name="facebook-domain-verification"
           content="6kezk737zh1ph4vvms50b6iv1cjro4"
         />
+
+        <meta
+          name="adopt-website-id"
+          content="10ffa802-5b28-4ed5-b6f0-652a2bb04ca8"
+        />
       </Head>
       <body className={roboto.className}>
         <div className="min-h-screen">
@@ -101,6 +106,10 @@ export default function RootLayout({
           fbq('track', 'PageView');
         `}
         </Script>
+        <Script
+          src="//tag.goadopt.io/injector.js?website_code=10ffa802-5b28-4ed5-b6f0-652a2bb04ca8"
+          className="adopt-injector"
+        ></Script>
         <noscript>
           <img
             height="1"
