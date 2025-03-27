@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Suspense } from 'react'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import Head from 'next/head'
@@ -91,6 +91,7 @@ export default function RootLayout({
 
         <Suspense fallback={null}>
           <GoogleAnalytics gaId="G-ZMSWXB8HFV" />
+          <GoogleTagManager gtmId="AW-16576045048" />
         </Suspense>
 
         <Script id="facebook-pixel" strategy="afterInteractive">
