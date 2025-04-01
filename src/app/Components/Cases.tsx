@@ -16,6 +16,37 @@ export function Cases() {
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
         <div className="flex flex-col items-start gap-4  ">
           <Image
+            src="/banner-cloock.png"
+            width={408}
+            height={408}
+            alt=""
+            quality={100}
+          />
+
+          <div className="flex flex-col items-start gap-2">
+            <h3 className="font-mono text-xl font-bold text-sapphire-950 ">
+              Cloock
+            </h3>
+            <p className="text-sm text-start">
+              Foi criado um sistema personalizado para atender empresas que
+              trabalham com agendamentos, permitindo gerenciar serviços,
+              horários disponíveis, bloqueios e reservas de forma simples e
+              eficiente.
+            </p>
+
+            <a
+              href="https://www.cloock.com.br/"
+              target="_blank"
+              title="Cloock"
+              className="text-sm font-bold text-sapphire-950 hover:underline"
+            >
+              Acesse aqui
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-start gap-4  ">
+          <Image
             src="/banner-guilherme.png"
             width={408}
             height={408}
@@ -36,7 +67,7 @@ export function Cases() {
             <a
               href="https://www.guilhermeschulze.com.br/"
               target="_blank"
-              title="Auros Corretora Imobiliaria"
+              title="Guilherme Schulze"
               className="text-sm font-bold text-sapphire-950 hover:underline"
             >
               Acesse aqui
@@ -151,7 +182,7 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 lg:items-start ">
+        {/* <div className="flex flex-col items-start gap-4 lg:items-start ">
           <Image
             src="/banner-magaventures.png"
             width={408}
@@ -170,7 +201,7 @@ export function Cases() {
               o desempenho de cada startup investida.
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="flex flex-col items-start gap-4 pt-8 lg:flex-row lg:items-start lg:pt-12">
           <div className="flex w-full items-center justify-center rounded-md bg-sapphire-950 p-12 lg:w-auto lg:p-4">
