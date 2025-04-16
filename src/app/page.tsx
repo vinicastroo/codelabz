@@ -13,8 +13,8 @@ export default function Home() {
       <Header />
       <Reason />
       <ServicesContainer />
-      <ProcessContainer />
       <Cases />
+      <ProcessContainer />
       <Cta />
       <Footer />
     </>
