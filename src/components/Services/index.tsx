@@ -47,42 +47,42 @@ export function Services() {
         id: 0,
         title: 'Desenvolvimento de sites responsivos',
         description:
-          'É criar um site que se adapta automaticamente a qualquer tamanho de tela, garantindo que ele funcione bem tanto em computadores quanto em dispositivos móveis, proporcionando uma experiência agradável para todos os usuários.',
+          'Criamos sites que se adaptam automaticamente a qualquer dispositivo — de smartphones a desktops — oferecendo uma navegação fluida, rápida e intuitiva para todos os usuários.',
         icon: IlustrationResponsive,
       },
       {
         id: 1,
         title: 'Desenvolvimento de Sistemas',
         description:
-          'É como montar um quebra-cabeça digital para resolver problemas específicos. Cada peça é um código que, quando combinado, forma um programa que executa tarefas úteis, como gerenciar dados ou automatizar processos.',
+          'Transformamos ideias em sistemas inteligentes que automatizam processos, otimizam rotinas e resolvem problemas específicos do seu negócio com eficiência.',
         icon: IlustrationDashboard,
       },
       {
         id: 2,
         title: 'Desenvolvimento de API',
         description:
-          'É como construir um garçom para um restaurante digital. Assim como um garçom pega os pedidos dos clientes e traz a comida da cozinha, a API recebe pedidos de programas ou aplicativos e entrega as informações ou executa ações necessárias. É uma maneira de diferentes softwares se comunicarem entre si.',
+          'Criamos APIs robustas que conectam plataformas, integram serviços e permitem que diferentes sistemas conversem entre si de forma segura, rápida e confiável.',
         icon: IlustrationAPI,
       },
       {
         id: 3,
         title: 'Deploy de aplicações',
         description:
-          'É como mudar sua loja ou escritório para um shopping center online gigante. Ao invés de manter sua loja em um prédio físico, você a coloca em um espaço virtual, onde ela pode ser acessada de qualquer lugar pela internet. Isso torna sua loja mais fácil de gerenciar, mais segura e acessível para mais clientes.',
+          'Publicamos e configuramos sua aplicação na nuvem, tornando-a acessível, segura e escalável — pronta para receber usuários de qualquer lugar do mundo.',
         icon: IlustrationDeploy,
       },
       {
         id: 4,
         title: 'Integração de Sistemas',
         description:
-          'Permite que diferentes programas de computador e aplicativos trabalhem em conjunto, compartilhando informações e recursos para operar mais eficientemente.',
+          'Conectamos diferentes softwares e plataformas para que eles compartilhem dados em tempo real, reduzindo retrabalho e aumentando a produtividade da sua operação.',
         icon: IlustrationIntegration,
       },
       {
         id: 5,
         title: 'Consultorias em TI',
         description:
-          'É um serviço onde especialistas em tecnologia da informação ajudam empresas a melhorar e otimizar seus sistemas de computador. Eles dão conselhos sobre como usar a tecnologia para atingir objetivos de negócios e resolver problemas.',
+          'Ajudamos sua empresa a tomar decisões estratégicas em tecnologia, com análises personalizadas e soluções que otimizam recursos, reduzem custos e impulsionam resultados.',
         icon: IlustrationConsulting,
       },
     ]

@@ -1,6 +1,5 @@
 'use client'
 import { Menu } from '@/components/Menu'
-import { motion } from 'framer-motion'
 import { IlustrationHome } from '@/assets/ilustrations'
 
 import { Button } from '@/components/Button'
@@ -18,31 +17,30 @@ export function Header() {
             realidade
           </h1>
           <p className="text-base  lg:text-lg">
-            Vamos além da criação de sites, entregando soluções digitais que
-            geram resultados concretos, do aumento de leads ao crescimento das
-            vendas
+            Nada de plataformas engessadas. Criamos soluções sob medida com
+            design moderno, performance e resultado real.
           </p>
 
-          <motion.div
+          {/* <motion.div
             animate={{ rotate: [0, 0, 0, 1, 0, -1, 0, 0, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
+          > */}
+          <Button
+            variant="fill"
+            className="px-4 py-2 mt-2 text-base flex items-center font-bold shadow-sm lg:text-lg lg:py-3 lg:px-6"
+            onClick={(e) => {
+              e.preventDefault()
+              router.push(
+                'https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações',
+              )
+            }}
+            aria-labelledby="Começar um projeto"
+            title="Começar um projeto"
           >
-            <Button
-              variant="fill"
-              className="px-4 py-2 mt-2 text-base flex items-center font-bold shadow-sm lg:text-xl lg:py-4 lg:px-8"
-              onClick={(e) => {
-                e.preventDefault()
-                router.push(
-                  'https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações',
-                )
-              }}
-              aria-labelledby="Começar um projeto"
-              title="Começar um projeto"
-            >
-              <Rocket className="h-5 w-5 mr-2" />
-              Começar um projeto
-            </Button>
-          </motion.div>
+            <Rocket className="h-5 w-5 mr-2" />
+            Solicitar orçamento
+          </Button>
+          {/* </motion.div> */}
         </div>
 
         <div className="lg:flex-1">
