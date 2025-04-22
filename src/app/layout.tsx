@@ -9,6 +9,7 @@ import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import Head from 'next/head'
+import { PostHogProvider } from './providers/post-hog'
 const roboto = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -71,24 +72,26 @@ export default function RootLayout({
       </Head>
 
       <body className={roboto.className}>
-        <div className="min-h-screen">
-          {/* <Menu /> */}
-          <main className="max-w-screen">{children}</main>
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+        <PostHogProvider>
+          <div className="min-h-screen">
+            {/* <Menu /> */}
+            <main className="max-w-screen">{children}</main>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
 
-          <SpeedInsights />
-          <Analytics />
-        </div>
+            <SpeedInsights />
+            <Analytics />
+          </div>
+        </PostHogProvider>
 
         <Suspense fallback={null}>
           <GoogleAnalytics gaId="G-ZMSWXB8HFV" />
@@ -122,6 +125,15 @@ export default function RootLayout({
           r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
           a.appendChild(r);
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+          `}
+        </Script>
+        <Script id="clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "r89mbd4nbc");
           `}
         </Script>
         <noscript>
