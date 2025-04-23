@@ -4,8 +4,7 @@ import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Suspense } from 'react'
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import Head from 'next/head'
@@ -93,10 +92,7 @@ export default function RootLayout({
           </div>
         </PostHogProvider>
 
-        <Suspense fallback={null}>
-          <GoogleAnalytics gaId="G-ZMSWXB8HFV" />
-          <GoogleTagManager gtmId="AW-16576045048" />
-        </Suspense>
+        <GoogleTagManager gtmId="GTM-W4MB4WBZ" />
 
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
