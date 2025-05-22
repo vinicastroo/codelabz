@@ -17,7 +17,7 @@ export function Header() {
             realidade
           </h1>
           <p className="text-base  lg:text-lg">
-            Nada de plataformas engessadas. Criamos soluções sob medida com
+            Nada de plataformas engessadassss. Criamos soluções sob medida com
             design moderno, performance e resultado real.
           </p>
 
