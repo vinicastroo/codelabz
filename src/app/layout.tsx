@@ -8,7 +8,6 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import Head from 'next/head'
-import { PostHogProvider } from './providers/post-hog'
 const roboto = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -64,33 +63,31 @@ export default function RootLayout({
           content="6kezk737zh1ph4vvms50b6iv1cjro4"
         />
 
-        <meta
+        {/* <meta
           name="adopt-website-id"
           content="10ffa802-5b28-4ed5-b6f0-652a2bb04ca8"
-        />
+        /> */}
       </Head>
 
       <body className={roboto.className}>
-        <PostHogProvider>
-          <div className="min-h-screen">
-            {/* <Menu /> */}
-            <main className="max-w-screen">{children}</main>
-            <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
+        <div className="min-h-screen">
+          {/* <Menu /> */}
+          <main className="max-w-screen">{children}</main>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
 
-            <SpeedInsights />
-            <Analytics />
-          </div>
-        </PostHogProvider>
+          <SpeedInsights />
+          <Analytics />
+        </div>
 
         <GoogleTagManager gtmId="GTM-W4MB4WBZ" />
 
@@ -107,10 +104,7 @@ export default function RootLayout({
           fbq('track', 'PageView');
         `}
         </Script>
-        <Script
-          src="//tag.goadopt.io/injector.js?website_code=10ffa802-5b28-4ed5-b6f0-652a2bb04ca8"
-          className="adopt-injector"
-        ></Script>
+
         <Script id="hotjar" strategy="afterInteractive">
           {`
             (function(h,o,t,j,a,r){
