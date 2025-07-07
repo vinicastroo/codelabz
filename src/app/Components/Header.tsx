@@ -4,7 +4,7 @@ import { IlustrationHome } from '@/assets/ilustrations'
 
 import { Button } from '@/components/Button'
 import { useRouter } from 'next/navigation'
-import { Rocket } from 'lucide-react'
+import { ChevronDown, Rocket } from 'lucide-react'
 export function Header() {
   const router = useRouter()
   return (
@@ -46,6 +46,10 @@ export function Header() {
         <div className="lg:flex-1">
           <IlustrationHome />
         </div>
+      </div>
+
+      <div>
+        <ChevronDown className="absolute bottom-4 left-1/2 transform -translate-x-1/2 h-6 w-6 text-sapphire-950 animate-bounce" />
       </div>
     </header>
   )
