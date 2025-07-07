@@ -12,25 +12,24 @@ const roboto = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Codelabz - Criação de sites e Desenvolvimento de sistemas',
-  keywords: [
-    'Criação de sites',
-    'Desenvolvimento de sistemas',
-    'Rio do sul',
-    'Santa Catarina',
-    'Codelabz',
-    'Criação de sites em Rio do Sul',
-    'Sistemas em Rio do Sul',
-    'Desenvolvimento de API',
-    'Deploy de aplicações',
-    'Integração de Sistemas',
-    'Consultorias em TI',
-  ],
   description:
-    'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
+    'Transforme suas ideias em realidade com soluções digitais completas. Sites, sistemas, APIs, consultorias e estratégias para impulsionar sua marca online.',
+  keywords: [
+    'criação de sites profissionais',
+    'desenvolvimento de sistemas personalizados',
+    'agência digital em Santa Catarina',
+    'sites responsivos em Rio do Sul',
+    'consultoria em tecnologia',
+    'sistemas sob medida',
+    'soluções digitais para empresas',
+    'landing pages otimizadas',
+    'integração de APIs',
+    'Codelabz tecnologia',
+  ],
   openGraph: {
     title: 'Codelabz - Criação de sites e Desenvolvimento de sistemas',
     description:
-      'Transforme suas ideias em realidade com nossas soluções digitais abrangentes. Vamos além da criação de sites ou desenvolvimento de sistemas, oferecendo estratégias digitais que impulsionam o sucesso online do seu negócio. Descubra como podemos posicionar sua marca de forma eficaz no mundo digital e gerar resultados reais para o seu negócio.',
+      'Transforme suas ideias em realidade com nossas soluções digitais. Vamos além da criação de sites, oferecendo estratégias digitais que geram resultados reais.',
     url: 'https://www.codelabz.com.br/',
     siteName: 'Codelabz',
     images: [
@@ -48,7 +47,19 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Codelabz - Criação de sites e sistemas sob medida',
+    description:
+      'Soluções digitais sob medida em Rio do Sul: criação de sites, sistemas, APIs e estratégias para empresas que querem crescer no digital.',
+    images: ['https://www.codelabz.com.br/logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
+
 
 export default function RootLayout({
   children,
