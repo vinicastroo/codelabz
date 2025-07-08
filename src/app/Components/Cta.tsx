@@ -1,6 +1,9 @@
+'use client'
 import { Button } from '@/components/Button'
 import { Rocket } from 'lucide-react'
 import Link from 'next/link'
+import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
+import { redirect } from 'next/navigation'
 
 export function Cta() {
   return (
@@ -14,12 +17,17 @@ export function Cta() {
             Pronto para tirar seu projeto do papel?
           </h2>
           <p className="text-center max-w-2xl">
-            Dê o primeiro passo rumo a uma solução digital feita sob medida.
             Entre em contato e veja como podemos transformar sua ideia em um
             projeto real, eficiente e com resultado.
           </p>
 
-          <Link href="https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações">
+          <Link
+            href="https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações"
+            onClick={() => {
+              sendGAEvent('event', 'ads_conversion_Fale_conosco_1')
+              sendGTMEvent('event', 'ads_conversion_Fale_conosco_1')
+              redirect('https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações')
+            }}>
             <Button
               className="flex items-center mt-4"
               variant="fill"

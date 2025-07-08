@@ -4,7 +4,7 @@ import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import Head from 'next/head'
@@ -136,6 +136,22 @@ export default function RootLayout({
           `}
         </Script>
 
+        <Script id="gtag-delayed-navigation" strategy="afterInteractive">
+          {`
+              function gtagSendEvent(url) {
+                var callback = function () {
+                  if (typeof url === 'string') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'ads_conversion_Fale_conosco_1', {
+                  'event_callback': callback,
+                  'event_timeout': 2000
+                });
+                return false;
+              }
+            `}
+        </Script>
         <noscript>
           <img
             height="1"

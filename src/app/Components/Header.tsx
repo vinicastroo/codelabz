@@ -5,6 +5,7 @@ import { IlustrationHome } from '@/assets/ilustrations'
 import { Button } from '@/components/Button'
 import { useRouter } from 'next/navigation'
 import { ChevronDown, Rocket } from 'lucide-react'
+import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
 export function Header() {
   const router = useRouter()
   return (
@@ -30,6 +31,8 @@ export function Header() {
             className="px-4 py-2 mt-2 text-base flex items-center font-bold shadow-sm lg:text-lg lg:py-3 lg:px-6"
             onClick={(e) => {
               e.preventDefault()
+              sendGAEvent('event', 'ads_conversion_Fale_conosco_1')
+              sendGTMEvent('event', 'ads_conversion_Fale_conosco_1')
               router.push(
                 'https://api.whatsapp.com/send?phone=5547996164275&text=Olá, gostaria de mais informações',
               )
