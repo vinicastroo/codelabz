@@ -10,7 +10,7 @@ export function Header() {
   const router = useRouter()
   return (
     <header className="lg:0 m-auto flex h-screen max-w-[1300px] flex-col lg:px-0">
-      <Menu />
+
       <div className="flex flex-1 px-4 flex-col-reverse justify-end lg:gap-8 lg:grid lg:grid-cols-app lg:items-center lg:px-4">
         <div className="flex flex-col items-start gap-2 lg:gap-4">
           <h1 className="text-2xl font-extrabold text-sapphire-950 lg:text-6xl">

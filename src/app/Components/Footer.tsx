@@ -103,7 +103,7 @@ export function Footer() {
             © {new Date().getFullYear()} - Code Labz. Todos os direitos
             reservados
           </span>
-          <span className="text-sm ">Rio do Sul - SC</span>
+          <span className="text-sm ">Balneário Camboriú - SC</span>
         </div>
       </div>
     </>

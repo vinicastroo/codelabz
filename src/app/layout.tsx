@@ -8,6 +8,7 @@ import { GoogleTagManager, } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import Head from 'next/head'
+import { Menu } from '@/components/Menu'
 const roboto = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'criação de sites profissionais',
     'desenvolvimento de sistemas personalizados',
     'agência digital em Santa Catarina',
-    'sites responsivos em Rio do Sul',
+    'sites responsivos em Balneário Camboriú',
     'consultoria em tecnologia',
     'sistemas sob medida',
     'soluções digitais para empresas',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Codelabz - Criação de sites e sistemas sob medida',
     description:
-      'Soluções digitais sob medida em Rio do Sul: criação de sites, sistemas, APIs e estratégias para empresas que querem crescer no digital.',
+      'Soluções digitais sob medida em Balneário Camboriú: criação de sites, sistemas, APIs e estratégias para empresas que querem crescer no digital.',
     images: ['https://www.codelabz.com.br/logo.png'],
   },
   robots: {
@@ -81,7 +82,7 @@ export default function RootLayout({
 
       <body className={roboto.className}>
         <div className="min-h-screen">
-          {/* <Menu /> */}
+          <Menu />
           <main className="max-w-screen">{children}</main>
           <ToastContainer
             position="top-right"
