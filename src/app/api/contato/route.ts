@@ -1,104 +1,51 @@
-// defaults to auto
-import { PrismaClient } from '@prisma/client'
+import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses'
 
-import { Resend } from 'resend'
 export const dynamic = 'force-dynamic'
-const prisma = new PrismaClient()
+
+const sesClient = new SESClient({
+  region: process.env.AWS_REGION || 'us-east-1',
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID ?? '',
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? '',
+  },
+})
+
 export async function POST(req: Request) {
-  const response = await req.json()
-  const { name, email, company, phone, description } = response.data
   try {
-    const emailAlreadyExists = await prisma.clients.findFirst({
-      where: {
-        email: {
-          equals: email,
-        },
+    const { name, email, company, phone, message } = await req.json()
+
+    // Email para o admin
+    const adminEmailCommand = new SendEmailCommand({
+      Source: 'Code labz <contato@codelabz.com.br>',
+      Destination: {
+        ToAddresses: ['viniciusc.d.c@hotmail.com'],
       },
-    })
-
-    if (emailAlreadyExists) {
-      return Response.json(
-        { error: 'Email já cadastrado' },
-        {
-          status: 400,
-          headers: {
-            'content-type': 'application/json',
-          },
+      Message: {
+        Subject: {
+          Data: `Proposta de ${name}`,
+          Charset: 'UTF-8',
         },
-      )
-    }
-
-    await prisma.clients.create({
-      data: {
-        name,
-        email,
-        company,
-        phone,
-        description,
-      },
-    })
-
-    const resend = new Resend(process.env.RESEND_API_KEY)
-
-    await resend.emails.send({
-      from: 'Code labz <contato@codelabz.com.br>',
-      to: 'viniciusc.d.c@hotmail.com',
-      subject: `Proposta de ${name}`,
-      html: `<div>
+        Body: {
+          Html: {
+            Data: `<div>
            <h1>Proposta de ${name}</h1>
            <p>Email: ${email}</p>
            <p>Empresa: ${company}</p>
            <p>Telefone: ${phone}</p>
-           <p>${description}</p>
+           <p>${message}</p>
          </div>`,
+            Charset: 'UTF-8',
+          },
+        },
+      },
     })
 
-    await resend.emails.send({
-      from: 'Code labz <contato@codelabz.com.br>',
-      to: email,
-      subject: `Próximas Etapas: Informações Importantes em Breve`,
-      html: `<!DOCTYPE html>
-      <html>
-      <head>
-          <title>Email de Agradecimento</title>
-          <style>
-              body {
-                  font-family: Arial, sans-serif;
-                  line-height: 1.6;
-              }
-              .container {
-                  width: 80%;
-                  margin: auto;
-                  padding: 20px;
-              }
-              .signature {
-                  margin-top: 50px;
-              }
-          </style>
-      </head>
-      <body>
-          <div class="container">
-              <p>Prezado(a) ${name},</p>
-              
-              <p>Espero que esta mensagem o(a) encontre bem.</p>
-      
-              <p>Estou no processo de compilar/organizar as informações necessárias e pretendo entrar em contato em breve com mais detalhes. Acredito que nossa futura parceria tem um grande potencial, e estou ansioso(a) para explorar as possibilidades.</p>
-      
-              <p>Por favor, sinta-se à vontade para entrar em contato caso tenha alguma dúvida em contato@codelabz.com.br ou necessidade adicional no ínterim. Estou à disposição para quaisquer esclarecimentos ou discussões adicionais.</p>
-      
-              <p>Mais uma vez, agradeço sinceramente pelo seu tempo e consideração. Aguardo com expectativa a nossa próxima interação.</p>
-      
-              <div class="signature">
-                  <p>Atenciosamente,</p>
-                  <p>Vinicius Castro / Code labz</p>
-              </div>
-          </div>
-      </body>
-      </html>`,
-    })
+    await Promise.all([
+      sesClient.send(adminEmailCommand),
+    ])
 
     return Response.json(
-      { message: 'Cliente criado com sucesso' },
+      { message: 'Email enviado com sucesso' },
       {
         status: 200,
         headers: {
@@ -107,9 +54,9 @@ export async function POST(req: Request) {
       },
     )
   } catch (error) {
-    console.error('Falha ao criar usuário: ', error)
+    console.error('Falha ao enviar email: ', error)
     return Response.json(
-      { error: 'Falha ao criar usuário' },
+      { error: 'Falha ao enviar email' },
       {
         status: 500,
         headers: {

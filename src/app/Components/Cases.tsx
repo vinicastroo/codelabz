@@ -1,118 +1,117 @@
-import Image from 'next/image'
-
+import Link from 'next/link'
+import { ProjectCard } from './project-card'
 const casesData = [
   {
-    title: 'Rafa Helena Arquitetura',
+    title: "Rafa Helena Arquitetura",
     description:
-      'Desenvolvemos o site da arquiteta Rafaela Helena com foco em transmitir sofisticação, personalidade e criatividade. A plataforma valoriza o portfólio, apresenta os serviços com elegância e oferece uma experiência fluida, conectando clientes à essência da marca.',
-    image: '/banner-rafa.png',
-    link: 'http://rafahelena.com.br/',
+      "Site pensado para valorizar o portfólio e transmitir sofisticação. Navegação fluida, visual limpo e foco em apresentação de projetos.",
+    image: "/banner-rafa.png",
+    link: "http://rafahelena.com.br/",
+    tags: ["Site Institucional", "Design"],
   },
   {
-    title: 'SDL Consultoria',
+    title: "SDL Consultoria",
     description:
-      'Criamos um site institucional moderno e funcional para a SDL Consultoria, destacando seus serviços de assessoria em segurança do trabalho, meio ambiente e treinamentos. A plataforma reforça a credibilidade da empresa com uma navegação clara, conteúdo organizado e design responsivo.',
-    image: '/banner-sdl.png',
-    link: 'https://sdlconsultoria.ind.br/',
+      "Site institucional moderno para apresentar serviços e facilitar o contato. Estrutura clara, conteúdo bem organizado e navegação objetiva.",
+    image: "/banner-sdl.png",
+    link: "https://sdlconsultoria.ind.br/",
+    tags: ["Corporativo", "Consultoria"],
   },
   {
-    title: 'Lovegoods',
+    title: "Lovegoods",
     description:
-      'Construímos a loja virtual da Lovegoods, especializada em presentes criativos e colecionáveis. O site destaca os produtos com um layout dinâmico, foco na experiência do usuário e integração completa com soluções de pagamento e logística.',
-    image: '/banner-lovegoods.png',
-    link: 'https://lovegoods.com.br/',
+      "E-commerce com foco em experiência do usuário e conversão. Layout dinâmico para destacar produtos e facilitar a compra.",
+    image: "/banner-lovegoods.png",
+    link: "https://lovegoods.com.br/",
+    tags: ["E-commerce", "Vendas"],
   },
   {
-    title: 'Cloock',
+    title: "Cloock",
     description:
-      'Desenvolvemos um sistema completo para empresas que trabalham com agendamentos online. A plataforma permite o controle de horários, serviços, bloqueios e reservas de forma intuitiva, garantindo mais organização e eficiência no dia a dia.',
-    image: '/banner-cloock.png',
-    link: 'https://www.cloock.com.br/',
+      "Desenvolvemos um sistema completo para empresas que trabalham com agendamentos online. A plataforma permite o controle de horários, serviços, bloqueios e reservas de forma intuitiva.",
+    image: "/banner-cloock.png",
+    link: "https://www.cloock.com.br/",
+    tags: ["SaaS", "Sistema Web"],
   },
   {
-    title: 'Guilherme Schulze',
+    title: "Guilherme Schulze",
     description:
-      'Criamos um site personalizado para destacar o trabalho do fotógrafo e videomaker Guilherme Schulze. A plataforma apresenta seus projetos, portfólio e serviços com uma experiência visual moderna e atrativa.',
-    image: '/banner-guilherme.png',
-    link: 'https://www.guilhermeschulze.com.br/',
+      "Criamos um site personalizado para destacar o trabalho do fotógrafo e videomaker Guilherme Schulze. A plataforma apresenta seus projetos e portfólio com uma experiência visual moderna.",
+    image: "/banner-guilherme.png",
+    link: "https://www.guilhermeschulze.com.br/",
+    tags: ["Portfólio", "Mídia"],
   },
   {
-    title: 'Auros corretora imobiliaria',
+    title: "Auros Corretora Imob",
     description:
-      'Entregamos uma solução digital sob medida para o setor imobiliário, com um sistema interno para gerenciamento de imóveis e um site moderno, responsivo e otimizado para buscas, facilitando a administração e aumentando a presença online da marca.',
-    image: '/banner-auros.png',
-    link: 'https://www.aurosimobiliaria.com.br/',
+      "Entregamos uma solução digital sob medida para o setor imobiliário, com um sistema interno para gerenciamento de imóveis e um site moderno, responsivo e otimizado para buscas.",
+    image: "/banner-auros.png",
+    link: "https://www.aurosimobiliaria.com.br/",
+    tags: ["Imobiliária", "Sistema Interno"],
   },
   {
-    title: 'Fidliz',
+    title: "Fidliz",
     description:
-      'Criamos uma plataforma digital de fidelização que substitui os cartões físicos por um sistema moderno e acessível. Agora, os clientes acumulam pontos diretamente pelo celular, sem depender de nada além do próprio dispositivo.',
-    image: '/banner-fidliz.png',
-    link: 'https://www.fidliz.com.br/',
+      "Criamos uma plataforma digital de fidelização que substitui os cartões físicos. Agora, os clientes acumulam pontos diretamente pelo celular, sem depender de nada além do próprio dispositivo.",
+    image: "/banner-fidliz.png",
+    link: "https://www.fidliz.com.br/",
+    tags: ["App Web", "Fidelização"],
   },
   {
-    title: 'Unidavi - Minha Reserva',
+    title: "Unidavi - Minha Reserva",
     description:
-      'Desenvolvemos um sistema interno para reserva de salas de aula, facilitando o agendamento por parte dos professores, com controle de horários e equipamentos disponíveis — tudo para evitar conflitos e tornar a rotina mais eficiente.',
-    image: '/banner-minha-reserva.png',
+      "Desenvolvemos um sistema interno para reserva de salas de aula, facilitando o agendamento por parte dos professores, com controle de horários e equipamentos disponíveis.",
+    image: "/banner-minha-reserva.png",
+    tags: ["Educacional", "Gestão"],
   },
   {
-    title: 'Unidavi - Minha Prova',
+    title: "Unidavi - Minha Prova",
     description:
-      'Criamos um sistema de aplicação de provas personalizadas, com foco em agilidade e automação. O sistema permite montar avaliações com praticidade e calcula as notas em tempo real ao final da prova.',
-    image: '/banner-minha-prova.png',
+      "Criamos um sistema de aplicação de provas personalizadas, com foco em agilidade e automação. O sistema permite montar avaliações com praticidade e calcula notas em tempo real.",
+    image: "/banner-minha-prova.png",
+    tags: ["Educacional", "Automação"],
   },
 ]
 
+
 export function Cases() {
   return (
-    <div className="bg-slate-50">
-      <section
-        id="cases"
-        className="m-auto flex max-w-[1300px] flex-col space-y-8 px-4 py-12 lg:space-y-16 lg:py-32"
-      >
-        <div className="flex flex-col">
-          <h2 className="text-lg text-sapphire-950">Nossos cases</h2>
-          <strong className="text-4xl text-sapphire-950">
-            Veja nossos sucessos
-          </strong>
+    <section className="relative pt-16 pb-16 lg:pt-16 lg:pb-16 bg-codelabz-dark backdrop-blur-md shadow-lg">
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-slate-50 to-slate-50"></div> */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+          opacity: 0.05,
+        }}
+      />
+      <div className="container mx-auto px-6 z-index-10 relative">
+        <h2 className="text-3xl md:text-4xl font-display font-bold mb-16 text-center text-white">
+          Projetos em <span className="text-codelabz-accent">Destaque</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 items-center justify-center">
+          {[
+            casesData.find((c) => c.title.includes("Rafa Helena")),
+            casesData.find((c) => c.title.includes("Lovegoods")),
+            casesData.find((c) => c.title.includes("Cloock")),
+            casesData.find((c) => c.title.includes("Auros")),
+          ]
+            .filter(Boolean)
+            .map((project, idx) => (
+              <ProjectCard key={idx} {...project!} />
+            ))}
         </div>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {casesData.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-start gap-4 lg:items-start"
+        <div className="text-center">
+          <Link href="/projects">
+            <button
+              className="px-10 py-4 bg-codelabz-accent text-white hover:bg-codelabz-accent cursor-pointer  hover:scale-105 rounded-full font-bold transition-all uppercase tracking-wide text-sm"
             >
-              <Image
-                src={item.image}
-                width={408}
-                height={408}
-                alt={item.title}
-                quality={100}
-              />
-
-              <div className="flex flex-col items-start gap-2">
-                <h3 className="font-mono text-xl font-bold text-sapphire-950 text-start">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-start">{item.description}</p>
-                {item.link && (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={item.title}
-                    className="text-sm font-bold text-sapphire-950 hover:underline"
-                  >
-                    Acesse aqui
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+              Ver todos os projetos
+            </button>
+          </Link>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

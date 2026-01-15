@@ -1,7 +1,7 @@
 'use client'
 import { Menu } from '@/components/Menu'
 import { Footer } from '../Components/Footer'
-import { MessagesSquare, ShieldCheck } from 'lucide-react'
+import { Mail, MessagesSquare, Phone, ShieldCheck, Users } from 'lucide-react'
 
 import { Button } from '@/components/Button'
 import { useForm } from 'react-hook-form'
@@ -11,217 +11,169 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'react-toastify'
 import api from '@/lib/api'
 import { AxiosError } from 'axios'
+import { motion } from 'framer-motion'
+
+const contactFormSchema = z.object({
+  name: z.string().min(3, { message: 'O nome deve ter pelo menos 3 caracteres' }),
+  company: z.string().min(3, { message: 'A empresa deve ter pelo menos 3 caracteres' }),
+  email: z.string().email({ message: 'Digite um e-mail válido' }),
+  phone: z.string().min(10, { message: 'Digite um telefone válido' }),
+  message: z.string().min(10, { message: 'A mensagem deve ter pelo menos 10 caracteres' }),
+})
+
+type ContactFormData = z.infer<typeof contactFormSchema>
 
 export default function Contato() {
-  const signupSchema = z.object({
-    name: z.string().min(1, 'O nome é obrigatório'),
-    email: z.string().email('Email inválido').min(1, 'O email é obrigatório'),
-    company: z.string().min(1, 'A empresa é obrigatória'),
-    phone: z.string().min(1, 'O telefone é obrigatório'),
-    description: z.string().min(1, 'A descrição é obrigatória'),
-  })
-  type SignupFormData = z.infer<typeof signupSchema>
-
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<SignupFormData>({
-    resolver: zodResolver(signupSchema),
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
   })
 
-  const onSubmit = async (data: SignupFormData) => {
+  async function handleContact(data: ContactFormData) {
     try {
-      await api.post('/contato', {
-        data,
-      })
-
-      toast.success(
-        'Proposta enviada com sucesso, entraremos em contato o mais rápido possível!',
-      )
+      await api.post('/contato', data)
+      toast.success('Mensagem enviada com sucesso!')
       reset()
-    } catch (err) {
-      const error = err as AxiosError<{ error: string }>
-
-      if (error.response && error.response.data && error.response.data.error) {
-        toast.error(error.response.data.error)
-      } else {
-        toast.error(
-          'Aconteceu algum problema no envio da proposta, tente novamente mais tarde!',
-        )
+    } catch (error) {
+      if (error instanceof AxiosError && error.response?.data?.message) {
+        toast.error(error.response.data.message)
+        return
       }
+      toast.error('Erro ao enviar mensagem. Tente novamente.')
     }
   }
 
   return (
-    <>
-      <div className="m-auto flex max-w-[1300px] flex-col px-4 lg:px-0">
-        <Menu />
-      </div>
-
-      <div className="m-auto mt-8 mb-32 lg:mb-0 lg:mt-16 flex flex-col-reverse lg:grid min-h-screen max-w-[1300px] grid-cols-contact gap-4 lg:gap-16 px-4 lg:px-0">
-        <aside className="flex h-auto flex-col gap-8 divide-y-[1px] ">
-          <div className="flex flex-col">
-            <span>É relevante estar ciente</span>
-            <strong className="font-mono text-2xl text-sapphire-950">
-              Como trabalhamos
-            </strong>
-          </div>
-
-          <div className="flex flex-col space-y-2 pt-8">
-            <MessagesSquare className="h-10 w-10 text-sapphire-950" />
-            <span>Sempre temos tempo para conversar</span>
-            <p>
-              Estamos aqui para te ajudar. Durante todo o processo estaremos
-              disponíveis para esclarecer dúvidas, receber sugestões e trocar
-              ideias.
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pb-20 pt-20">
+      <div className="container mx-auto px-6 py-12 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-5">
+            <span className="text-codelabz-accent font-bold uppercase tracking-widest text-sm mb-4 block">Contato</span>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-codelabz-dark">
+              Vamos iniciar um projeto?
+            </h1>
+            <p className="text-slate-600 text-lg mb-10 leading-relaxed">
+              Estamos prontos para entender seu desafio e propor a melhor solução tecnológica. Preencha o formulário e
+              retornaremos em breve.
             </p>
-          </div>
 
-          <div className="flex flex-col space-y-2 pt-8">
-            <ShieldCheck className="h-10 w-10 text-sapphire-950" />
-            <span>O projeto é seu</span>
-            <p>
-              Da propriedade intelectual aos arquivos, tudo que te ajudarmos a
-              construir é totalmente seu.
-            </p>
-          </div>
-        </aside>
-
-        <main>
-          <h1 className="font-mono text-4xl font-bold text-sapphire-950">
-            Gostaríamos de saber mais sobre o seu projeto.
-          </h1>
-
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="mt-6 flex flex-col gap-4 pb-16"
-          >
-            <div>
-              <label
-                htmlFor="name"
-                className="text-sm font-medium text-zinc-700"
-              >
-                Nome
-              </label>
-
-              <div className="flex w-full items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus-within:border-sapphire-950 focus-within:ring-4 focus-within:ring-sapphire-50">
-                <input
-                  id="name"
-                  className="flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
-                  {...register('name')}
-                />
-              </div>
-
-              {errors.name && (
-                <p className="text-sm text-red-500">{errors.name.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="text-sm font-medium text-zinc-700 "
-              >
-                Email
-              </label>
-
-              <div className="flex w-full items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus-within:border-sapphire-950 focus-within:ring-4 focus-within:ring-sapphire-50">
-                <input
-                  id="email"
-                  className="flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
-                  placeholder="exemplo@email.com.br"
-                  {...register('email')}
-                />
-              </div>
-              {errors.email && (
-                <p className="text-sm text-red-500">{errors.email.message}</p>
-              )}
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label
-                  htmlFor="company"
-                  className="text-sm font-medium text-zinc-700 "
-                >
-                  Nome da empresa
-                </label>
-
-                <div className="flex w-full items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus-within:border-sapphire-950 focus-within:ring-4 focus-within:ring-sapphire-50">
-                  <input
-                    id="company"
-                    className="w-full flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600  outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
-                    {...register('company')}
-                  />
+            <div className="space-y-8 mt-12 bg-white p-8 rounded-2xl border border-slate-200 shadow-md">
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 bg-codelabz-accent/10 rounded-full flex items-center justify-center text-codelabz-accent shrink-0">
+                  <Mail />
                 </div>
-
-                {errors.company && (
-                  <p className="text-sm text-red-500">
-                    {errors.company.message}
+                <div>
+                  <h3 className="font-bold text-codelabz-dark text-lg">Email</h3>
+                  <p className="text-slate-500 hover:text-codelabz-accent transition-colors cursor-pointer">
+                    contato@codelabz.com.br
                   </p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="text-sm font-medium text-zinc-700 "
-                >
-                  Telefone
-                </label>
-
-                <div className="flex w-full items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus-within:border-sapphire-950 focus-within:ring-4 focus-within:ring-sapphire-50">
-                  <input
-                    id="phone"
-                    className="w-full flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none dark:text-zinc-100 dark:placeholder-zinc-400"
-                    placeholder="(99) 9 9999-9999"
-                    {...register('phone')}
-                  />
                 </div>
-                {errors.phone && (
-                  <p className="text-sm text-red-500">{errors.phone.message}</p>
-                )}
+              </div>
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 bg-codelabz-accent/10 rounded-full flex items-center justify-center text-codelabz-accent shrink-0">
+                  <Phone />
+                </div>
+                <div>
+                  <h3 className="font-bold text-codelabz-dark text-lg">WhatsApp</h3>
+                  <a href="https://wa.me/5547996164275" className="text-slate-500 hover:text-codelabz-accent transition-colors cursor-pointer">
+                    +55 47 99616-4275
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 bg-codelabz-accent/10 rounded-full flex items-center justify-center text-codelabz-accent shrink-0">
+                  <Users />
+                </div>
+                <div>
+                  <h3 className="font-bold text-codelabz-dark text-lg">Redes Sociais</h3>
+                  <div className="flex gap-4 mt-1 text-slate-500">
+                    <a href="https://www.instagram.com/code.labz/" className="hover:text-codelabz-accent transition-colors">
+                      Instagram
+                    </a>
+                    <span className="text-slate-300">•</span>
+                    <a href="https://www.linkedin.com/company/code-labz/" className="hover:text-codelabz-accent transition-colors">
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div>
-              <label
-                htmlFor="description"
-                className="text-sm font-medium text-zinc-700 "
-              >
-                Conte um pouco mais sobre seu projeto
-              </label>
-
-              <textarea
-                className="min-h-[120px] w-full resize-y rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-sapphire-200 focus:ring-4 focus:ring-sapphire-100 "
-                id="description"
-                {...register('description')}
-              />
-              {errors.description && (
-                <p className="text-sm text-red-500">
-                  {errors.description.message}
-                </p>
-              )}
+          <div className="lg:col-span-7">
+            <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-md">
+              <h3 className="text-2xl font-bold text-codelabz-dark mb-6">Envie uma mensagem</h3>
+              <form className="space-y-6" onSubmit={handleSubmit(handleContact)}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-bold text-codelabz-dark mb-2">Nome</label>
+                    <input
+                      type="text"
+                      {...register('name')}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-codelabz-accent focus:ring-1 focus:ring-codelabz-accent transition-colors"
+                      placeholder="Seu nome completo"
+                    />
+                    {errors.name && <span className="text-red-500 text-xs">{errors.name.message}</span>}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-codelabz-dark mb-2">Empresa</label>
+                    <input
+                      type="text"
+                      {...register('company')}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-codelabz-accent focus:ring-1 focus:ring-codelabz-accent transition-colors"
+                      placeholder="Nome da empresa"
+                    />
+                    {errors.company && <span className="text-red-500 text-xs">{errors.company.message}</span>}
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-bold text-codelabz-dark mb-2">Email</label>
+                    <input
+                      type="email"
+                      {...register('email')}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-codelabz-accent focus:ring-1 focus:ring-codelabz-accent transition-colors"
+                      placeholder="seu@email.com"
+                    />
+                    {errors.email && <span className="text-red-500 text-xs">{errors.email.message}</span>}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-codelabz-dark mb-2">Telefone</label>
+                    <input
+                      type="tel"
+                      {...register('phone')}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-codelabz-accent focus:ring-1 focus:ring-codelabz-accent transition-colors"
+                      placeholder="(00) 00000-0000"
+                    />
+                    {errors.phone && <span className="text-red-500 text-xs">{errors.phone.message}</span>}
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-codelabz-dark mb-2">Como podemos ajudar?</label>
+                  <textarea
+                    rows={4}
+                    {...register('message')}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-codelabz-accent focus:ring-1 focus:ring-codelabz-accent transition-colors resize-none"
+                    placeholder="Conte um pouco sobre o projeto, funcionalidades desejadas, etc..."
+                  />
+                  {errors.message && <span className="text-red-500 text-xs">{errors.message.message}</span>}
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-codelabz-accent hover:bg-rose-600 text-white font-bold rounded-lg shadow-lg transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+                </button>
+              </form>
             </div>
-
-            <div className="flex justify-end">
-              <Button
-                variant="fill"
-                className={`px-6 ${isSubmitting && 'bg-slate-400 hover:bg-slate-400 cursor-not-allowed'}`}
-                disabled={isSubmitting}
-                aria-labelledby="Finalizar formulário"
-                title="Enviar formulário"
-              >
-                {isSubmitting ? 'Carregando...' : 'Enviar'}
-              </Button>
-            </div>
-          </form>
-        </main>
+          </div>
+        </div>
       </div>
-
-      <Footer />
-    </>
+    </motion.div>
   )
 }
