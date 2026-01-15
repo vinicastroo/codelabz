@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export const ProjectCard: React.FC<{
@@ -172,11 +173,12 @@ export default function ProjetosPage() {
           <p className="text-slate-600 mb-8 max-w-lg mx-auto">
             Nós temos a tecnologia e a expertise para torná-la real. Vamos conversar?
           </p>
-          <button
+          <Link
+            href="/contato"
             className="px-10 py-4 bg-codelabz-accent text-white hover:bg-codelabz-accent cursor-pointer  hover:scale-105 rounded-full font-bold transition-all uppercase tracking-wide text-sm"
           >
             Solicitar Orçamento
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>
