@@ -81,7 +81,9 @@ export function Header() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="absolute inset-0 flex items-center justify-center scale-90 sm:scale-100"
           >
-            <Image src="/illustration-hero.svg" alt="Ilustração do Home" width={200} height={200} />
+            <Image src="/illustration-hero.svg" alt="Ilustração do Home" width={500}
+              height={500}
+              className="w-[200px] h-[200px] lg:w-[500px] lg:h-[500px]" />
           </motion.div>
         </div>
       </div>
