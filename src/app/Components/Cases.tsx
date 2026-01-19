@@ -103,7 +103,7 @@ export function Cases() {
             ))}
         </div>
         <div className="text-center">
-          <Link href="/projects">
+          <Link href="/projetos">
             <button
               className="px-10 py-4 bg-codelabz-accent text-white hover:bg-codelabz-accent cursor-pointer  hover:scale-105 rounded-full font-bold transition-all uppercase tracking-wide text-sm"
             >

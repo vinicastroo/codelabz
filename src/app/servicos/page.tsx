@@ -3,6 +3,7 @@ import { IlustrationAPI, IlustrationDashboard, IlustrationDeploy, IlustrationECo
 import { Layout, ShoppingCart, Code2, Zap, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const TechBadge: React.FC<{ name: string }> = ({ name }) => (
@@ -162,12 +163,13 @@ export default function ServicosPage() {
         </div>
 
         <div className="mt-10">
-          <button
+          <Link
+            href="/contato"
             className="px-10 py-4 bg-codelabz-accent text-white hover:bg-codelabz-accent cursor-pointer  hover:scale-105 rounded-full font-bold transition-all tracking-wide text-lg"
           >
             Falar com um especialista
             {/* <ArrowRight className="group-hover:translate-x-1 transition-transform" /> */}
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

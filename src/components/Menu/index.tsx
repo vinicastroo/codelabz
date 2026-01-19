@@ -29,7 +29,6 @@ export function Menu() {
     { name: "Blog", id: "blog" },
   ]
 
-
   return (
     <>
       < header className="fixed top-0 left-0 right-0 z-50 bg-codelabz-dark/95 backdrop-blur-md shadow-lg py-3 transition-all duration-300" >
