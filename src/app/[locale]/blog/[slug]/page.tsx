@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Clock, Share2, Tag, User } from 'lucide-react'
 
-// Mock function to simulate data fetching
 const getPostData = (slug: string) => {
-  // In a real scenario, fetch based on slug
   return {
     title: "A Importância da Transformação Digital para Pequenas Empresas",
     date: "12 Out 2023",
@@ -44,8 +42,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const post = getPostData(slug)
 
   return (
-    <main className="bg-white min-h-screen  pb-20">
-      {/* Hero Image */}
+    <main className="bg-white min-h-screen pb-20">
       <div className="w-full h-[40vh] md:h-[50vh] relative overflow-hidden mb-12 bg-codelabz-dark">
         <img
           src={post.image}

@@ -1,11 +1,41 @@
 'use client'
-import { AnimatePresence, motion } from "framer-motion";
-import { X, Menu as MenuIcon, Rocket } from "lucide-react";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion"
+import { X, Menu as MenuIcon } from "lucide-react"
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { useTranslations, useLocale } from "next-intl"
+import { useRouter, usePathname } from "@/i18n/navigation"
+
+function LanguageSwitcher() {
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  function switchLocale(newLocale: string) {
+    router.replace(pathname, { locale: newLocale })
+  }
+
+  return (
+    <div className="flex items-center gap-1 border border-white/20 rounded-full px-1 py-0.5">
+      <button
+        onClick={() => switchLocale('pt')}
+        className={`px-2 py-1 rounded-full text-xs font-bold transition-all ${locale === 'pt' ? 'bg-codelabz-accent text-white' : 'text-slate-300 hover:text-white'}`}
+      >
+        PT
+      </button>
+      <button
+        onClick={() => switchLocale('en')}
+        className={`px-2 py-1 rounded-full text-xs font-bold transition-all ${locale === 'en' ? 'bg-codelabz-accent text-white' : 'text-slate-300 hover:text-white'}`}
+      >
+        EN
+      </button>
+    </div>
+  )
+}
 
 export function Menu() {
+  const t = useTranslations('menu')
   const [activePage, setActivePage] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [, setScrolled] = useState(false)
@@ -22,16 +52,15 @@ export function Menu() {
   }, [activePage])
 
   const navLinks = [
-    // { name: "Início", id: "" },
-    { name: "Serviços", id: "servicos" },
-    { name: "Projetos", id: "projetos" },
-    { name: "Contato", id: "contato" },
-    { name: "Blog", id: "blog" },
+    { name: t('services'), id: "servicos" },
+    { name: t('projects'), id: "projetos" },
+    { name: t('contact'), id: "contato" },
+    { name: t('blog'), id: "blog" },
   ]
 
   return (
     <>
-      < header className="fixed top-0 left-0 right-0 z-50 bg-codelabz-dark/95 backdrop-blur-md shadow-lg py-3 transition-all duration-300" >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-codelabz-dark/95 backdrop-blur-md shadow-lg py-3 transition-all duration-300">
         <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
           <div className="cursor-pointer flex items-center" onClick={() => setActivePage("home")}>
@@ -51,10 +80,11 @@ export function Menu() {
                 {link.name}
               </Link>
             ))}
+            <LanguageSwitcher />
             <Link href="/contato"
               className="px-6 py-2.5 bg-codelabz-accent hover:bg-rose-600 text-white rounded-full font-bold text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-codelabz-accent/20"
             >
-              Iniciar um projeto
+              {t('startProject')}
             </Link>
           </nav>
 
@@ -66,46 +96,47 @@ export function Menu() {
             <MenuIcon size={28} />
           </button>
         </div>
-      </header >
+      </header>
 
       {/* --- MOBILE MENU --- */}
       <AnimatePresence>
-        {
-          mobileMenuOpen && (
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-codelabz-dark flex flex-col p-6"
-            >
-              <div className="flex justify-between items-center mb-12">
-                <Image width={150} height={40} src="/logo-code.svg" alt="Logo Codelabz" />
-                <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-codelabz-accent">
-                  <X size={28} />
-                </button>
-              </div>
-              <div className="flex flex-col gap-6 text-xl font-display font-semibold">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.id}
-                    href={link.id}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`text-left border-b border-white/5 pb-4 ${activePage === link.id ? "text-codelabz-accent" : "text-white"}`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <button
-                  className="mt-4 px-6 py-4 bg-codelabz-accent text-white rounded-lg text-center font-bold"
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed inset-0 z-[60] bg-codelabz-dark flex flex-col p-6"
+          >
+            <div className="flex justify-between items-center mb-12">
+              <Image width={150} height={40} src="/logo-code.svg" alt="Logo Codelabz" />
+              <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-codelabz-accent">
+                <X size={28} />
+              </button>
+            </div>
+            <div className="flex flex-col gap-6 text-xl font-display font-semibold">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.id}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-left border-b border-white/5 pb-4 ${activePage === link.id ? "text-codelabz-accent" : "text-white"}`}
                 >
-                  Iniciar Projeto
-                </button>
+                  {link.name}
+                </Link>
+              ))}
+              <div className="flex items-center gap-3 mt-2">
+                <LanguageSwitcher />
               </div>
-            </motion.div>
-          )
-        }
-      </AnimatePresence >
+              <button
+                className="mt-4 px-6 py-4 bg-codelabz-accent text-white rounded-lg text-center font-bold"
+              >
+                {t('startProject')}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

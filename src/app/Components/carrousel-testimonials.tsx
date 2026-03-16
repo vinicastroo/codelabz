@@ -2,51 +2,49 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
-
-const items = [
-  {
-    name: "Rafaela Helena",
-    role: "Arquiteta Proprietária",
-    company: "Arquiteta",
-    content:
-      "Meu site de arquitetura ficou excelente! Do jeito que eu queria, super recomendo !!",
-    image: "./avaliacao-foto-1.png",
-  },
-  {
-    name: "Guilherme Schulze",
-    role: "Videomaker & Fotógrafo",
-    company: "Videomaker & Fotógrafo",
-    content:
-      "Fiz meu site profissional com a Code Labz e ficou excelente! O design é muito bonito, moderno e a navegação é super fluida. Fiquei muito satisfeito com o resultado e recomendo demais!",
-    image: "./avaliacao-foto-2.png",
-  },
-  {
-    name: "Renato Niehues",
-    role: "Auros Corretora imobiliria",
-    company: "Auros Corretora imobiliria",
-    content:
-      "Contratar a Code Labz foi essencial. Eles desenvolveram uma solução completa para nós: um site moderno para os clientes e um sistema robusto para nossa gestão de imóveis. Recomendo fortemente pela qualidade e competência.",
-    image: "./avaliacao-foto-3.png",
-  },
-  {
-    name: "Sérgio Dallolmo",
-    role: "SDL Consultoria",
-    company: "SDL Consultoria",
-    content:
-      "A Code Labz fez um excelente trabalho na nossa Landing Page. O site ficou profissional, objetivo e transmitiu perfeitamente a seriedade da nossa consultoria. Recomendo pela agilidade e qualidade.",
-    image: "./avaliacao-foto-4.png",
-  },
-  {
-    name: "Rosandro Schauffler",
-    role: "APJESC",
-    company: "APJESC",
-    content:
-      "Excelente trabalho da Code Labz. Desenvolveram um portal completo e um sistema interno que facilitou muito a administração e o controle dos nossos associados. Recomendo!",
-    image: "./avaliacao-foto-5.png",
-  },
-]
+import { useTranslations } from "next-intl"
 
 export const Carousel: React.FC = () => {
+  const t = useTranslations('testimonials')
+
+  const items = [
+    {
+      name: t('t1Name'),
+      role: t('t1Role'),
+      company: t('t1Company'),
+      content: t('t1Content'),
+      image: "./avaliacao-foto-1.png",
+    },
+    {
+      name: t('t2Name'),
+      role: t('t2Role'),
+      company: t('t2Company'),
+      content: t('t2Content'),
+      image: "./avaliacao-foto-2.png",
+    },
+    {
+      name: t('t3Name'),
+      role: t('t3Role'),
+      company: t('t3Company'),
+      content: t('t3Content'),
+      image: "./avaliacao-foto-3.png",
+    },
+    {
+      name: t('t4Name'),
+      role: t('t4Role'),
+      company: t('t4Company'),
+      content: t('t4Content'),
+      image: "./avaliacao-foto-4.png",
+    },
+    {
+      name: t('t5Name'),
+      role: t('t5Role'),
+      company: t('t5Company'),
+      content: t('t5Content'),
+      image: "./avaliacao-foto-5.png",
+    },
+  ]
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerPage, setItemsPerPage] = useState(1)
 
@@ -64,7 +62,6 @@ export const Carousel: React.FC = () => {
 
   const maxIndex = Math.max(0, items.length - itemsPerPage)
 
-  // ✅ FUNÇÃO MEMOIZADA (pra usar no interval sem bugs)
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
   }, [maxIndex])
@@ -73,7 +70,6 @@ export const Carousel: React.FC = () => {
     setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1))
   }, [maxIndex])
 
-  // ✅ AUTO SLIDE
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
@@ -82,7 +78,6 @@ export const Carousel: React.FC = () => {
     return () => clearInterval(interval)
   }, [nextSlide])
 
-  // ✅ se diminuir a tela e currentIndex ficar maior que maxIndex, corrige
   useEffect(() => {
     if (currentIndex > maxIndex) setCurrentIndex(0)
   }, [itemsPerPage, maxIndex, currentIndex])
@@ -101,7 +96,7 @@ export const Carousel: React.FC = () => {
               style={{ flex: `0 0 ${100 / itemsPerPage}%` }}
               className="px-3"
             >
-              <div className="h-full bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:shadow-md  transition-all duration-300 flex flex-col">
+              <div className="h-full bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col">
                 <div className="flex gap-1 mb-6 text-amber-400">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} fill="currentColor" />

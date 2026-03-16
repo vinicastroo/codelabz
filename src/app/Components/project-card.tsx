@@ -2,12 +2,13 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, } from 'lucide-react'
 
-export function ProjectCard({ title, description, image, link, tags, }: {
+export function ProjectCard({ title, description, image, link, tags, viewProjectLabel = 'Ver projeto' }: {
   title: string
   description: string
   image: string
   link?: string
   tags: string[]
+  viewProjectLabel?: string
 }) {
   return (
 
@@ -53,7 +54,7 @@ export function ProjectCard({ title, description, image, link, tags, }: {
             rel="noopener noreferrer"
             className="mt-auto inline-flex items-center gap-2 text-codelabz-accent hover:underline font-medium text-xs transition-colors group/link pt-5"
           >
-            Ver projeto
+            {viewProjectLabel}
             <ExternalLink size={14} className="group-hover/link:translate-x-1 transition-transform" />
           </a>
         )}
