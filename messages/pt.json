@@ -190,7 +190,11 @@
     "minhareserva": "Desenvolvemos um sistema interno para reserva de salas de aula, facilitando o agendamento por parte dos professores, com controle de horários e equipamentos disponíveis.",
     "minhaprova": "Criamos um sistema de aplicação de provas personalizadas, com foco em agilidade e automação. O sistema permite montar avaliações com praticidade e calcula notas em tempo real.",
     "apjesc": "Desenvolvemos o site institucional da APJESC junto a um sistema interno para gestão de cursos, associados e conteúdos administrativos, trazendo mais organização, autonomia e eficiência para a entidade.",
-    "magaventures": "Desenvolvemos um sistema interno para acompanhamento do desempenho das startups do ecossistema Magaventures, com dashboards estratégicos, controle de faturamento, métricas de crescimento e visão centralizada para tomada de decisão."
+    "magaventures": "Desenvolvemos um sistema interno para acompanhamento do desempenho das startups do ecossistema Magaventures, com dashboards estratégicos, controle de faturamento, métricas de crescimento e visão centralizada para tomada de decisão.",
+    "patrono": "Desenvolvemos o site institucional da Patrono Assessoria e Consultoria Júnior, a primeira empresa júnior de Direito da UESC. A plataforma apresenta os serviços jurídicos com um visual sofisticado, reforçando a credibilidade e facilitando o contato com a equipe.",
+    "patronoShort": "Site institucional para a primeira EJ de Direito da UESC. Visual sofisticado, foco em credibilidade e facilidade de contato com a equipe.",
+    "tbmotors": "Criamos o site da TB Motors, loja especializada em veículos seminovos premium. A plataforma exibe o estoque completo de carros e motos com fichas detalhadas, filtros de busca e contato direto via WhatsApp.",
+    "tbmotorsShort": "Site para loja de seminovos premium, com vitrine de veículos, filtros de busca e contato direto via WhatsApp."
   },
   "testimonials": {
     "t1Name": "Rafaela Helena",

@@ -16,25 +16,25 @@ export function Cases() {
       tags: ["Site Institucional", "Design"],
     },
     {
-      title: "Lovegoods",
-      description: p('lovegoodsShort'),
-      image: "/banner-lovegoods.png",
-      link: "https://lovegoods.com.br/",
-      tags: ["E-commerce", "Vendas"],
-    },
-    {
-      title: "Cloock",
-      description: p('cloockShort'),
-      image: "/banner-cloock.png",
-      link: "https://www.cloock.com.br/",
-      tags: ["SaaS", "Sistema Web"],
-    },
-    {
       title: "Auros Corretora Imob",
       description: p('aurosShort'),
       image: "/banner-auros.png",
       link: "https://www.aurosimobiliaria.com.br/",
       tags: ["Imobiliária", "Sistema Interno"],
+    },
+    {
+      title: "Patrono Jr.",
+      description: p('patronoShort'),
+      image: "/banner-patrono.png",
+      link: "https://www.patronojunior.com.br/",
+      tags: ["Jurídico", "Institucional"],
+    },
+    {
+      title: "TB Motors",
+      description: p('tbmotorsShort'),
+      image: "/banner-tbmotors.png",
+      link: "https://www.tbmotorssc.com.br/",
+      tags: ["Automotivo", "Vitrine Online"],
     },
   ]
 

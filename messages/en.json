@@ -190,7 +190,11 @@
     "minhareserva": "We developed an internal system for classroom booking, making it easier for teachers to schedule sessions, with control over schedules and available equipment.",
     "minhaprova": "We created a personalized exam application system, focused on agility and automation. The system allows assessments to be built quickly and calculates grades in real time.",
     "apjesc": "We developed the APJESC institutional website along with an internal system for managing courses, members and administrative content, bringing more organization, autonomy and efficiency to the entity.",
-    "magaventures": "We developed an internal system for tracking the performance of startups in the Magaventures ecosystem, with strategic dashboards, revenue control, growth metrics and centralized vision for decision-making."
+    "magaventures": "We developed an internal system for tracking the performance of startups in the Magaventures ecosystem, with strategic dashboards, revenue control, growth metrics and centralized vision for decision-making.",
+    "patrono": "We developed the institutional website for Patrono Assessoria e Consultoria Júnior, the first law junior enterprise at UESC. The platform presents legal services with a sophisticated look, reinforcing credibility and making it easy to contact the team.",
+    "patronoShort": "Institutional website for the first law junior enterprise at UESC. Sophisticated look, focused on credibility and easy contact with the team.",
+    "tbmotors": "We built the website for TB Motors, a premium pre-owned vehicle dealership. The platform showcases the full inventory of cars and motorcycles with detailed listings, search filters and direct WhatsApp contact.",
+    "tbmotorsShort": "Website for a premium pre-owned vehicle dealership, featuring a vehicle showcase, search filters and direct WhatsApp contact."
   },
   "testimonials": {
     "t1Name": "Rafaela Helena",

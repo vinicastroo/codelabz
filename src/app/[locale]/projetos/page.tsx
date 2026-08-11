@@ -69,7 +69,6 @@ export default function ProjetosPage() {
       title: "SDL Consultoria",
       description: p('sdl'),
       image: "/banner-sdl.png",
-      link: "https://sdlconsultoria.ind.br/",
       tags: ["Corporativo", "Consultoria"],
     },
     {
@@ -90,7 +89,6 @@ export default function ProjetosPage() {
       title: "Guilherme Schulze",
       description: p('guilherme'),
       image: "/banner-guilherme.png",
-      link: "https://www.guilhermeschulze.com.br/",
       tags: ["Portfólio", "Mídia"],
     },
     {
@@ -130,6 +128,20 @@ export default function ProjetosPage() {
       description: p('magaventures'),
       image: "/banner-magaventures.png",
       tags: ["Sistema", "Dashboard", "Startups"],
+    },
+    {
+      title: "Patrono Jr.",
+      description: p('patrono'),
+      image: "/banner-patrono.png",
+      link: "https://www.patronojunior.com.br/",
+      tags: ["Jurídico", "Institucional"],
+    },
+    {
+      title: "TB Motors",
+      description: p('tbmotors'),
+      image: "/banner-tbmotors.png",
+      link: "https://www.tbmotorssc.com.br/",
+      tags: ["Automotivo", "Vitrine Online"],
     },
   ]
 
