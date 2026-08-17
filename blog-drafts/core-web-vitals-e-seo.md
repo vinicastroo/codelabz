@@ -85,9 +85,9 @@ Estudos do setor de SEO apontam que sites com bons índices de Core Web Vitals c
 Vale entender que existem dois tipos de impacto no SEO:
 
 - **Sinal direto**: o Google usa os Core Web Vitals como parte do algoritmo de Page Experience, junto com outros fatores como uso de HTTPS e adequação a dispositivos móveis.
-- **Sinal indireto**: um site lento ou instável aumenta a chance de o usuário sair rápido da página (o que pode ser interpretado como sinal de insatisfação), reduz o tempo de permanência e prejudica a navegação entre páginas do mesmo site — fatores que também influenciam a percepção de qualidade.
+- **Sinal indireto**: um site lento ou instável aumenta a chance de o usuário sair rápido da página, reduz o tempo de permanência e prejudica a navegação entre páginas — fatores que também influenciam a percepção de qualidade.
 
-Ou seja, mesmo que o peso direto de cada métrica no algoritmo não seja o fator isolado mais forte do SEO, o efeito combinado — direto mais indireto — é real e mensurável ao longo do tempo.
+Ou seja, mesmo que o peso direto de cada métrica não seja o fator isolado mais forte do SEO, o efeito combinado — direto mais indireto — é real ao longo do tempo.
 
 ### Mobile-first: o campo onde os Core Web Vitals mais pesam
 
@@ -97,7 +97,7 @@ Como conexões móveis costumam ser mais instáveis do que redes fixas, um site 
 
 ## Como saber se o seu site está dentro das metas
 
-Você não precisa ser desenvolvedor para ter uma noção do problema. O próprio Google oferece ferramentas gratuitas, como o PageSpeed Insights e o relatório de Core Web Vitals dentro do Google Search Console, que mostram quais páginas estão dentro ou fora das metas recomendadas.
+Você não precisa ser desenvolvedor para ter uma noção do problema. Ferramentas gratuitas do Google, como o PageSpeed Insights e o relatório de Core Web Vitals no Search Console, mostram quais páginas estão dentro ou fora das metas.
 
 Essas ferramentas apontam a nota geral e destacam qual das três métricas está prejudicando o desempenho: carregamento (LCP), resposta a cliques (INP) ou estabilidade visual (CLS).
 
