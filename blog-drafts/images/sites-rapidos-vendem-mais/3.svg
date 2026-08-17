@@ -1,0 +1,6 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">Funil de conversão com abandono por lentidão</title>
+<desc id="d">Ilustração de um funil de conversão mostrando visitantes entrando no topo e uma parte deles vazando no meio do funil, com a indicação de abandono por lentidão do site.</desc>
+<rect width="800" height="480" fill="#eef2f7"/>
+<path d="M300 60 L520 60 L476.0 190.0 L476.0 190.0 L344.0 190.0 Z" fill="#021d3f" opacity="0.85"/><path d="M344.0 190.0 L476.0 190.0 L440.8 320 L379.2 320 Z" fill="#021d3f"/><path d="M472.0 221.2 q26 10 34 34" fill="none" stroke="#e0024d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/><circle cx="506.0" cy="255.2" r="5" fill="#e0024d"/><text x="410" y="50" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#7d90a6" text-anchor="middle">Visitantes</text><text x="410" y="350" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#7d90a6" text-anchor="middle">Conversões</text><text x="560" y="300" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#e0024d" text-anchor="start">Abandono por lentidão</text>
+</svg>
