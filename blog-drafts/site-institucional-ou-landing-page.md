@@ -1,6 +1,6 @@
 ## Title tag sugerido
 
-Site Institucional ou Landing Page: Qual Escolher? | Codelabz
+Site Institucional ou Landing Page: Qual Escolher | Codelabz
 
 ## Meta description sugerida
 
