@@ -3,6 +3,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
+import Image from "next/image"
 
 export const Carousel: React.FC = () => {
   const t = useTranslations('testimonials')
@@ -13,35 +14,35 @@ export const Carousel: React.FC = () => {
       role: t('t1Role'),
       company: t('t1Company'),
       content: t('t1Content'),
-      image: "./avaliacao-foto-1.png",
+      image: "/avaliacao-foto-1.png",
     },
     {
       name: t('t2Name'),
       role: t('t2Role'),
       company: t('t2Company'),
       content: t('t2Content'),
-      image: "./avaliacao-foto-2.png",
+      image: "/avaliacao-foto-2.png",
     },
     {
       name: t('t3Name'),
       role: t('t3Role'),
       company: t('t3Company'),
       content: t('t3Content'),
-      image: "./avaliacao-foto-3.png",
+      image: "/avaliacao-foto-3.png",
     },
     {
       name: t('t4Name'),
       role: t('t4Role'),
       company: t('t4Company'),
       content: t('t4Content'),
-      image: "./avaliacao-foto-4.png",
+      image: "/avaliacao-foto-4.png",
     },
     {
       name: t('t5Name'),
       role: t('t5Role'),
       company: t('t5Company'),
       content: t('t5Content'),
-      image: "./avaliacao-foto-5.png",
+      image: "/avaliacao-foto-5.png",
     },
   ]
 
@@ -108,9 +109,11 @@ export const Carousel: React.FC = () => {
                 </p>
 
                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-slate-50">
-                  <img
+                  <Image
                     src={item.image}
-                    alt={item.name}
+                    alt={`Foto de ${item.name}, cliente da Codelabz`}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100"
                   />
                   <div>

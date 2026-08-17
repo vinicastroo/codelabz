@@ -7,6 +7,36 @@
     "twitterTitle": "Codelabz - Custom websites and systems",
     "twitterDescription": "Custom digital solutions: website creation, systems, APIs and strategies for companies that want to grow digitally."
   },
+  "homeMeta": {
+    "title": "Codelabz: Custom Website Creation & Software Development",
+    "description": "Digital agency in Brazil specialized in professional website creation, custom system development and e-commerce solutions to help your business grow online.",
+    "ogTitle": "Codelabz: Custom Websites and Software Development",
+    "ogDescription": "We turn ideas into real websites and systems. Meet Codelabz, a digital agency based in Balneário Camboriú, Brazil."
+  },
+  "servicosMeta": {
+    "title": "Website & Software Development Services | Codelabz",
+    "description": "Explore Codelabz services: website creation, custom system development, APIs, e-commerce, automation and cloud deployment tailored to your business.",
+    "ogTitle": "Website Creation and Software Development Services",
+    "ogDescription": "Websites, systems, APIs, e-commerce, automation and deployment: discover Codelabz's custom digital solutions for your business."
+  },
+  "projetosMeta": {
+    "title": "Codelabz Portfolio: Website and Software Dev Cases",
+    "description": "See real projects built by Codelabz: institutional websites, online stores and custom systems that delivered measurable results for our clients.",
+    "ogTitle": "Codelabz Project Portfolio",
+    "ogDescription": "Real cases of website creation, systems and e-commerce stores developed by Codelabz for companies across different industries."
+  },
+  "contatoMeta": {
+    "title": "Contact Codelabz for a Website Development Quote Today",
+    "description": "Get in touch with Codelabz and request a free quote for website creation, custom software development or e-commerce. We reply quickly via WhatsApp.",
+    "ogTitle": "Contact Codelabz and Request a Free Quote",
+    "ogDescription": "Request a free quote for website creation, systems or e-commerce. Fast response via WhatsApp from our team in Balneário Camboriú, Brazil."
+  },
+  "blogMeta": {
+    "title": "Codelabz Blog: Web Development and Technology Tips",
+    "description": "Articles about website creation, custom software development, e-commerce and digital transformation strategies to help your business grow online.",
+    "ogTitle": "Codelabz Blog: Technology and Website Content",
+    "ogDescription": "Articles and insights about website creation, web systems and digital transformation produced by the Codelabz team."
+  },
   "menu": {
     "services": "Services",
     "projects": "Projects",
@@ -17,11 +47,12 @@
   "header": {
     "badge": "Software house focused on digital products",
     "title1": "We transform ideas into",
-    "titleAccent": "real digital solutions",
+    "titleAccent": "real websites and web systems",
     "title2": ".",
     "description": "We develop custom, fast and scalable websites and web systems. We combine modern design, solid technology and total focus on results.",
     "cta1": "Start my project",
-    "cta2": "View our projects"
+    "cta2": "View our projects",
+    "heroAlt": "Illustration representing the transformation of ideas into websites and digital systems by Codelabz"
   },
   "reason": {
     "title": "Why being online is no longer optional?",
@@ -44,7 +75,10 @@
     "card2Title": "System Development",
     "card2Desc": "Custom systems for management, SaaS, dashboards and process automation, bringing more control, efficiency and less spreadsheet dependency.",
     "card3Title": "E-commerce",
-    "card3Desc": "Fast, secure and scalable online stores, with payment and logistics integration to boost your online sales."
+    "card3Desc": "Fast, secure and scalable online stores, with payment and logistics integration to boost your online sales.",
+    "card1Alt": "SEO optimization illustration representing professional website creation",
+    "card2Alt": "API integration illustration representing custom system development",
+    "card3Alt": "Shopping cart illustration representing e-commerce solutions"
   },
   "process": {
     "tag": "Workflow",
@@ -90,9 +124,9 @@
     "tagline": "We transform ideas into code."
   },
   "servicesPage": {
-    "title": "What",
-    "titleAccent": "Codelabz",
-    "titleEnd": "does for you",
+    "title": "Website & Software",
+    "titleAccent": "Development Services",
+    "titleEnd": "tailored to your business",
     "subtitle": "End-to-end digital solutions. We don't just deliver code, we deliver value, strategy and results for your business.",
     "techStack": "Technology Stack",
     "techStackDesc": "We use the most modern tools on the market to ensure speed, security and scalability.",
@@ -104,6 +138,12 @@
     "service1f3": "Modern and responsive design",
     "service1f4": "High performance and SEO",
     "service1f5": "WhatsApp and form integration",
+    "service1Alt": "SEO optimization illustration representing professional website creation",
+    "service2Alt": "Dashboard panel illustration representing custom-built systems",
+    "service3Alt": "API connections illustration representing integration between systems",
+    "service4Alt": "Rocket illustration representing cloud application deployment",
+    "service5Alt": "Connected pieces illustration representing integration between platforms",
+    "service6Alt": "Gears illustration representing process automation",
     "service2Title": "System Development",
     "service2Desc": "We transform ideas into smart systems that automate processes, optimize routines and solve specific business problems efficiently.",
     "service2f1": "Custom systems",
@@ -137,7 +177,7 @@
   },
   "projectsPage": {
     "tag": "Portfolio",
-    "title": "Our Cases",
+    "title": "Website & Software Development Projects",
     "subtitle": "Discover some of the success stories we helped build.",
     "ctaTitle": "Have an amazing idea?",
     "ctaSubtitle": "We have the technology and expertise to make it real. Let's talk?",
@@ -146,7 +186,7 @@
   },
   "contactPage": {
     "tag": "Contact",
-    "title": "Let's start a project?",
+    "title": "Contact Us for a Website & Software Quote",
     "subtitle": "We're ready to understand your challenge and propose the best technological solution. Fill out the form and we'll get back to you shortly.",
     "emailLabel": "Email",
     "whatsappLabel": "WhatsApp",
@@ -220,7 +260,7 @@
   },
   "blogPage": {
     "tag": "Blog & Insights",
-    "title": "Content to boost your business",
+    "title": "Blog: Website, Software & Technology Insights",
     "subtitle": "Articles on technology, design, marketing and digital strategies to help your company grow online.",
     "emptyTitle": "New content coming soon",
     "emptyText": "We don't have any articles published yet, but we're already preparing content about technology, website creation, web systems, design and digital strategies to help your company grow online.",

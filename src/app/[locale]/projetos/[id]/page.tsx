@@ -1,79 +1,114 @@
-'use client'
-import { useParams } from 'next/navigation'
-import Link from 'next/link'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
+import Link from 'next/link'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbJsonLd, buildAlternates, buildOpenGraph } from '@/lib/seo'
+import type { Locale } from '@/i18n/routing'
+import { getProjectById, projects } from '@/data/projects'
 
-// Mesmos dados da listagem
-const projetos = [
-  {
-    id: 1,
-    title: 'Rafa Helena Arquitetura',
-    description:
-      'Desenvolvemos o site da arquiteta Rafaela Helena com foco em transmitir sofisticação, personalidade e criatividade. A plataforma valoriza o portfólio, apresenta os serviços com elegância e oferece uma experiência fluida, conectando clientes à essência da marca.',
-    image: '/banner-rafa.png',
-    link: 'http://rafahelena.com.br/',
-  },
-  {
-    id: 2,
-    title: 'SDL Consultoria',
-    description:
-      'Criamos um site institucional moderno e funcional para a SDL Consultoria, destacando seus serviços de assessoria em segurança do trabalho, meio ambiente e treinamentos. A plataforma reforça a credibilidade da empresa com uma navegação clara, conteúdo organizado e design responsivo.',
-    image: '/banner-sdl.png',
-    link: 'https://sdlconsultoria.ind.br/',
-  },
-  {
-    id: 3,
-    title: 'Lovegoods',
-    description:
-      'Construímos a loja virtual da Lovegoods, especializada em presentes criativos e colecionáveis. O site destaca os produtos com um layout dinâmico, foco na experiência do usuário e integração completa com soluções de pagamento e logística.',
-    image: '/banner-lovegoods.png',
-    link: 'https://lovegoods.com.br/',
-  },
-  // Adicione os outros cases conforme necessário...
-]
+export function generateStaticParams() {
+  return projects.map((project) => ({ id: String(project.id) }))
+}
 
-export default function ProjetoDetalhePage() {
-  const params = useParams()
-  const id = Number(params.id)
-  const projeto = projetos.find((p) => p.id === id)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; id: string }>
+}): Promise<Metadata> {
+  const { locale, id } = (await params) as { locale: Locale; id: string }
+  const project = getProjectById(Number(id))
 
-  if (!projeto) {
-    return (
-      <div className="max-w-2xl mx-auto py-12 px-4">
-        <h1 className="text-2xl font-bold mb-4 text-red-600">Projeto não encontrado</h1>
-        <Link href="/Projetos" className="text-blue-600 hover:underline">
-          Voltar para lista de projetos
-        </Link>
-      </div>
-    )
+  if (!project) {
+    return {}
   }
 
+  const t = await getTranslations({ locale, namespace: 'projects' })
+  const description = t(project.descriptionKey as any)
+  const title =
+    locale === 'pt'
+      ? `${project.title} — Case de Sucesso | Codelabz`
+      : `${project.title} — Case Study | Codelabz`
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, `/projetos/${project.id}`),
+    openGraph: buildOpenGraph({
+      locale,
+      path: `/projetos/${project.id}`,
+      title,
+      description,
+      images: [{ url: project.image, width: 1200, height: 630 }],
+    }),
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  }
+}
+
+export default async function ProjetoDetalhePage({
+  params,
+}: {
+  params: Promise<{ locale: string; id: string }>
+}) {
+  const { locale, id } = (await params) as { locale: Locale; id: string }
+  const project = getProjectById(Number(id))
+
+  if (!project) {
+    notFound()
+  }
+
+  const t = await getTranslations({ locale, namespace: 'projects' })
+  const p = await getTranslations({ locale, namespace: 'projectsPage' })
+  const bc = await getTranslations({ locale, namespace: 'menu' })
+  const description = t(project.descriptionKey as any)
+
   return (
-    <div className="max-w-3xl mx-auto py-12 px-4">
+    <div className="max-w-3xl mx-auto py-12 px-4 pt-32">
+      <JsonLd
+        data={breadcrumbJsonLd(locale, [
+          { name: locale === 'pt' ? 'Início' : 'Home', path: '/' },
+          { name: bc('projects'), path: '/projetos' },
+          { name: project.title, path: `/projetos/${project.id}` },
+        ])}
+      />
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-        <Image
-          src={projeto.image}
-          alt={projeto.title}
-          width={800}
-          height={400}
-          className="w-full h-64 object-cover"
-        />
+        <div className="relative w-full h-64">
+          <Image
+            src={project.image}
+            alt={`Print da tela inicial do projeto ${project.title}, desenvolvido pela Codelabz`}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
         <div className="p-8">
-          <h1 className="text-3xl font-bold mb-4 text-sapphire-950">{projeto.title}</h1>
-          <p className="text-gray-700 mb-6">{projeto.description}</p>
-          <div className="flex gap-2">
+          <h1 className="text-3xl font-bold mb-4 text-codelabz-dark">{project.title}</h1>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-codelabz-accent mb-2">
+            {locale === 'pt' ? 'Sobre o projeto' : 'About the project'}
+          </h2>
+          <p className="text-gray-700 mb-6">{description}</p>
+          <div className="flex flex-wrap gap-2">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-codelabz-accent text-white px-4 py-2 rounded hover:opacity-90 transition"
+              >
+                {p('viewProject')}
+              </a>
+            )}
             <Link
-              href={projeto.link}
-              target="_blank"
-              className="bg-ruby-500 text-white px-4 py-2 rounded hover:bg-ruby-600 transition"
+              href="/projetos"
+              className="bg-codelabz-dark text-white px-4 py-2 rounded hover:opacity-90 transition"
             >
-              Ver projeto online
-            </Link>
-            <Link
-              href="/Projetos"
-              className="bg-sapphire-950 text-white px-4 py-2 rounded hover:bg-sapphire-800 transition"
-            >
-              ← Voltar para lista de projetos
+              ← {bc('projects')}
             </Link>
           </div>
         </div>

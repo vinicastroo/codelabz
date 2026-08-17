@@ -1,15 +1,30 @@
 'use client'
 import { motion } from 'framer-motion'
-import { ExternalLink, } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
-export function ProjectCard({ title, description, image, link, tags, viewProjectLabel = 'Ver projeto' }: {
+export function ProjectCard({
+  id,
+  title,
+  description,
+  image,
+  link,
+  tags,
+  viewProjectLabel = 'Ver projeto',
+  headingLevel = 'h3',
+}: {
+  id?: number
   title: string
   description: string
   image: string
   link?: string
   tags: string[]
   viewProjectLabel?: string
+  headingLevel?: 'h2' | 'h3'
 }) {
+  const Heading = headingLevel
+
   return (
 
     <motion.div
@@ -18,10 +33,12 @@ export function ProjectCard({ title, description, image, link, tags, viewProject
       viewport={{ once: true }}
       transition={{ delay: 0.3, duration: 0.3 }} className="cursor-pointer backdrop-blur-xl rounded-lg overflow-hidden transition-all duration-300 group h-full flex flex-col">
       <div className="relative h-80 overflow-hidden bg-transparent shrink-0">
-        <img
-          src={image || "/placeholder.svg"}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        <Image
+          src={image || '/placeholder.svg'}
+          alt={`Print da tela inicial do projeto ${title}, desenvolvido pela Codelabz`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#032550] via-transparent to-transparent opacity-60"></div>
       </div>
@@ -38,9 +55,15 @@ export function ProjectCard({ title, description, image, link, tags, viewProject
             ))}
           </div>
 
-          <h3 className="text-xl font-display font-bold text-[#032550] mb-3 transition-colors">
-            {title}
-          </h3>
+          <Heading className="text-xl font-display font-bold text-[#032550] mb-3 transition-colors">
+            {id ? (
+              <Link href={`/projetos/${id}`} className="hover:underline">
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
+          </Heading>
 
           <p className="text-slate-400 text-sm leading-relaxed">
             {description}
