@@ -44,24 +44,28 @@ export const posts: Post[] = [
   {
     slug: 'lovegoods-ecommerce-foco-em-conversao',
     title: 'Lovegoods: como construímos um e-commerce com foco real em conversão',
+    metaTitle: 'Case Lovegoods: E-commerce Focado em Conversão',
     excerpt:
-      'Entenda as decisões de UX, performance e integrações de pagamento que aplicamos na loja virtual da Lovegoods para aumentar a taxa de conversão.',
+      'Veja como a Codelabz estruturou o e-commerce da Lovegoods com catálogo filtrável, checkout enxuto e integrações que reduzem abandono de carrinho.',
     date: '2024-07-02',
     category: 'E-commerce',
     readTime: '6 min',
     author: 'Equipe Codelabz',
     image: '/banner-lovegoods.png',
     content: `
-      <p>Um e-commerce bonito não é suficiente se o fluxo de compra não for pensado para converter. No projeto da Lovegoods, loja especializada em presentes criativos e colecionáveis, priorizamos cada etapa da jornada do cliente, do catálogo ao checkout.</p>
+      <p>A Lovegoods, especializada em presentes criativos e colecionáveis, precisava de uma loja virtual construída do zero para vender online — não uma adaptação de plataforma genérica. Desenvolvemos o e-commerce da marca com foco em cada etapa da jornada de compra, do catálogo ao checkout.</p>
+
+      <h2>O desafio</h2>
+      <p>Um catálogo de presentes e colecionáveis precisa funcionar bem tanto para quem já sabe o que procura quanto para quem está só explorando. A loja também precisava nascer pensada para mobile desde o início, já que é por ali que passa a maior parte do tráfego de e-commerce. Veja como estruturamos esse tipo de projeto nos nossos <a href="/servicos">serviços de e-commerce</a>.</p>
 
       <h2>Catálogo filtrável e experiência mobile</h2>
-      <p>Como a maior parte do tráfego de e-commerce vem de dispositivos móveis, estruturamos filtros de produto rápidos, imagens otimizadas em formato moderno e um layout que prioriza a leitura em telas pequenas sem perder informações relevantes para a decisão de compra.</p>
+      <p>Estruturamos filtros de produto rápidos, imagens otimizadas em formato moderno e um layout que prioriza a leitura em telas pequenas sem perder informações relevantes para a decisão de compra.</p>
 
       <h2>Integrações de pagamento e logística</h2>
       <p>Integramos gateways de pagamento confiáveis e serviços de cálculo de frete em tempo real, reduzindo o abandono de carrinho por falta de transparência nos custos finais da compra.</p>
 
       <h2>Resultado</h2>
-      <p>O resultado foi um checkout mais curto, menos etapas de fricção e uma experiência de compra consistente entre desktop e mobile, refletindo diretamente na conversão da loja.</p>
+      <p>O resultado foi um checkout mais curto, com menos etapas de fricção, e uma experiência de compra consistente entre desktop e mobile — construída do zero para converter, não adaptada depois. Confira outros projetos de e-commerce que já entregamos <a href="/projetos">no nosso portfólio</a>.</p>
     `,
   },
   {
