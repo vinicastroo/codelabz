@@ -1,6 +1,8 @@
 export type Post = {
   slug: string
   title: string
+  /** Title tag curto (~60 caracteres) para <title>/OG/Twitter. Se ausente, usa `title`. */
+  metaTitle?: string
   excerpt: string
   content: string
   date: string
@@ -14,24 +16,29 @@ export const posts: Post[] = [
   {
     slug: 'rafa-helena-arquitetura-caso-de-sucesso',
     title: 'Rafa Helena Arquitetura: um site que transforma portfólio em captação de clientes',
+    metaTitle: 'Site para Arquitetos: o Case Rafa Helena',
     excerpt:
-      'Como estruturamos o site institucional da arquiteta Rafa Helena com foco em performance, SEO técnico e apresentação de portfólio para gerar mais contatos qualificados.',
+      'Como a Codelabz transformou o portfólio disperso da arquiteta Rafa Helena em um site rápido e otimizado para SEO, pensado para gerar contato com clientes.',
     date: '2024-08-10',
     category: 'Cases de Sucesso',
     readTime: '5 min',
     author: 'Equipe Codelabz',
     image: '/banner-rafa.png',
     content: `
-      <p>Para escritórios de arquitetura, o site é muitas vezes o primeiro contato do cliente com o trabalho do profissional. Foi com esse objetivo que desenvolvemos o site institucional da arquiteta Rafa Helena: transformar um portfólio disperso em uma vitrine digital capaz de transmitir sofisticação e gerar novos contatos.</p>
+      <p>Para escritórios de arquitetura, o site costuma ser o primeiro contato do cliente com o trabalho do profissional. Foi com esse objetivo que desenvolvemos o site institucional da arquiteta Rafa Helena: transformar um portfólio disperso em uma vitrine digital.</p>
 
       <h2>O desafio</h2>
-      <p>Antes do projeto, os trabalhos da Rafa Helena estavam espalhados entre redes sociais e materiais físicos, sem uma central que reunisse cases, diferenciais e formas de contato. O objetivo era criar uma experiência fluida, com carregamento rápido e navegação intuitiva em qualquer dispositivo.</p>
+      <p>Antes do projeto, os trabalhos da Rafa Helena estavam espalhados entre redes sociais e materiais físicos, sem um lugar central que reunisse cases, diferenciais e formas de contato. O objetivo era uma experiência fluida, com carregamento rápido e navegação intuitiva em qualquer dispositivo. Veja também os <a href="/servicos">serviços de criação de sites</a> que aplicamos nesse tipo de projeto.</p>
 
       <h2>A solução da Codelabz</h2>
-      <p>Desenvolvemos uma galeria de projetos responsiva, otimizamos todas as imagens para carregamento rápido (reduzindo o peso das páginas sem perder qualidade visual) e aplicamos boas práticas de SEO técnico, como marcação semântica de títulos, dados estruturados e meta tags específicas para cada seção do site.</p>
+      <p>Desenvolvemos uma galeria de projetos responsiva, otimizamos as imagens para carregamento rápido sem perder qualidade visual, e aplicamos boas práticas de SEO técnico — marcação semântica de títulos, dados estruturados e meta tags específicas para cada seção do site.</p>
 
       <h2>Resultado</h2>
-      <p>O novo site passou a funcionar como uma ferramenta ativa de captação, apresentando o portfólio com elegância e facilitando o contato direto via WhatsApp. Esse é o tipo de resultado que buscamos em cada projeto: unir design, performance e estratégia digital.</p>
+      <p>O site passou a funcionar como ferramenta ativa de captação, com o portfólio apresentado de forma organizada e contato direto via WhatsApp em qualquer página. Na avaliação da própria cliente:</p>
+
+      <blockquote>"Meu site de arquitetura ficou excelente! Do jeito que eu queria, super recomendo!!" — Rafaela Helena, arquiteta</blockquote>
+
+      <p>Quer ver outros projetos com esse mesmo cuidado de portfólio e performance? Conheça mais no nosso <a href="/projetos">portfólio de projetos</a>.</p>
     `,
   },
   {

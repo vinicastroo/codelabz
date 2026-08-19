@@ -33,21 +33,23 @@ export async function generateMetadata({
     return {}
   }
 
+  const seoTitle = post.metaTitle ?? post.title
+
   return {
-    title: `${post.title} | Codelabz`,
+    title: `${seoTitle} | Codelabz`,
     description: post.excerpt,
     alternates: buildAlternates(locale, `/blog/${post.slug}`),
     openGraph: buildOpenGraph({
       locale,
       path: `/blog/${post.slug}`,
-      title: post.title,
+      title: seoTitle,
       description: post.excerpt,
       images: [{ url: post.image, width: 1200, height: 630 }],
       type: 'article',
     }),
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: seoTitle,
       description: post.excerpt,
     },
   }
