@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { Receipt, ListPlus } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 import { formatCents } from '@/lib/money'
 import {
@@ -6,6 +7,7 @@ import {
   markChargePaidAction,
   cancelChargeAction,
   updateSubscriptionStatusAction,
+  generateAsaasLinkAction,
 } from '../../actions'
 
 export const dynamic = 'force-dynamic'
@@ -14,6 +16,22 @@ const STATUS_LABEL: Record<string, string> = {
   ACTIVE: 'Ativa',
   PAUSED: 'Pausada',
   CANCELLED: 'Cancelada',
+}
+
+const STATUS_BORDER: Record<string, string> = {
+  ACTIVE: 'border-l-green-400',
+  PAUSED: 'border-l-amber-400',
+  CANCELLED: 'border-l-slate-300',
+}
+
+function initialsOf(name: string) {
+  return name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase()
 }
 
 export default async function ClienteDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -33,24 +51,39 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
 
   return (
     <div>
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-codelabz-dark">{client.name}</h1>
-        <p className="text-sm text-slate-500 mt-1">
-          {[client.email, client.phone, client.document].filter(Boolean).join(' · ') || 'Sem dados de contato'}
-        </p>
-        {client.notes && <p className="text-sm text-slate-400 mt-1">{client.notes}</p>}
+      <div className="flex items-start gap-4 mb-8">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-codelabz-accent/10 text-codelabz-accent font-bold ring-1 ring-codelabz-accent/20">
+          {initialsOf(client.name)}
+        </span>
+        <div>
+          <h1 className="text-2xl font-bold text-codelabz-dark">{client.name}</h1>
+          <p className="text-sm text-slate-500 mt-1">
+            {[client.email, client.phone, client.document].filter(Boolean).join(' · ') || 'Sem dados de contato'}
+          </p>
+          {client.notes && <p className="text-sm text-slate-400 mt-1 italic">{client.notes}</p>}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          <h2 className="text-lg font-bold text-codelabz-dark">Assinaturas</h2>
+          <h2 className="flex items-center gap-2 text-sm font-bold text-codelabz-dark uppercase tracking-wide">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-100 text-slate-500">
+              <Receipt size={14} />
+            </span>
+            Assinaturas
+          </h2>
 
           {client.subscriptions.length === 0 && (
-            <p className="text-sm text-slate-500">Nenhuma assinatura cadastrada ainda.</p>
+            <div className="bg-white rounded-xl border border-dashed border-slate-300 p-8 text-center">
+              <p className="text-sm text-slate-500">Nenhuma assinatura cadastrada ainda.</p>
+            </div>
           )}
 
           {client.subscriptions.map((sub) => (
-            <div key={sub.id} className="bg-white rounded-xl border border-slate-200 p-5">
+            <div
+              key={sub.id}
+              className={`bg-white rounded-xl border border-slate-200 border-l-4 ${STATUS_BORDER[sub.status]} p-5`}
+            >
               <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
                 <div>
                   <p className="font-semibold text-codelabz-dark">{sub.description}</p>
@@ -75,7 +108,7 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                       <input type="hidden" name="subscriptionId" value={sub.id} />
                       <input type="hidden" name="clientId" value={client.id} />
                       <input type="hidden" name="status" value="PAUSED" />
-                      <button type="submit" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 hover:bg-amber-100">
+                      <button type="submit" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 hover:bg-amber-100 transition-colors">
                         Pausar
                       </button>
                     </form>
@@ -85,7 +118,7 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                       <input type="hidden" name="subscriptionId" value={sub.id} />
                       <input type="hidden" name="clientId" value={client.id} />
                       <input type="hidden" name="status" value="ACTIVE" />
-                      <button type="submit" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-green-50 text-green-700 hover:bg-green-100">
+                      <button type="submit" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-green-50 text-green-700 hover:bg-green-100 transition-colors">
                         Reativar
                       </button>
                     </form>
@@ -95,7 +128,7 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                       <input type="hidden" name="subscriptionId" value={sub.id} />
                       <input type="hidden" name="clientId" value={client.id} />
                       <input type="hidden" name="status" value="CANCELLED" />
-                      <button type="submit" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-red-50 text-red-600 hover:bg-red-100">
+                      <button type="submit" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-red-50 text-red-600 hover:bg-red-100 transition-colors">
                         Cancelar
                       </button>
                     </form>
@@ -112,17 +145,39 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                       <th className="text-left py-1.5 font-semibold">Vencimento</th>
                       <th className="text-left py-1.5 font-semibold">Status</th>
                       <th className="text-right py-1.5 font-semibold">Valor</th>
+                      <th className="text-left py-1.5 font-semibold">Cobrança</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     {sub.charges.map((charge) => (
-                      <tr key={charge.id} className="border-t border-slate-50">
+                      <tr key={charge.id} className="border-t border-slate-50 hover:bg-slate-50/60 transition-colors">
                         <td className="py-2 text-slate-600">{charge.dueDate.toLocaleDateString('pt-BR')}</td>
                         <td className="py-2">
                           <ChargeStatusBadge status={charge.status} dueDate={charge.dueDate} />
                         </td>
                         <td className="py-2 text-right font-semibold text-codelabz-dark">{formatCents(charge.amountCents)}</td>
+                        <td className="py-2">
+                          {charge.paymentLink ? (
+                            <a
+                              href={charge.paymentLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs font-semibold text-codelabz-accent hover:underline"
+                            >
+                              Link de pagamento
+                            </a>
+                          ) : charge.status === 'PENDING' ? (
+                            <form action={generateAsaasLinkAction}>
+                              <input type="hidden" name="chargeId" value={charge.id} />
+                              <button type="submit" className="text-xs font-semibold text-slate-500 hover:underline">
+                                Gerar cobrança Asaas
+                              </button>
+                            </form>
+                          ) : (
+                            <span className="text-xs text-slate-300">—</span>
+                          )}
+                        </td>
                         <td className="py-2 text-right">
                           {charge.status === 'PENDING' && (
                             <div className="flex gap-2 justify-end">
@@ -151,7 +206,12 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
         </div>
 
         <div>
-          <h2 className="text-sm font-bold text-codelabz-dark uppercase tracking-wide mb-4">Nova assinatura</h2>
+          <h2 className="flex items-center gap-2 text-sm font-bold text-codelabz-dark uppercase tracking-wide mb-4">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-codelabz-accent/10 text-codelabz-accent">
+              <ListPlus size={14} />
+            </span>
+            Nova assinatura
+          </h2>
           <form action={createSubscriptionAction} className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
             <input type="hidden" name="clientId" value={client.id} />
             <div>
@@ -160,7 +220,7 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                 name="description"
                 required
                 placeholder="Mensalidade site institucional"
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-codelabz-accent"
+                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-codelabz-accent focus:ring-2 focus:ring-codelabz-accent/20 transition-shadow"
               />
             </div>
             <div>
@@ -170,7 +230,7 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                 required
                 inputMode="decimal"
                 placeholder="150,00"
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-codelabz-accent"
+                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-codelabz-accent focus:ring-2 focus:ring-codelabz-accent/20 transition-shadow"
               />
             </div>
             <div>
@@ -181,7 +241,7 @@ export default async function ClienteDetailPage({ params }: { params: Promise<{ 
                 min={1}
                 max={28}
                 defaultValue={5}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-codelabz-accent"
+                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-codelabz-accent focus:ring-2 focus:ring-codelabz-accent/20 transition-shadow"
               />
             </div>
             <button type="submit" className="w-full py-2.5 bg-codelabz-accent text-white text-sm font-bold rounded-lg hover:bg-rose-600 transition-colors">

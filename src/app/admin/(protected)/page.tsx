@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AlertTriangle, CalendarClock, RefreshCw } from 'lucide-react'
+import { AlertTriangle, CalendarClock, RefreshCw, Wallet } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 import { formatCents } from '@/lib/money'
 import { startOfToday } from '@/lib/billing'
@@ -37,25 +37,40 @@ export default async function AdminDashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-        <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold mb-1">Em aberto</p>
-          <p className="text-2xl font-bold text-codelabz-dark">{formatCents(pendingTotal)}</p>
-          <p className="text-xs text-slate-400 mt-1">{pendingCharges.length} cobrança(s)</p>
+        <div className="bg-white rounded-xl border border-slate-200 p-5 flex items-start justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold mb-1">Em aberto</p>
+            <p className="text-2xl font-bold text-codelabz-dark">{formatCents(pendingTotal)}</p>
+            <p className="text-xs text-slate-400 mt-1">{pendingCharges.length} cobrança(s)</p>
+          </div>
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-500">
+            <Wallet size={17} />
+          </span>
         </div>
-        <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <p className="text-xs uppercase tracking-wide text-red-500 font-semibold mb-1">Atrasado</p>
-          <p className="text-2xl font-bold text-red-600">{formatCents(overdueTotal)}</p>
-          <p className="text-xs text-slate-400 mt-1">{overdue.length} cobrança(s)</p>
+        <div className="bg-white rounded-xl border border-slate-200 p-5 flex items-start justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-red-500 font-semibold mb-1">Atrasado</p>
+            <p className="text-2xl font-bold text-red-600">{formatCents(overdueTotal)}</p>
+            <p className="text-xs text-slate-400 mt-1">{overdue.length} cobrança(s)</p>
+          </div>
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-500">
+            <AlertTriangle size={17} />
+          </span>
         </div>
-        <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold mb-1">Próximos 14 dias</p>
-          <p className="text-2xl font-bold text-codelabz-dark">
-            {formatCents(
-              upcoming
-                .filter((c) => c.dueDate <= new Date(today.getTime() + 14 * 86400000))
-                .reduce((sum, c) => sum + c.amountCents, 0),
-            )}
-          </p>
+        <div className="bg-white rounded-xl border border-slate-200 p-5 flex items-start justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold mb-1">Próximos 14 dias</p>
+            <p className="text-2xl font-bold text-codelabz-dark">
+              {formatCents(
+                upcoming
+                  .filter((c) => c.dueDate <= new Date(today.getTime() + 14 * 86400000))
+                  .reduce((sum, c) => sum + c.amountCents, 0),
+              )}
+            </p>
+          </div>
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sapphire-50 text-sapphire-600">
+            <CalendarClock size={17} />
+          </span>
         </div>
       </div>
 

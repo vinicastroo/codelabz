@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
 import { reaisToCents } from '@/lib/money'
-import { generateMonthlyCharges } from '@/lib/billing'
+import { generateMonthlyCharges, syncChargeToAsaas } from '@/lib/billing'
 
 export async function createClientAction(formData: FormData) {
   const name = String(formData.get('name') || '').trim()
@@ -96,4 +96,42 @@ export async function generateChargesAction() {
   await generateMonthlyCharges()
   revalidatePath('/admin')
   revalidatePath('/admin/cobrancas')
+}
+
+export async function createChargeAction(formData: FormData) {
+  const subscriptionId = String(formData.get('subscriptionId') || '')
+  const dueDateInput = String(formData.get('dueDate') || '')
+  const amount = String(formData.get('amount') || '').trim()
+
+  if (!subscriptionId || !dueDateInput) return
+
+  const subscription = await prisma.subscription.findUniqueOrThrow({ where: { id: subscriptionId } })
+
+  const [year, month, day] = dueDateInput.split('-').map(Number)
+  const dueDate = new Date(year, month - 1, day)
+  const amountCents = amount ? reaisToCents(amount) : subscription.amountCents
+
+  try {
+    await prisma.charge.create({
+      data: { subscriptionId, dueDate, amountCents, status: 'PENDING' },
+    })
+  } catch (err) {
+    const isDuplicateChargeError = err !== null && typeof err === 'object' && 'code' in err && err.code === 'P2002'
+    if (!isDuplicateChargeError) throw err
+  }
+
+  revalidatePath('/admin')
+  revalidatePath('/admin/cobrancas')
+  revalidatePath('/admin/clientes')
+}
+
+export async function generateAsaasLinkAction(formData: FormData) {
+  const chargeId = String(formData.get('chargeId') || '')
+  if (!chargeId) return
+
+  await syncChargeToAsaas(chargeId)
+
+  revalidatePath('/admin')
+  revalidatePath('/admin/cobrancas')
+  revalidatePath('/admin/clientes')
 }
