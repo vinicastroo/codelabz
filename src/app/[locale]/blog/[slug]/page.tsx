@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Calendar, Clock, Share2, Tag, User } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Calendar, Clock, Share2, Tag, User } from 'lucide-react'
 import { JsonLd } from '@/components/JsonLd'
 import { articleJsonLd, breadcrumbJsonLd, buildAlternates, buildOpenGraph } from '@/lib/seo'
 import type { Locale } from '@/i18n/routing'
@@ -68,6 +68,11 @@ export default async function BlogPost({
   }
 
   const bc = await getTranslations({ locale, namespace: 'menu' })
+
+  const moreArticles = posts
+    .filter((p) => p.slug !== post.slug)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
 
   return (
     <main className="bg-white min-h-screen pb-20">
@@ -153,6 +158,46 @@ export default async function BlogPost({
           </div>
         </div>
       </article>
+
+      {moreArticles.length > 0 && (
+        <section className="container mx-auto px-6 mt-20 max-w-5xl">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-codelabz-dark mb-8">
+            {locale === 'pt' ? 'Continue lendo' : 'Keep reading'}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {moreArticles.map((related) => (
+              <Link href={`/blog/${related.slug}`} key={related.slug} className="group h-full">
+                <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 h-full flex flex-col">
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <Image
+                      src={related.image}
+                      alt={`Imagem de capa do artigo "${related.title}"`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-white/90 backdrop-blur-sm text-codelabz-accent text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <Tag size={12} /> {related.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="text-base font-display font-bold text-codelabz-dark mb-2 leading-tight group-hover:text-codelabz-accent transition-colors">
+                      {related.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-2">{related.excerpt}</p>
+                    <div className="mt-auto pt-3 border-t border-slate-50 flex items-center text-codelabz-accent font-bold text-xs gap-2 group/btn">
+                      {locale === 'pt' ? 'Ler artigo' : 'Read article'}
+                      <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   )
 }
