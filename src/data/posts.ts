@@ -91,6 +91,67 @@ export const posts: Post[] = [
       <p>Hoje, os parceiros da Fidliz contam com uma ferramenta de retenção de clientes moderna, sem custos de impressão de cartões e com dados centralizados sobre o comportamento de compra do público.</p>
     `,
   },
+  {
+    slug: 'minha-prova-sistema-de-avaliacoes-unidavi',
+    title: 'Minha Prova: como estruturamos o sistema de aplicação de provas da UNIDAVI',
+    metaTitle: 'Minha Prova: Sistema de Provas Online da UNIDAVI',
+    excerpt:
+      'Como a Codelabz criou o Minha Prova, sistema da UNIDAVI para criar, aplicar e corrigir provas online com banco de questões e alternativas embaralhadas.',
+    date: '2024-03-14',
+    category: 'Sistemas Web',
+    readTime: '5 min',
+    author: 'Equipe Codelabz',
+    image: '/banner-minha-prova.png',
+    content: `
+      <p>Aplicar provas em papel dificulta reaproveitar questões entre turmas e obriga o professor a corrigir tudo manualmente. Para a UNIDAVI, desenvolvemos o Minha Prova: um sistema acadêmico onde professores montam um banco de questões e aplicam provas digitalmente, turma por turma.</p>
+
+      <h2>Como o professor usa o sistema</h2>
+      <p>O acesso é feito por login institucional com Google. Na tela inicial, o professor vê as turmas em que está vinculado; dentro de cada turma, acompanha as provas já cadastradas — com status de liberação — e a lista de participantes.</p>
+
+      <h2>Banco de questões reutilizável</h2>
+      <p>As questões ficam centralizadas em um banco único, organizadas por curso, disciplina, autor e status. Isso permite montar uma prova nova selecionando questões já cadastradas, em vez de reescrever tudo a cada aplicação. Na criação da prova, o professor escolhe as questões e visualiza uma pré-visualização antes de liberar.</p>
+
+      <h2>A prova na visão do aluno</h2>
+      <p>Do lado do aluno, as alternativas de cada questão aparecem embaralhadas — cada aluno vê uma ordem diferente — e as respostas são marcadas por botões de rádio, com um botão de finalizar ao final da prova.</p>
+
+      <h2>Arquitetura técnica</h2>
+      <p>A API foi construída em Node.js com Fastify, Prisma e PostgreSQL; o frontend em Next.js, com autenticação via next-auth. É a mesma stack que usamos em <a href="/servicos">sistemas sob medida</a> quando o projeto pede performance e integração direta com login institucional.</p>
+
+      <p>Veja outros sistemas que desenvolvemos para instituições de ensino <a href="/projetos">no nosso portfólio</a>.</p>
+    `,
+  },
+  {
+    slug: 'minha-reserva-sistema-de-reservas-unidavi',
+    title: 'Minha Reserva: como estruturamos o sistema de reservas de salas da UNIDAVI',
+    metaTitle: 'Minha Reserva: Sistema de Reservas da UNIDAVI',
+    excerpt:
+      'Como a Codelabz criou o Minha Reserva, sistema da UNIDAVI para gerenciar reservas de salas e equipamentos por local, período e nível de acesso.',
+    date: '2024-02-20',
+    category: 'Sistemas Web',
+    readTime: '5 min',
+    author: 'Equipe Codelabz',
+    image: '/banner-minha-reserva.png',
+    content: `
+      <p>Coordenar reserva de salas, Chromebooks, projetores e caixas de som entre vários prédios e laboratórios fica difícil de controlar manualmente. Para a UNIDAVI, desenvolvemos o Minha Reserva: um sistema que centraliza pessoas, equipamentos, salas e reservas por localização.</p>
+
+      <h2>Acesso e visão geral</h2>
+      <p>A autenticação é feita por código de mentor e senha. Depois do login, um menu único reúne todas as áreas de gerenciamento do sistema — reservas, salas, equipamentos, pessoas e permissões.</p>
+
+      <h2>Calendário de reservas</h2>
+      <p>As reservas aparecem em um calendário organizado por dia e período, com abas separando pedidos, itens já entregues, recolhidos e cancelados. Criar uma nova reserva é feito escolhendo pessoa, sala e período — sem depender de planilha ou controle por WhatsApp.</p>
+
+      <h2>Salas, equipamentos e períodos configuráveis</h2>
+      <p>Salas e equipamentos ficam em listagens paginadas, com os equipamentos organizados por tipo — Chromebooks, caixas de som, projetores, entre outros. Os períodos disponíveis (matutino, vespertino, noturno) também podem ser personalizados conforme a necessidade de cada unidade.</p>
+
+      <h2>Controle de acesso por pessoa e local</h2>
+      <p>Cada pessoa tem cargo e status de ativo no sistema, e os cargos definem se aquele perfil tem acesso administrativo. Além disso, o acesso pode ser configurado por localização — prédios, laboratórios e biblioteca podem ter permissões diferentes para os mesmos usuários.</p>
+
+      <h2>Arquitetura técnica</h2>
+      <p>A API foi construída em Node.js com Express, TypeORM e PostgreSQL; o painel administrativo em React com Material UI. Projetos assim combinam bem com nossos <a href="/servicos">serviços de desenvolvimento de sistemas</a>, especialmente quando envolvem múltiplos níveis de permissão.</p>
+
+      <p>Confira outros sistemas internos que já desenvolvemos <a href="/projetos">no nosso portfólio</a>.</p>
+    `,
+  },
 ]
 
 export function getPostBySlug(slug: string) {
