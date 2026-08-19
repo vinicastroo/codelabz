@@ -44,6 +44,18 @@ export const Carousel: React.FC = () => {
       content: t('t5Content'),
       image: "/avaliacao-foto-5.png",
     },
+    {
+      name: t('t6Name'),
+      role: t('t6Role'),
+      company: t('t6Company'),
+      content: t('t6Content'),
+    },
+    {
+      name: t('t7Name'),
+      role: t('t7Role'),
+      company: t('t7Company'),
+      content: t('t7Content'),
+    },
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -109,13 +121,22 @@ export const Carousel: React.FC = () => {
                 </p>
 
                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-slate-50">
-                  <Image
-                    src={item.image}
-                    alt={`Foto de ${item.name}, cliente da Codelabz`}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100"
-                  />
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={`Foto de ${item.name}, cliente da Codelabz`}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden
+                      className="w-10 h-10 shrink-0 rounded-full bg-codelabz-accent/10 ring-2 ring-slate-100 flex items-center justify-center text-codelabz-accent font-bold text-sm"
+                    >
+                      {item.name.charAt(0)}
+                    </div>
+                  )}
                   <div>
                     <h4 className="font-bold text-codelabz-dark text-sm">{item.name}</h4>
                     <p className="text-xs text-codelabz-accent font-semibold tracking-wide">

@@ -152,6 +152,34 @@ export const posts: Post[] = [
       <p>Confira outros sistemas internos que já desenvolvemos <a href="/projetos">no nosso portfólio</a>.</p>
     `,
   },
+  {
+    slug: 'patrono-jr-consultoria-juridica-caso-de-sucesso',
+    title: 'Patrono Jr.: um site institucional para transmitir credibilidade jurídica',
+    metaTitle: 'Case Patrono Jr.: Site para Consultoria Jurídica',
+    excerpt:
+      'Como a Codelabz desenvolveu o site institucional da Patrono Jr., empresa júnior de Direito da UESC, com visual sofisticado para transmitir credibilidade.',
+    date: '2024-04-05',
+    category: 'Cases de Sucesso',
+    readTime: '4 min',
+    author: 'Equipe Codelabz',
+    image: '/banner-patrono.png',
+    content: `
+      <p>Uma empresa júnior formada por estudantes de Direito enfrenta um desafio duplo de credibilidade: precisa transmitir a mesma seriedade de um escritório jurídico estabelecido, mas também superar a percepção de que, por ser um projeto acadêmico, teria menos rigor profissional. Foi esse o ponto de partida do site que desenvolvemos para a Patrono Assessoria e Consultoria Júnior, a primeira empresa júnior de Direito da <a href="https://www.uesc.br" target="_blank" rel="noopener noreferrer">UESC</a> (Universidade Estadual de Santa Cruz).</p>
+
+      <h2>O desafio</h2>
+      <p>O site precisava apresentar os serviços jurídicos oferecidos com clareza, sem soar amador, e facilitar o contato com a equipe — tudo isso comunicando, logo no primeiro acesso, o mesmo nível de seriedade esperado de qualquer consultoria jurídica.</p>
+
+      <h2>A solução da Codelabz</h2>
+      <p>Desenvolvemos um site institucional com visual sofisticado e estrutura clara, priorizando a apresentação dos serviços jurídicos e um caminho direto até o contato com a equipe. Veja mais sobre como estruturamos esse tipo de projeto nos nossos <a href="/servicos">serviços de criação de sites institucionais</a>.</p>
+
+      <h2>Resultado</h2>
+      <p>Na avaliação da própria cliente:</p>
+
+      <blockquote>"Trabalho incrível! Alcançamos a versão final do site em menos de 2 semanas! O Vinicius é super atencioso e dedicado, sempre estava a disposição para tirar qualquer dúvida e realizar qualquer modificação! O site ficou do jeitinho que eu sempre sonhei para a empresa, recomendo muito!" — Maria Eduarda Chagas de Sousa, Patrono Assessoria e Consultoria Júnior</blockquote>
+
+      <p>Confira outros projetos institucionais que já entregamos <a href="/projetos">no nosso portfólio</a>.</p>
+    `,
+  },
 ]
 
 export function getPostBySlug(slug: string) {

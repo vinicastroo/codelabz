@@ -43,7 +43,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = (await params) as { locale: Locale }
   const t = await getTranslations({ locale, namespace: 'testimonials' })
 
-  const testimonials = [1, 2, 3, 4, 5].map((n) => ({
+  const testimonials = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
     author: t(`t${n}Name` as any),
     reviewBody: t(`t${n}Content` as any),
   }))
