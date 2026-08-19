@@ -103,7 +103,7 @@ export const posts: Post[] = [
     author: 'Equipe Codelabz',
     image: '/banner-minha-prova.png',
     content: `
-      <p>Aplicar provas em papel dificulta reaproveitar questões entre turmas e obriga o professor a corrigir tudo manualmente. Para a <a href="https://www.unidavi.edu.br" target="_blank" rel="noopener noreferrer">UNIDAVI</a>, instituição de ensino superior de Rio do Sul (SC), desenvolvemos o Minha Prova: um sistema acadêmico onde professores montam um banco de questões e aplicam provas digitalmente, turma por turma.</p>
+      <p>Aplicar provas em papel dificulta reaproveitar questões entre turmas e obriga o professor a corrigir tudo manualmente. Para a <a href="https://www.unidavi.edu.br" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;"><img src="/logo-unidavi.png" alt="Logo UNIDAVI" style="display:inline-block;height:22px;width:auto;vertical-align:middle;margin:0;" />UNIDAVI</a>, instituição de ensino superior de Rio do Sul (SC), desenvolvemos o Minha Prova: um sistema acadêmico onde professores montam um banco de questões e aplicam provas digitalmente, turma por turma.</p>
 
       <h2>Como o professor usa o sistema</h2>
       <p>O acesso é feito por login institucional com Google. Na tela inicial, o professor vê as turmas em que está vinculado; dentro de cada turma, acompanha as provas já cadastradas — com status de liberação — e a lista de participantes.</p>
@@ -132,7 +132,7 @@ export const posts: Post[] = [
     author: 'Equipe Codelabz',
     image: '/banner-minha-reserva.png',
     content: `
-      <p>Coordenar reserva de salas, Chromebooks, projetores e caixas de som entre vários prédios e laboratórios fica difícil de controlar manualmente. Para a <a href="https://www.unidavi.edu.br" target="_blank" rel="noopener noreferrer">UNIDAVI</a>, instituição de ensino superior de Rio do Sul (SC), desenvolvemos o Minha Reserva: um sistema que centraliza pessoas, equipamentos, salas e reservas por localização.</p>
+      <p>Coordenar reserva de salas, Chromebooks, projetores e caixas de som entre vários prédios e laboratórios fica difícil de controlar manualmente. Para a <a href="https://www.unidavi.edu.br" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;"><img src="/logo-unidavi.png" alt="Logo UNIDAVI" style="display:inline-block;height:22px;width:auto;vertical-align:middle;margin:0;" />UNIDAVI</a>, instituição de ensino superior de Rio do Sul (SC), desenvolvemos o Minha Reserva: um sistema que centraliza pessoas, equipamentos, salas e reservas por localização.</p>
 
       <h2>Acesso e visão geral</h2>
       <p>A autenticação é feita por código de mentor e senha. Depois do login, um menu único reúne todas as áreas de gerenciamento do sistema — reservas, salas, equipamentos, pessoas e permissões.</p>
@@ -164,7 +164,7 @@ export const posts: Post[] = [
     author: 'Equipe Codelabz',
     image: '/banner-patrono.png',
     content: `
-      <p>Uma empresa júnior formada por estudantes de Direito enfrenta um desafio duplo de credibilidade: precisa transmitir a mesma seriedade de um escritório jurídico estabelecido, mas também superar a percepção de que, por ser um projeto acadêmico, teria menos rigor profissional. Foi esse o ponto de partida do site que desenvolvemos para a Patrono Assessoria e Consultoria Júnior, a primeira empresa júnior de Direito da <a href="https://www.uesc.br" target="_blank" rel="noopener noreferrer">UESC</a> (Universidade Estadual de Santa Cruz).</p>
+      <p>Uma empresa júnior formada por estudantes de Direito enfrenta um desafio duplo de credibilidade: precisa transmitir a mesma seriedade de um escritório jurídico estabelecido, mas também superar a percepção de que, por ser um projeto acadêmico, teria menos rigor profissional. Foi esse o ponto de partida do site que desenvolvemos para a Patrono Assessoria e Consultoria Júnior, a primeira empresa júnior de Direito da <a href="https://www.uesc.br" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;"><img src="/logo-uesc.png" alt="Logo UESC" style="display:inline-block;height:22px;width:auto;vertical-align:middle;margin:0;" />UESC</a> (Universidade Estadual de Santa Cruz).</p>
 
       <h2>O desafio</h2>
       <p>O site precisava apresentar os serviços jurídicos oferecidos com clareza, sem soar amador, e facilitar o contato com a equipe — tudo isso comunicando, logo no primeiro acesso, o mesmo nível de seriedade esperado de qualquer consultoria jurídica.</p>
