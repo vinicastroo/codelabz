@@ -49,12 +49,14 @@ export const Carousel: React.FC = () => {
       role: t('t6Role'),
       company: t('t6Company'),
       content: t('t6Content'),
+      image: "/testimonial-maria.png",
     },
     {
       name: t('t7Name'),
       role: t('t7Role'),
       company: t('t7Company'),
       content: t('t7Content'),
+      image: "/testimonial-ricardo.png",
     },
   ]
 
