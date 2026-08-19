@@ -130,7 +130,7 @@ export default async function BlogPost({
       </div>
 
       <article className="container mx-auto px-6 max-w-3xl">
-        <div className="prose prose-lg prose-slate max-w-none mb-16 prose-headings:font-display prose-headings:text-codelabz-dark prose-a:text-codelabz-accent">
+        <div className="prose prose-lg max-w-none mb-16 prose-headings:font-display">
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
 
