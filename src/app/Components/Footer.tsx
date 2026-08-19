@@ -1,5 +1,5 @@
 'use client'
-import { ChevronRight, Facebook, Instagram, Linkedin, Mail, Phone, Users } from 'lucide-react'
+import { ChevronRight, Instagram, Linkedin, Mail, Phone, Users } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -23,19 +23,19 @@ export function Footer() {
               </div>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/code.labz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram da Codelabz"
                   className="w-10 h-10 rounded-full bg-codelabz-accent/30 hover:bg-white/30 flex items-center justify-center hover:text-white transition-colors group"
                 >
                   <Instagram size={20} className="group-hover:scale-110 transition-transform stroke-codelabz-accent group-hover:stroke-white" />
                 </a>
                 <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-codelabz-accent/30 hover:bg-white/30 flex items-center justify-center hover:text-white transition-colors group"
-                >
-                  <Facebook size={20} className="group-hover:scale-110 transition-transform stroke-codelabz-accent group-hover:stroke-white" />
-                </a>
-                <a
                   href="https://www.linkedin.com/company/code-labz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn da Codelabz"
                   className="w-10 h-10 rounded-full bg-codelabz-accent/30 hover:bg-white/30 flex items-center justify-center hover:text-white transition-colors group"
                 >
                   <Linkedin size={20} className="group-hover:scale-110 transition-transform stroke-codelabz-accent group-hover:stroke-white" />
@@ -44,7 +44,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-white font-display font-bold mb-6 text-sm uppercase tracking-wider">{t('quickLinks')}</h4>
+              <h3 className="text-white font-display font-bold mb-6 text-sm uppercase tracking-wider">{t('quickLinks')}</h3>
               <ul className="space-y-3 text-sm">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors flex items-center gap-2">
@@ -75,7 +75,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-white font-display font-bold mb-6 text-sm uppercase tracking-wider">{t('contactUs')}</h4>
+              <h3 className="text-white font-display font-bold mb-6 text-sm uppercase tracking-wider">{t('contactUs')}</h3>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3 group cursor-pointer">
                   <Mail size={18} className="text-codelabz-accent mt-0.5 group-hover:text-white transition-colors" />
@@ -99,7 +99,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-white font-display font-bold mb-6 text-sm uppercase tracking-wider">{t('location')}</h4>
+              <h3 className="text-white font-display font-bold mb-6 text-sm uppercase tracking-wider">{t('location')}</h3>
               <p className="text-sm text-slate-400">
                 {t('locationText')}
                 <br />

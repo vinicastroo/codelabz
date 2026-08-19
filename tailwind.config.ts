@@ -111,9 +111,91 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
-      }
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': '#334155',
+            '--tw-prose-headings': '#021d3f',
+            '--tw-prose-links': '#e0024d',
+            '--tw-prose-bold': '#021d3f',
+            '--tw-prose-quotes': '#021d3f',
+            '--tw-prose-quote-borders': '#e0024d',
+            '--tw-prose-bullets': '#e0024d',
+            '--tw-prose-counters': '#e0024d',
+            '--tw-prose-hr': '#e2e8f0',
+            maxWidth: 'none',
+            fontSize: '1.125rem',
+            lineHeight: '1.9',
+            p: {
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+            },
+            '> p:first-of-type': {
+              fontSize: '1.3em',
+              lineHeight: '1.65',
+              fontWeight: '400',
+              color: '#64748b',
+            },
+            h2: {
+              fontWeight: '800',
+              letterSpacing: '-0.01em',
+              marginTop: '2.75em',
+              marginBottom: '0.9em',
+              fontSize: '1.6em',
+              lineHeight: '1.3',
+            },
+            h3: {
+              fontWeight: '700',
+              marginTop: '2em',
+              marginBottom: '0.75em',
+              fontSize: '1.3em',
+            },
+            a: {
+              fontWeight: '600',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+              textDecorationColor: '#e0024d66',
+              transition: 'text-decoration-color 0.2s ease',
+            },
+            'a:hover': {
+              textDecorationColor: '#e0024d',
+            },
+            strong: {
+              fontWeight: '700',
+            },
+            blockquote: {
+              fontStyle: 'normal',
+              fontWeight: '500',
+              fontSize: '1.2em',
+              lineHeight: '1.6',
+              borderLeftWidth: '3px',
+              paddingLeft: '1.25em',
+            },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:last-of-type::after': { content: 'none' },
+            img: {
+              borderRadius: '1rem',
+            },
+            code: {
+              backgroundColor: '#f1f5f9',
+              padding: '0.2em 0.4em',
+              borderRadius: '0.35em',
+              fontWeight: '600',
+            },
+            'code::before': { content: 'none' },
+            'code::after': { content: 'none' },
+          },
+        },
+        lg: {
+          css: {
+            fontSize: '1.1875rem',
+            lineHeight: '1.9',
+          },
+        },
+      },
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 export default config;

@@ -9,6 +9,7 @@ export function Cases() {
 
   const casesData = [
     {
+      id: 1,
       title: "Rafa Helena Arquitetura",
       description: p('rafahelenaShort'),
       image: "/banner-rafa.png",
@@ -16,6 +17,7 @@ export function Cases() {
       tags: ["Site Institucional", "Design"],
     },
     {
+      id: 6,
       title: "Auros Corretora Imob",
       description: p('aurosShort'),
       image: "/banner-auros.png",
@@ -23,6 +25,7 @@ export function Cases() {
       tags: ["Imobiliária", "Sistema Interno"],
     },
     {
+      id: 12,
       title: "Patrono Jr.",
       description: p('patronoShort'),
       image: "/banner-patrono.png",
@@ -30,6 +33,7 @@ export function Cases() {
       tags: ["Jurídico", "Institucional"],
     },
     {
+      id: 13,
       title: "TB Motors",
       description: p('tbmotorsShort'),
       image: "/banner-tbmotors.png",

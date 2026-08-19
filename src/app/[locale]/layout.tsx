@@ -9,9 +9,11 @@ import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { routing } from '@/i18n/routing'
+import { routing, type Locale } from '@/i18n/routing'
 import { Menu } from '@/components/Menu'
 import { Footer } from '../Components/Footer'
+import { JsonLd } from '@/components/JsonLd'
+import { SITE_URL, buildAlternates, buildOpenGraph, localBusinessJsonLd, organizationJsonLd } from '@/lib/seo'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700', '800'] })
 
@@ -20,12 +22,14 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params
+  const { locale } = (await params) as { locale: Locale }
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: t('title'),
     description: t('description'),
+    alternates: buildAlternates(locale, '/'),
     keywords:
       locale === 'pt'
         ? [
@@ -52,18 +56,16 @@ export async function generateMetadata({
             'API integration',
             'Codelabz technology',
           ],
-    openGraph: {
+    openGraph: buildOpenGraph({
+      locale,
+      path: '/',
       title: t('ogTitle'),
       description: t('ogDescription'),
-      url: 'https://www.codelabz.com.br/',
-      siteName: 'Codelabz',
       images: [
         { url: 'https://www.codelabz.com.br/logo.png', width: 800, height: 600 },
         { url: 'https://www.codelabz.com.br/logo.png', width: 1800, height: 1600 },
       ],
-      locale: locale === 'pt' ? 'pt_BR' : 'en_US',
-      type: 'website',
-    },
+    }),
     twitter: {
       card: 'summary_large_image',
       title: t('twitterTitle'),
@@ -102,6 +104,7 @@ export default async function LocaleLayout({
       className="antialiased selection:bg-codelabz-accent selection:text-white"
     >
       <body className={poppins.className}>
+        <JsonLd data={[organizationJsonLd(), localBusinessJsonLd()]} />
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen">
             <Menu />

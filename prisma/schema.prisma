@@ -24,3 +24,68 @@ model Clients {
 
   @@map("clients")
 }
+
+// ---- Billing / cobrança de mensalidades (painel /admin) ----
+
+model BillingClient {
+  id              String         @id @default(uuid())
+  name            String
+  email           String?
+  phone           String?
+  document        String? // CPF ou CNPJ
+  notes           String?
+  asaasCustomerId String? // preenchido quando o cliente for sincronizado com o Asaas
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  subscriptions   Subscription[]
+
+  @@map("billing_clients")
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  PAUSED
+  CANCELLED
+}
+
+model Subscription {
+  id                  String             @id @default(uuid())
+  clientId            String
+  client              BillingClient      @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  description         String // ex: "Mensalidade site institucional"
+  amountCents         Int // valor em centavos, evita erro de ponto flutuante
+  billingDay          Int // dia do mês em que a cobrança vence (1-28)
+  status              SubscriptionStatus @default(ACTIVE)
+  startDate           DateTime           @default(now())
+  asaasSubscriptionId String? // preenchido quando a cobrança recorrente automática for ativada
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  charges             Charge[]
+
+  @@map("subscriptions")
+}
+
+enum ChargeStatus {
+  PENDING
+  PAID
+  CANCELLED
+}
+
+model Charge {
+  id             String       @id @default(uuid())
+  subscriptionId String
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+  dueDate        DateTime
+  amountCents    Int
+  status         ChargeStatus @default(PENDING)
+  paidAt         DateTime?
+  paymentLink    String? // preenchido quando integrado ao Asaas
+  asaasChargeId  String?
+  reminderSentAt DateTime?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@unique([subscriptionId, dueDate])
+  @@index([status, dueDate])
+  @@map("charges")
+}

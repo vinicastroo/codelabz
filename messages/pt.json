@@ -7,6 +7,36 @@
     "twitterTitle": "Codelabz - Criação de sites e sistemas sob medida",
     "twitterDescription": "Soluções digitais sob medida em Balneário Camboriú: criação de sites, sistemas, APIs e estratégias para empresas que querem crescer no digital."
   },
+  "homeMeta": {
+    "title": "Codelabz: Agência de Criação de Sites e Sistemas Web",
+    "description": "Agência de tecnologia em Balneário Camboriú especializada em criação de sites, sistemas web e e-commerce sob medida para o seu negócio crescer online.",
+    "ogTitle": "Codelabz: Criação de Sites e Sistemas Web sob Medida",
+    "ogDescription": "Transformamos ideias em sites e sistemas de verdade. Conheça a Codelabz, agência de tecnologia em Balneário Camboriú, SC."
+  },
+  "servicosMeta": {
+    "title": "Serviços de Criação de Sites e Sistemas | Codelabz",
+    "description": "Conheça os serviços da Codelabz: criação de sites, desenvolvimento de sistemas, APIs, e-commerce, automações e deploy em nuvem sob medida para sua empresa.",
+    "ogTitle": "Serviços de Criação de Sites e Desenvolvimento de Sistemas",
+    "ogDescription": "Sites, sistemas, APIs, e-commerce, automação e deploy: conheça as soluções digitais sob medida da Codelabz para o seu negócio."
+  },
+  "projetosMeta": {
+    "title": "Portfólio da Codelabz: Cases de Sites e Sistemas Web",
+    "description": "Veja projetos reais desenvolvidos pela Codelabz: sites institucionais, e-commerces e sistemas sob medida que geraram resultados para nossos clientes.",
+    "ogTitle": "Portfólio de Projetos da Codelabz",
+    "ogDescription": "Cases reais de criação de sites, sistemas e e-commerces desenvolvidos pela Codelabz para empresas de diversos segmentos."
+  },
+  "contatoMeta": {
+    "title": "Contato e Orçamento para Criação de Sites | Codelabz",
+    "description": "Fale com a Codelabz e solicite um orçamento gratuito para criação de sites, desenvolvimento de sistemas ou e-commerce. Retornamos rapidamente pelo WhatsApp.",
+    "ogTitle": "Fale com a Codelabz e Peça um Orçamento",
+    "ogDescription": "Solicite um orçamento gratuito para criação de sites, sistemas ou e-commerce. Atendimento rápido pelo WhatsApp em Balneário Camboriú, SC."
+  },
+  "blogMeta": {
+    "title": "Blog da Codelabz sobre Tecnologia, Sites e Sistemas",
+    "description": "Artigos sobre criação de sites, desenvolvimento de sistemas, e-commerce e transformação digital para ajudar sua empresa a crescer no ambiente online.",
+    "ogTitle": "Blog Codelabz: Conteúdo sobre Tecnologia e Sites",
+    "ogDescription": "Artigos e insights sobre criação de sites, sistemas web e transformação digital produzidos pela equipe da Codelabz."
+  },
   "menu": {
     "services": "Serviços",
     "projects": "Projetos",
@@ -17,11 +47,12 @@
   "header": {
     "badge": "Software house focada em produtos digitais",
     "title1": "Transformamos ideias em",
-    "titleAccent": "soluções digitais",
+    "titleAccent": "sites e sistemas web",
     "title2": "de verdade.",
     "description": "Desenvolvemos sites e sistemas web personalizados, rápidos e escaláveis. Unimos design moderno, tecnologia sólida e foco total em resultado.",
     "cta1": "Iniciar meu projeto",
-    "cta2": "Ver nossos projetos"
+    "cta2": "Ver nossos projetos",
+    "heroAlt": "Ilustração representando a transformação de ideias em sites e sistemas digitais pela Codelabz"
   },
   "reason": {
     "title": "Por que estar online deixou de ser opcional?",
@@ -44,7 +75,10 @@
     "card2Title": "Desenvolvimento de Sistemas",
     "card2Desc": "Sistemas sob medida para gestão, SaaS, dashboards e automação de processos, trazendo mais controle, eficiência e menos dependência de planilhas.",
     "card3Title": "E-commerce",
-    "card3Desc": "Lojas virtuais rápidas, seguras e escaláveis, com integração de pagamentos e logística para aumentar suas vendas online."
+    "card3Desc": "Lojas virtuais rápidas, seguras e escaláveis, com integração de pagamentos e logística para aumentar suas vendas online.",
+    "card1Alt": "Ilustração de otimização SEO representando a criação de sites profissionais",
+    "card2Alt": "Ilustração de integração de API representando o desenvolvimento de sistemas sob medida",
+    "card3Alt": "Ilustração de carrinho de compras representando soluções de e-commerce"
   },
   "process": {
     "tag": "Workflow",
@@ -90,9 +124,9 @@
     "tagline": "Transformamos ideias em código."
   },
   "servicesPage": {
-    "title": "O que a",
-    "titleAccent": "Codelabz",
-    "titleEnd": "faz por você",
+    "title": "Serviços de",
+    "titleAccent": "Criação de Sites e Sistemas",
+    "titleEnd": "sob medida",
     "subtitle": "Soluções digitais de ponta a ponta. Não entregamos apenas código, entregamos valor, estratégia e resultado para o seu negócio.",
     "techStack": "Stack Tecnológico",
     "techStackDesc": "Utilizamos as ferramentas mais modernas do mercado para garantir velocidade, segurança e escalabilidade.",
@@ -104,6 +138,12 @@
     "service1f3": "Design moderno e responsivo",
     "service1f4": "Alta performance e SEO",
     "service1f5": "Integração com WhatsApp e formulários",
+    "service1Alt": "Ilustração de otimização SEO representando a criação de sites profissionais",
+    "service2Alt": "Ilustração de um painel de dashboard representando sistemas sob medida",
+    "service3Alt": "Ilustração de conexões de API representando integração entre sistemas",
+    "service4Alt": "Ilustração de foguete representando o deploy de aplicações na nuvem",
+    "service5Alt": "Ilustração de peças conectadas representando a integração entre plataformas",
+    "service6Alt": "Ilustração de engrenagens representando a automação de processos",
     "service2Title": "Desenvolvimento de Sistemas",
     "service2Desc": "Transformamos ideias em sistemas inteligentes que automatizam processos, otimizam rotinas e resolvem problemas específicos do seu negócio com eficiência.",
     "service2f1": "Sistemas sob medida",
@@ -137,7 +177,7 @@
   },
   "projectsPage": {
     "tag": "Portfólio",
-    "title": "Nossos Cases",
+    "title": "Projetos e Cases de Sites e Sistemas",
     "subtitle": "Conheça algumas das histórias de sucesso que ajudamos a construir.",
     "ctaTitle": "Tem uma ideia incrível?",
     "ctaSubtitle": "Nós temos a tecnologia e a expertise para torná-la real. Vamos conversar?",
@@ -146,7 +186,7 @@
   },
   "contactPage": {
     "tag": "Contato",
-    "title": "Vamos iniciar um projeto?",
+    "title": "Contato: Orçamento para Criação de Sites e Sistemas",
     "subtitle": "Estamos prontos para entender seu desafio e propor a melhor solução tecnológica. Preencha o formulário e retornaremos em breve.",
     "emailLabel": "Email",
     "whatsappLabel": "WhatsApp",
@@ -216,11 +256,19 @@
     "t5Name": "Rosandro Schauffler",
     "t5Role": "APJESC",
     "t5Company": "APJESC",
-    "t5Content": "Excelente trabalho da Code Labz. Desenvolveram um portal completo e um sistema interno que facilitou muito a administração e o controle dos nossos associados. Recomendo!"
+    "t5Content": "Excelente trabalho da Code Labz. Desenvolveram um portal completo e um sistema interno que facilitou muito a administração e o controle dos nossos associados. Recomendo!",
+    "t6Name": "Maria Eduarda Chagas de Sousa",
+    "t6Role": "Patrono Assessoria e Consultoria Júnior",
+    "t6Company": "Patrono Assessoria e Consultoria Júnior",
+    "t6Content": "Trabalho incrível! Alcançamos a versão final do site em menos de 2 semanas! O Vinicius é super atencioso e dedicado, sempre estava a disposição para tirar qualquer dúvida e realizar qualquer modificação! O site ficou do jeitinho que eu sempre sonhei para a empresa, recomendo muito!",
+    "t7Name": "Ricardo Grahl",
+    "t7Role": "TB Motors",
+    "t7Company": "TB Motors",
+    "t7Content": "Empresa séria e comprometida, atendimento e resolução de problemas são imediatos."
   },
   "blogPage": {
     "tag": "Blog & Insights",
-    "title": "Conteúdo para impulsionar seu negócio",
+    "title": "Blog: Conteúdo sobre Sites, Sistemas e Tecnologia",
     "subtitle": "Artigos sobre tecnologia, design, marketing e estratégias digitais para ajudar sua empresa a crescer no ambiente online.",
     "emptyTitle": "Em breve novos conteúdos por aqui",
     "emptyText": "No momento ainda não temos artigos publicados, mas já estamos preparando conteúdos sobre tecnologia, criação de sites, sistemas web, design e estratégias digitais para ajudar sua empresa a crescer no ambiente online.",

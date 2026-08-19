@@ -40,19 +40,19 @@ export function ServicesContainer() {
             id="sites"
             title={t('card1Title')}
             desc={t('card1Desc')}
-            icon={<Image src="/illustration-seo.svg" alt="Ilustração de sites responsivos" width={200} height={200} />}
+            icon={<Image src="/illustration-seo.svg" alt={t('card1Alt')} width={200} height={200} />}
           />
           <ServiceCard
             id="systems"
             title={t('card2Title')}
             desc={t('card2Desc')}
-            icon={<Image src="/illustration-api.svg" alt="Ilustração de sites responsivos" width={200} height={200} />}
+            icon={<Image src="/illustration-api.svg" alt={t('card2Alt')} width={200} height={200} />}
           />
           <ServiceCard
             id="ecommerce"
             title={t('card3Title')}
             desc={t('card3Desc')}
-            icon={<Image src="/illustration-ecommerce.svg" alt="Ilustração de sites responsivos" width={200} height={200} />}
+            icon={<Image src="/illustration-ecommerce.svg" alt={t('card3Alt')} width={200} height={200} />}
           />
         </div>
       </div>
