@@ -103,7 +103,7 @@ export const posts: Post[] = [
     author: 'Equipe Codelabz',
     image: '/banner-minha-prova.png',
     content: `
-      <p>Aplicar provas em papel dificulta reaproveitar questões entre turmas e obriga o professor a corrigir tudo manualmente. Para a UNIDAVI, desenvolvemos o Minha Prova: um sistema acadêmico onde professores montam um banco de questões e aplicam provas digitalmente, turma por turma.</p>
+      <p>Aplicar provas em papel dificulta reaproveitar questões entre turmas e obriga o professor a corrigir tudo manualmente. Para a <a href="https://www.unidavi.edu.br" target="_blank" rel="noopener noreferrer">UNIDAVI</a>, instituição de ensino superior de Rio do Sul (SC), desenvolvemos o Minha Prova: um sistema acadêmico onde professores montam um banco de questões e aplicam provas digitalmente, turma por turma.</p>
 
       <h2>Como o professor usa o sistema</h2>
       <p>O acesso é feito por login institucional com Google. Na tela inicial, o professor vê as turmas em que está vinculado; dentro de cada turma, acompanha as provas já cadastradas — com status de liberação — e a lista de participantes.</p>
@@ -132,7 +132,7 @@ export const posts: Post[] = [
     author: 'Equipe Codelabz',
     image: '/banner-minha-reserva.png',
     content: `
-      <p>Coordenar reserva de salas, Chromebooks, projetores e caixas de som entre vários prédios e laboratórios fica difícil de controlar manualmente. Para a UNIDAVI, desenvolvemos o Minha Reserva: um sistema que centraliza pessoas, equipamentos, salas e reservas por localização.</p>
+      <p>Coordenar reserva de salas, Chromebooks, projetores e caixas de som entre vários prédios e laboratórios fica difícil de controlar manualmente. Para a <a href="https://www.unidavi.edu.br" target="_blank" rel="noopener noreferrer">UNIDAVI</a>, instituição de ensino superior de Rio do Sul (SC), desenvolvemos o Minha Reserva: um sistema que centraliza pessoas, equipamentos, salas e reservas por localização.</p>
 
       <h2>Acesso e visão geral</h2>
       <p>A autenticação é feita por código de mentor e senha. Depois do login, um menu único reúne todas as áreas de gerenciamento do sistema — reservas, salas, equipamentos, pessoas e permissões.</p>
