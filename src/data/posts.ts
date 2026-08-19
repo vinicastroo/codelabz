@@ -19,7 +19,7 @@ export const posts: Post[] = [
     metaTitle: 'Site para Arquitetos: o Case Rafa Helena',
     excerpt:
       'Como a Codelabz transformou o portfólio disperso da arquiteta Rafa Helena em um site rápido e otimizado para SEO, pensado para gerar contato com clientes.',
-    date: '2024-08-10',
+    date: '2026-08-05',
     category: 'Cases de Sucesso',
     readTime: '5 min',
     author: 'Equipe Codelabz',
@@ -47,7 +47,7 @@ export const posts: Post[] = [
     metaTitle: 'Case Lovegoods: E-commerce Focado em Conversão',
     excerpt:
       'Veja como a Codelabz estruturou o e-commerce da Lovegoods com catálogo filtrável, checkout enxuto e integrações que reduzem abandono de carrinho.',
-    date: '2024-07-02',
+    date: '2026-06-20',
     category: 'E-commerce',
     readTime: '6 min',
     author: 'Equipe Codelabz',
@@ -73,7 +73,7 @@ export const posts: Post[] = [
     title: 'Fidliz: substituindo cartões físicos por um programa de fidelização 100% digital',
     excerpt:
       'Como desenvolvemos a plataforma mobile-first da Fidliz, permitindo que clientes acumulem pontos direto pelo celular, sem depender de cartões físicos.',
-    date: '2024-05-18',
+    date: '2026-05-08',
     category: 'Sistemas Web',
     readTime: '4 min',
     author: 'Equipe Codelabz',
@@ -97,7 +97,7 @@ export const posts: Post[] = [
     metaTitle: 'Minha Prova: Sistema de Provas Online da UNIDAVI',
     excerpt:
       'Como a Codelabz criou o Minha Prova, sistema da UNIDAVI para criar, aplicar e corrigir provas online com banco de questões e alternativas embaralhadas.',
-    date: '2024-03-14',
+    date: '2026-03-25',
     category: 'Sistemas Web',
     readTime: '5 min',
     author: 'Equipe Codelabz',
@@ -126,7 +126,7 @@ export const posts: Post[] = [
     metaTitle: 'Minha Reserva: Sistema de Reservas da UNIDAVI',
     excerpt:
       'Como a Codelabz criou o Minha Reserva, sistema da UNIDAVI para gerenciar reservas de salas e equipamentos por local, período e nível de acesso.',
-    date: '2024-02-20',
+    date: '2026-02-12',
     category: 'Sistemas Web',
     readTime: '5 min',
     author: 'Equipe Codelabz',
@@ -158,7 +158,7 @@ export const posts: Post[] = [
     metaTitle: 'Case Patrono Jr.: Site para Consultoria Jurídica',
     excerpt:
       'Como a Codelabz desenvolveu o site institucional da Patrono Jr., empresa júnior de Direito da UESC, com visual sofisticado para transmitir credibilidade.',
-    date: '2024-04-05',
+    date: '2025-12-18',
     category: 'Cases de Sucesso',
     readTime: '4 min',
     author: 'Equipe Codelabz',
