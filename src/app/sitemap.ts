@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     for (const project of projects) {
       entries.push({
-        url: absoluteUrl(locale, `/projetos/${project.id}`),
+        url: absoluteUrl(locale, `/projetos/${project.slug}`),
         lastModified: now,
         changeFrequency: 'monthly',
         priority: 0.6,

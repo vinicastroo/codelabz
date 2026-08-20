@@ -92,7 +92,7 @@ export default async function BlogPost({
       <div className="w-full h-[40vh] md:h-[50vh] relative overflow-hidden mb-12 bg-codelabz-dark">
         <Image
           src={post.image}
-          alt={`Imagem de capa do artigo "${post.title}"`}
+          alt={locale === 'pt' ? `Capa do artigo "${post.title}"` : `Cover image for "${post.title}"`}
           fill
           sizes="100vw"
           priority

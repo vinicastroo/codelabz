@@ -1,37 +1,27 @@
 'use client'
 
-import { Rocket } from 'lucide-react'
+import { Rocket, ArrowRight, Gauge, Layers3, MonitorSmartphone } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { LightBeams } from './LightBeams'
+import { MacbookHero } from './MacbookHero'
 
 export function Header() {
   const t = useTranslations('header')
 
   return (
-    <header className="relative pt-8 pb-12 lg:pt-40 lg:pb-32 bg-[#F1F5F9] overflow-hidden">
-      {/* Modern Clean Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-slate-50 to-slate-50"></div>
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-          opacity: 0.15,
-        }}
-      />
+    <header className="relative flex h-screen w-full max-w-full items-center overflow-hidden bg-white pt-16">
+      <LightBeams variant="light" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-12 items-center">
-
-        <motion.div initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="order-2 lg:order-1 lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left">
-
-          {/* Badge */}
-          <div className="inline-flex justify-center items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-codelabz-dark text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 lg:mb-8 shadow-sm">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="order-2 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
+        >
+          <div className="inline-flex justify-center items-center gap-2 px-4 py-1.5 rounded-full bg-codelabz-dark/5 border border-codelabz-dark/10 backdrop-blur-sm text-slate-600 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-6 lg:mb-8">
             <span className="relative flex items-center justify-center h-2 w-2">
               <span className="animate-ping absolute inline-flex top-0 left-0 items-center justify-center h-full w-full rounded-full bg-codelabz-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-codelabz-accent"></span>
@@ -39,53 +29,70 @@ export function Header() {
             {t('badge')}
           </div>
 
-          {/* Heading */}
-          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.2] lg:mb-6 mb-2 text-codelabz-dark tracking-tight">
-            {t('title1')}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-codelabz-accent to-codelabz-accent relative">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.08] mb-6 text-codelabz-dark tracking-tight">
+            {t('title1')}{' '}
+            <span className="text-codelabz-accent">
               {t('titleAccent')}
-            </span>{" "}
+            </span>{' '}
             {t('title2')}
           </h1>
 
-          {/* Paragraph */}
-          <p className="text-sm md:text-xl text-slate-600 lg:mb-8 mb-2 sm:mb-10 leading-relaxed max-w-lg lg:max-w-xl font-light">
+          <p className="text-base md:text-xl text-slate-600 mb-8 sm:mb-10 leading-relaxed max-w-lg lg:max-w-xl font-light">
             {t('description')}
           </p>
 
-          {/* Buttons Group */}
-          <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto">
             <Link href="/contato" className="w-full sm:w-auto">
-              <button
-                className="w-full sm:w-auto px-8 lg:py-4 py-3 bg-codelabz-accent hover:bg-rose-600 text-white rounded-lg font-bold transition-all shadow-xl shadow-codelabz-accent/20 flex items-center justify-center gap-2 group hover:-translate-y-1"
-              >
+              <button className="w-full sm:w-auto px-8 py-4 bg-codelabz-accent hover:bg-rose-600 text-white rounded-full font-bold transition-all shadow-xl shadow-codelabz-accent/30 flex items-center justify-center gap-2 group hover:-translate-y-1">
                 <Rocket size={20} className="group-hover:translate-x-1 transition-transform" />
                 {t('cta1')}
               </button>
             </Link>
 
             <Link href="/projetos" className="w-full sm:w-auto">
-              <button
-                className="w-full sm:w-auto px-8 lg:py-4 py-3 bg-white border border-slate-200 text-codelabz-dark rounded-lg font-bold transition-all flex items-center justify-center shadow-sm hover:shadow-md"
-              >
+              <button className="w-full sm:w-auto px-8 py-4 bg-white/70 border border-codelabz-dark/20 text-codelabz-dark rounded-full font-bold transition-all flex items-center justify-center gap-2 group hover:bg-white hover:border-codelabz-dark/35 hover:-translate-y-1 shadow-sm">
                 {t('cta2')}
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
           </div>
         </motion.div>
 
-        <div className="order-1 lg:order-2 lg:col-span-6 relative h-[250px] sm:h-[450px] lg:h-[600px] w-full lg:-mr-12 touch-none flex items-center justify-center">
+        <div className="order-1 lg:order-2 lg:col-span-5 relative h-[280px] sm:h-[420px] lg:h-[560px] w-full lg:w-[140%]">
+          <div
+            className="absolute inset-0 m-auto w-[70%] h-[70%] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(3,37,80,0.16) 0%, transparent 70%)', filter: 'blur(50px)' }}
+          />
+          <MacbookHero />
+
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="absolute inset-0 flex items-center justify-center scale-90 sm:scale-100"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+            transition={{ opacity: { delay: 0.8, duration: 0.5 }, scale: { delay: 0.8, duration: 0.5 }, y: { duration: 5, repeat: Infinity, ease: 'easeInOut' } }}
+            className="pointer-events-none absolute left-[4%] top-[18%] z-20 hidden sm:flex items-center gap-2 rounded-full border border-white/15 bg-[#061a36]/55 px-3 py-2 text-white shadow-xl shadow-black/20 backdrop-blur-2xl"
           >
-            <Image src="/illustration-hero.svg" alt={t('heroAlt')} width={500}
-              height={500}
-              priority
-              className="w-[200px] h-[200px] lg:w-[500px] lg:h-[500px]" />
+            <Gauge size={15} className="text-emerald-300" />
+            <strong className="text-[11px] font-bold">{t('performanceBadge')}</strong>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1, y: [0, 7, 0] }}
+            transition={{ opacity: { delay: 1, duration: 0.5 }, scale: { delay: 1, duration: 0.5 }, y: { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.6 } }}
+            className="pointer-events-none absolute right-[8%] top-[39%] z-20 hidden md:flex items-center gap-2 rounded-full border border-white/15 bg-[#061a36]/55 px-3 py-2 text-white shadow-xl shadow-black/20 backdrop-blur-2xl"
+          >
+            <MonitorSmartphone size={15} className="text-cyan-300" />
+            <strong className="text-[11px] font-bold">{t('responsiveBadge')}</strong>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
+            transition={{ opacity: { delay: 1.2, duration: 0.5 }, scale: { delay: 1.2, duration: 0.5 }, y: { duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.1 } }}
+            className="pointer-events-none absolute bottom-[14%] left-[9%] z-20 hidden md:flex items-center gap-2 rounded-full border border-codelabz-accent/25 bg-[#061a36]/60 px-3 py-2 text-white shadow-xl shadow-codelabz-accent/10 backdrop-blur-2xl"
+          >
+            <Layers3 size={15} className="text-rose-300" />
+            <strong className="text-[11px] font-bold">{t('workflowBadge')}</strong>
           </motion.div>
         </div>
       </div>

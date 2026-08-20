@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Geist, Bricolage_Grotesque } from 'next/font/google'
 import '../globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
@@ -15,7 +15,18 @@ import { Footer } from '../Components/Footer'
 import { JsonLd } from '@/components/JsonLd'
 import { SITE_URL, buildAlternates, buildOpenGraph, localBusinessJsonLd, organizationJsonLd } from '@/lib/seo'
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700', '800'] })
+const geist = Geist({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-geist',
+  display: 'swap',
+})
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-display',
+  display: 'swap',
+})
 
 export async function generateMetadata({
   params,
@@ -33,28 +44,20 @@ export async function generateMetadata({
     keywords:
       locale === 'pt'
         ? [
-            'criação de sites profissionais',
-            'desenvolvimento de sistemas personalizados',
-            'agência digital em Santa Catarina',
-            'sites responsivos em Balneário Camboriú',
-            'consultoria em tecnologia',
-            'sistemas sob medida',
-            'soluções digitais para empresas',
-            'landing pages otimizadas',
+            'desenvolvimento de sites',
+            'sistemas internos',
+            'e-commerce',
+            'desenvolvimento web em Balneário Camboriú',
             'integração de APIs',
-            'Codelabz tecnologia',
+            'Codelabz',
           ]
         : [
-            'professional website creation',
-            'custom system development',
-            'digital agency',
-            'responsive websites',
-            'technology consulting',
-            'custom systems',
-            'digital solutions for businesses',
-            'optimized landing pages',
+            'website development',
+            'internal systems',
+            'e-commerce development',
+            'web development in Balneário Camboriú',
             'API integration',
-            'Codelabz technology',
+            'Codelabz',
           ],
     openGraph: buildOpenGraph({
       locale,
@@ -103,7 +106,7 @@ export default async function LocaleLayout({
       lang={locale === 'pt' ? 'pt-br' : 'en'}
       className="antialiased selection:bg-codelabz-accent selection:text-white"
     >
-      <body className={poppins.className}>
+      <body className={`${geist.className} ${bricolage.variable}`}>
         <JsonLd data={[organizationJsonLd(), localBusinessJsonLd()]} />
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen">
