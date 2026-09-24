@@ -42,7 +42,9 @@
     "projects": "Projetos",
     "contact": "Contato",
     "blog": "Blog",
-    "startProject": "Iniciar um projeto"
+    "startProject": "Iniciar um projeto",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
   },
   "header": {
     "badge": "Software house focada em produtos digitais",
@@ -182,7 +184,15 @@
     "ctaTitle": "Tem uma ideia incrível?",
     "ctaSubtitle": "Nós temos a tecnologia e a expertise para torná-la real. Vamos conversar?",
     "ctaButton": "Solicitar Orçamento",
-    "viewProject": "Ver projeto"
+    "viewProject": "Ver projeto",
+    "aboutTitle": "Sobre o projeto",
+    "challengeTitle": "O desafio",
+    "solutionTitle": "A solução",
+    "deliverablesTitle": "O que entregamos",
+    "readCase": "Leia o case completo no blog",
+    "similarTitle": "Tem um projeto parecido?",
+    "similarText": "Conte o que você precisa e montamos uma proposta sob medida para o seu negócio, do planejamento ao lançamento.",
+    "caseSuffix": "Case de Sucesso"
   },
   "contactPage": {
     "tag": "Contato",
@@ -211,7 +221,26 @@
       "emailInvalid": "Digite um e-mail válido",
       "phoneMin": "Digite um telefone válido",
       "messageMin": "A mensagem deve ter pelo menos 10 caracteres"
-    }
+    },
+    "faqTitle": "Perguntas frequentes",
+    "faq": [
+      {
+        "q": "Quanto tempo leva para desenvolver um site ou sistema?",
+        "a": "Um site institucional costuma levar de 3 a 6 semanas. Sistemas web e plataformas sob medida variam conforme o escopo, e definimos o cronograma junto com você antes de começar."
+      },
+      {
+        "q": "Como funciona o orçamento?",
+        "a": "Depois do primeiro contato, marcamos uma conversa para entender o seu negócio e os objetivos do projeto. Em seguida enviamos uma proposta com escopo, prazo e investimento, sem compromisso."
+      },
+      {
+        "q": "Vocês atendem empresas fora de Santa Catarina?",
+        "a": "Sim. Estamos em Balneário Camboriú, mas atendemos clientes de todo o Brasil e do exterior com reuniões online e acompanhamento próximo em cada etapa."
+      },
+      {
+        "q": "Oferecem suporte depois da entrega?",
+        "a": "Sim. Oferecemos planos de manutenção e evolução contínua, com hospedagem, monitoramento, ajustes e novas funcionalidades conforme o seu negócio cresce."
+      }
+    ]
   },
   "projects": {
     "rafahelena": "Desenvolvemos o site da arquiteta Rafaela Helena com foco em transmitir sofisticação, personalidade e criatividade. A plataforma valoriza o portfólio, apresenta os serviços com elegância e oferece uma experiência fluida.",
@@ -264,7 +293,10 @@
     "t7Name": "Ricardo Grahl",
     "t7Role": "TB Motors",
     "t7Company": "TB Motors",
-    "t7Content": "Empresa séria e comprometida, atendimento e resolução de problemas são imediatos."
+    "t7Content": "Empresa séria e comprometida, atendimento e resolução de problemas são imediatos.",
+    "prev": "Depoimento anterior",
+    "next": "Próximo depoimento",
+    "goTo": "Ir para o grupo de depoimentos {index}"
   },
   "blogPage": {
     "tag": "Blog & Insights",
@@ -274,5 +306,150 @@
     "emptyText": "No momento ainda não temos artigos publicados, mas já estamos preparando conteúdos sobre tecnologia, criação de sites, sistemas web, design e estratégias digitais para ajudar sua empresa a crescer no ambiente online.",
     "emptyButton": "Falar com especialistas",
     "readMore": "Ler artigo completo"
+  },
+  "caseStudies": {
+    "rafahelena": {
+      "metaDescription": "Case Rafa Helena Arquitetura: site institucional que organiza o portfólio da arquiteta e transforma visitas em pedidos de orçamento.",
+      "challenge": "Os projetos da arquiteta estavam espalhados em redes sociais e arquivos soltos, sem um lugar que apresentasse o trabalho com a sofisticação que ele merece. Faltava um canal próprio, fácil de navegar, que mostrasse o portfólio e levasse o visitante até o contato.",
+      "solution": "Criamos um site com identidade visual limpa, em que as imagens dos projetos são protagonistas. Organizamos o portfólio por projeto, apresentamos os serviços de forma objetiva e colocamos chamadas para contato em pontos estratégicos da navegação, tudo responsivo e com carregamento otimizado.",
+      "deliverables": [
+        "Design exclusivo alinhado à identidade da marca",
+        "Portfólio organizado por projeto",
+        "Páginas de serviços e contato com foco em conversão",
+        "Site responsivo com SEO técnico configurado"
+      ]
+    },
+    "sdl": {
+      "metaDescription": "Case SDL Consultoria: site institucional moderno para apresentar serviços de segurança do trabalho, meio ambiente e treinamentos.",
+      "challenge": "A SDL Consultoria atua em áreas técnicas, como segurança do trabalho, meio ambiente e treinamentos, e precisava explicar esses serviços de forma clara para empresas que buscam assessoria. O site anterior não transmitia a solidez da consultoria nem facilitava o primeiro contato.",
+      "solution": "Estruturamos o conteúdo por área de atuação, com textos diretos e hierarquia visual que ajuda o visitante a encontrar o serviço certo rapidamente. O layout moderno reforça a credibilidade da marca e os canais de contato ficam sempre à mão.",
+      "deliverables": [
+        "Arquitetura de conteúdo por área de serviço",
+        "Layout institucional moderno e responsivo",
+        "Formulário e atalhos de contato",
+        "Otimização de performance e SEO on page"
+      ]
+    },
+    "lovegoods": {
+      "metaDescription": "Case Lovegoods: e-commerce de presentes criativos e colecionáveis construído com foco em experiência mobile e conversão.",
+      "challenge": "A Lovegoods vende presentes criativos e colecionáveis, um público que compra muito pelo celular e decide rápido. A loja precisava destacar os produtos, reduzir etapas até o pagamento e passar confiança em cada passo da compra.",
+      "solution": "Desenvolvemos uma loja virtual com layout dinâmico, catálogo com filtros rápidos e imagens otimizadas. Integramos pagamento e cálculo de frete em tempo real e desenhamos um checkout curto, pensado primeiro para telas pequenas.",
+      "deliverables": [
+        "Loja virtual com catálogo filtrável",
+        "Checkout enxuto e mobile first",
+        "Integração de pagamento e frete",
+        "Imagens otimizadas e boa performance"
+      ]
+    },
+    "cloock": {
+      "metaDescription": "Case Cloock: sistema web completo de agendamento online, com controle de horários, serviços, bloqueios e reservas.",
+      "challenge": "Empresas que trabalham com hora marcada perdem tempo com agendas em papel, mensagens soltas e conflitos de horário. A Cloock precisava de uma plataforma que centralizasse a agenda e deixasse o próprio cliente reservar sem depender de atendimento manual.",
+      "solution": "Criamos um sistema SaaS em que a empresa cadastra serviços, define horários de funcionamento e bloqueios, e o cliente final agenda online em poucos passos. O painel mostra as reservas de forma clara e evita sobreposição de horários.",
+      "deliverables": [
+        "Agendamento online para o cliente final",
+        "Gestão de serviços, horários e bloqueios",
+        "Painel administrativo de reservas",
+        "Arquitetura SaaS preparada para várias empresas"
+      ]
+    },
+    "guilherme": {
+      "metaDescription": "Case Guilherme Schulze: site portfólio personalizado para fotógrafo e videomaker, com experiência visual moderna.",
+      "challenge": "Para um fotógrafo e videomaker, o portfólio é o principal argumento de venda. Guilherme precisava de um site que exibisse fotos e vídeos em alta qualidade sem ficar pesado, e que refletisse seu estilo em vez de parecer um template genérico.",
+      "solution": "Desenvolvemos um site sob medida, com galerias que valorizam cada trabalho, carregamento progressivo de mídia e navegação simples entre projetos. O design deixa o conteúdo visual em primeiro plano e direciona o visitante para o contato.",
+      "deliverables": [
+        "Design personalizado para portfólio visual",
+        "Galerias de fotos e vídeos otimizadas",
+        "Navegação por projeto",
+        "Site responsivo com foco em performance"
+      ]
+    },
+    "auros": {
+      "metaDescription": "Case Auros Corretora: site imobiliário otimizado para buscas integrado a um sistema interno de gestão de imóveis.",
+      "challenge": "A Auros precisava divulgar imóveis na internet e, ao mesmo tempo, organizar o cadastro interno da carteira. Manter site e controle interno separados gerava retrabalho e informações desatualizadas para quem buscava um imóvel.",
+      "solution": "Entregamos uma solução integrada: um sistema interno para cadastrar e gerenciar imóveis, e um site responsivo que exibe essa carteira automaticamente, com filtros de busca e páginas otimizadas para aparecer no Google.",
+      "deliverables": [
+        "Sistema interno de gestão de imóveis",
+        "Site imobiliário responsivo",
+        "Busca com filtros e páginas de imóvel",
+        "SEO técnico para páginas de imóveis"
+      ]
+    },
+    "fidliz": {
+      "metaDescription": "Case Fidliz: plataforma de fidelização 100% digital que substitui cartões físicos e permite acumular pontos pelo celular.",
+      "challenge": "Cartões de fidelidade em papel se perdem, rasgam e ficam esquecidos em casa, e o lojista não tem nenhum dado sobre quem volta a comprar. A Fidliz queria digitalizar esse processo sem obrigar o cliente a instalar mais um aplicativo pesado.",
+      "solution": "Desenvolvemos uma plataforma web mobile first em que o cliente acumula pontos pelo próprio celular. Para o lojista, criamos um painel simples para gerenciar pontos, regras e campanhas, além de notificações que incentivam o retorno à loja.",
+      "deliverables": [
+        "App web mobile first para o cliente",
+        "Painel do lojista com regras e campanhas",
+        "Notificações de pontos e recompensas",
+        "Dados centralizados de recorrência"
+      ]
+    },
+    "minhareserva": {
+      "metaDescription": "Case Minha Reserva: sistema interno da UNIDAVI para reserva de salas de aula, com controle de horários e equipamentos.",
+      "challenge": "Na UNIDAVI, professores reservavam salas e equipamentos por processos manuais, o que causava conflitos de horário e pouca visibilidade sobre a ocupação dos espaços. A instituição precisava de um fluxo único e confiável.",
+      "solution": "Criamos o Minha Reserva, um sistema web em que o professor consulta a disponibilidade e reserva salas e equipamentos em poucos cliques. A administração acompanha a ocupação em tempo real e o sistema impede reservas conflitantes.",
+      "deliverables": [
+        "Reserva de salas e equipamentos online",
+        "Validação automática de conflitos",
+        "Visão de ocupação para a administração",
+        "Acesso por perfil de usuário"
+      ]
+    },
+    "minhaprova": {
+      "metaDescription": "Case Minha Prova: sistema da UNIDAVI para montar e aplicar provas online, com correção automática e notas em tempo real.",
+      "challenge": "Montar, aplicar e corrigir provas manualmente consumia horas dos professores e atrasava a divulgação das notas. A UNIDAVI queria automatizar esse ciclo sem perder a flexibilidade de criar avaliações personalizadas.",
+      "solution": "Desenvolvemos o Minha Prova, um sistema em que o professor monta avaliações com praticidade, aplica online e recebe as notas calculadas automaticamente. Os alunos fazem a prova em uma interface simples e o resultado fica disponível na hora.",
+      "deliverables": [
+        "Criação de provas personalizadas",
+        "Aplicação online para alunos",
+        "Correção e cálculo de notas em tempo real",
+        "Painel do professor com resultados"
+      ]
+    },
+    "apjesc": {
+      "metaDescription": "Case APJESC: site institucional e sistema interno para gestão de cursos, associados e conteúdos administrativos.",
+      "challenge": "A APJESC administrava cursos, associados e conteúdos em processos separados, com pouca autonomia para atualizar informações. O site institucional também precisava representar melhor a entidade e facilitar o acesso dos associados.",
+      "solution": "Desenvolvemos o novo site institucional junto com um sistema interno integrado. A equipe passou a gerenciar cursos, associados e conteúdos em um só lugar e a publicar atualizações no site sem depender de suporte técnico.",
+      "deliverables": [
+        "Site institucional responsivo",
+        "Sistema de gestão de cursos e associados",
+        "Painel para publicação de conteúdos",
+        "Controle de acesso por perfil"
+      ]
+    },
+    "magaventures": {
+      "metaDescription": "Case Magaventures: sistema interno com dashboards para acompanhar faturamento e métricas de crescimento das startups do portfólio.",
+      "challenge": "A Magaventures acompanha várias startups e recebia os números de cada uma em planilhas e formatos diferentes. Comparar desempenho e tomar decisões rápidas era difícil sem uma visão consolidada do portfólio.",
+      "solution": "Criamos um sistema interno em que cada startup registra faturamento e métricas em um padrão único. Dashboards estratégicos consolidam esses dados e mostram a evolução de cada empresa e do ecossistema como um todo.",
+      "deliverables": [
+        "Cadastro padronizado de métricas por startup",
+        "Dashboards de faturamento e crescimento",
+        "Visão consolidada do portfólio",
+        "Acesso separado para startups e gestores"
+      ]
+    },
+    "patrono": {
+      "metaDescription": "Case Patrono Jr.: site institucional da primeira empresa júnior de Direito da UESC, com foco em credibilidade e contato.",
+      "challenge": "Uma empresa júnior de Direito precisa transmitir a mesma seriedade de um escritório estabelecido. A Patrono Jr. não tinha um site próprio que apresentasse seus serviços jurídicos e facilitasse o contato de potenciais clientes.",
+      "solution": "Desenvolvemos um site institucional com visual sofisticado, textos claros sobre cada área de atuação e apresentação da equipe. Os canais de contato aparecem em toda a navegação para transformar visitas em atendimentos.",
+      "deliverables": [
+        "Design institucional sóbrio e sofisticado",
+        "Páginas de serviços jurídicos",
+        "Apresentação da equipe",
+        "Contato facilitado e site responsivo"
+      ]
+    },
+    "tbmotors": {
+      "metaDescription": "Case TB Motors: vitrine online de seminovos premium com estoque completo, filtros de busca e contato direto pelo WhatsApp.",
+      "challenge": "A TB Motors vende carros e motos seminovos premium e precisava mostrar o estoque completo na internet, com informações suficientes para o comprador decidir e um caminho rápido até o vendedor.",
+      "solution": "Criamos uma vitrine online com fichas detalhadas de cada veículo, galeria de fotos e filtros de busca por tipo, marca e faixa de preço. Cada anúncio tem contato direto pelo WhatsApp, já com o veículo identificado na mensagem.",
+      "deliverables": [
+        "Vitrine de carros e motos",
+        "Fichas detalhadas com galeria de fotos",
+        "Filtros de busca",
+        "Contato direto via WhatsApp por veículo"
+      ]
+    }
   }
 }

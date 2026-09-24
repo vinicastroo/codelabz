@@ -1,9 +1,9 @@
 'use client'
 
 import { Rocket } from 'lucide-react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { HeroIllustration } from './HeroIllustration'
 import { useTranslations } from 'next-intl'
 
 export function Header() {
@@ -55,21 +55,19 @@ export function Header() {
 
           {/* Buttons Group */}
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 w-full sm:w-auto">
-            <Link href="/contato" className="w-full sm:w-auto">
-              <button
-                className="w-full sm:w-auto px-8 lg:py-4 py-3 bg-codelabz-accent hover:bg-rose-600 text-white rounded-lg font-bold transition-all shadow-xl shadow-codelabz-accent/20 flex items-center justify-center gap-2 group hover:-translate-y-1"
-              >
-                <Rocket size={20} className="group-hover:translate-x-1 transition-transform" />
-                {t('cta1')}
-              </button>
+            <Link
+              href="/contato"
+              className="w-full sm:w-auto px-8 lg:py-4 py-3 bg-codelabz-accent hover:bg-rose-600 text-white rounded-lg font-bold transition-all shadow-xl shadow-codelabz-accent/20 flex items-center justify-center gap-2 group hover:-translate-y-1"
+            >
+              <Rocket size={20} className="group-hover:translate-x-1 transition-transform" />
+              {t('cta1')}
             </Link>
 
-            <Link href="/projetos" className="w-full sm:w-auto">
-              <button
-                className="w-full sm:w-auto px-8 lg:py-4 py-3 bg-white border border-slate-200 text-codelabz-dark rounded-lg font-bold transition-all flex items-center justify-center shadow-sm hover:shadow-md"
-              >
-                {t('cta2')}
-              </button>
+            <Link
+              href="/projetos"
+              className="w-full sm:w-auto px-8 lg:py-4 py-3 bg-white border border-slate-200 text-codelabz-dark rounded-lg font-bold transition-all flex items-center justify-center shadow-sm hover:shadow-md"
+            >
+              {t('cta2')}
             </Link>
           </div>
         </motion.div>
@@ -82,10 +80,7 @@ export function Header() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="absolute inset-0 flex items-center justify-center scale-90 sm:scale-100"
           >
-            <Image src="/illustration-hero.svg" alt={t('heroAlt')} width={500}
-              height={500}
-              priority
-              className="w-[200px] h-[200px] lg:w-[500px] lg:h-[500px]" />
+            <HeroIllustration alt={t('heroAlt')} />
           </motion.div>
         </div>
       </div>

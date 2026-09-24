@@ -3,33 +3,46 @@ import { AnimatePresence, motion } from "framer-motion"
 import { X, Menu as MenuIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
+import { Link, getPathname, usePathname, useRouter } from '@/i18n/navigation'
+import type { Locale } from '@/i18n/routing'
 import { useTranslations, useLocale } from "next-intl"
-import { useRouter, usePathname } from "@/i18n/navigation"
 
 function LanguageSwitcher() {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
 
-  function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale })
-  }
+  const options: { value: Locale; label: string; hrefLang: string; ariaLabel: string }[] = [
+    { value: 'pt', label: 'PT', hrefLang: 'pt-BR', ariaLabel: 'Ver site em português' },
+    { value: 'en', label: 'EN', hrefLang: 'en', ariaLabel: 'View site in English' },
+  ]
 
   return (
     <div className="flex items-center gap-1 border border-white/20 rounded-full px-1 py-0.5">
-      <button
-        onClick={() => switchLocale('pt')}
-        className={`px-2 py-1 rounded-full text-xs font-bold transition-all ${locale === 'pt' ? 'bg-codelabz-accent text-white' : 'text-slate-300 hover:text-white'}`}
-      >
-        PT
-      </button>
-      <button
-        onClick={() => switchLocale('en')}
-        className={`px-2 py-1 rounded-full text-xs font-bold transition-all ${locale === 'en' ? 'bg-codelabz-accent text-white' : 'text-slate-300 hover:text-white'}`}
-      >
-        EN
-      </button>
+      {options.map((option) => {
+        const isActive = option.value === locale
+        // Blog posts only exist in Portuguese, so the other locale points to the blog index.
+        const targetPath = !isActive && pathname.startsWith('/blog/') ? '/blog' : pathname
+
+        // Plain <a> with the canonical URL (no /pt prefix redirect) so crawlers can follow it;
+        // on click, the router switches locale and updates the NEXT_LOCALE cookie.
+        return (
+          <a
+            key={option.value}
+            href={getPathname({ href: targetPath, locale: option.value })}
+            hrefLang={option.hrefLang}
+            aria-label={option.ariaLabel}
+            aria-current={isActive ? 'true' : undefined}
+            onClick={(event) => {
+              event.preventDefault()
+              if (!isActive) router.replace(targetPath, { locale: option.value })
+            }}
+            className={`px-2 py-1 rounded-full text-xs font-bold transition-all ${isActive ? 'bg-codelabz-accent text-white' : 'text-slate-300 hover:text-white'}`}
+          >
+            {option.label}
+          </a>
+        )
+      })}
     </div>
   )
 }
@@ -90,8 +103,10 @@ export function Menu() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white hover:text-codelabz-accent transition-colors"
+            className="md:hidden p-2 -m-2 text-white hover:text-codelabz-accent transition-colors"
             onClick={() => setMobileMenuOpen(true)}
+            aria-label={t('openMenu')}
+            aria-expanded={mobileMenuOpen}
           >
             <MenuIcon size={28} />
           </button>
@@ -110,7 +125,7 @@ export function Menu() {
           >
             <div className="flex justify-between items-center mb-12">
               <Image width={150} height={40} src="/logo-code.svg" alt="Logo Codelabz" />
-              <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-codelabz-accent">
+              <button onClick={() => setMobileMenuOpen(false)} className="p-2 -m-2 text-white hover:text-codelabz-accent" aria-label={t('closeMenu')}>
                 <X size={28} />
               </button>
             </div>
@@ -118,7 +133,7 @@ export function Menu() {
               {navLinks.map((link) => (
                 <Link
                   key={link.id}
-                  href={link.id}
+                  href={`/${link.id}`}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-left border-b border-white/5 pb-4 ${activePage === link.id ? "text-codelabz-accent" : "text-white"}`}
                 >
@@ -128,11 +143,13 @@ export function Menu() {
               <div className="flex items-center gap-3 mt-2">
                 <LanguageSwitcher />
               </div>
-              <button
+              <Link
+                href="/contato"
+                onClick={() => setMobileMenuOpen(false)}
                 className="mt-4 px-6 py-4 bg-codelabz-accent text-white rounded-lg text-center font-bold"
               >
                 {t('startProject')}
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

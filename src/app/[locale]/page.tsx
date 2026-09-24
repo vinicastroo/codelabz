@@ -7,8 +7,7 @@ import { Cases } from '../Components/Cases'
 import { Reason } from '../Components/Reason'
 import { Cta } from '../Components/Cta'
 import { Carousel } from '../Components/carrousel-testimonials'
-import { JsonLd } from '@/components/JsonLd'
-import { aggregateRatingJsonLd, buildAlternates, buildOpenGraph } from '@/lib/seo'
+import { buildAlternates, buildOpenGraph } from '@/lib/seo'
 import type { Locale } from '@/i18n/routing'
 
 export const revalidate = 3600
@@ -39,18 +38,9 @@ export async function generateMetadata({
   }
 }
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = (await params) as { locale: Locale }
-  const t = await getTranslations({ locale, namespace: 'testimonials' })
-
-  const testimonials = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
-    author: t(`t${n}Name` as any),
-    reviewBody: t(`t${n}Content` as any),
-  }))
-
+export default function Home() {
   return (
     <>
-      <JsonLd data={aggregateRatingJsonLd(testimonials)} />
       <Header />
       <Reason />
       <ServicesContainer />

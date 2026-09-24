@@ -1,5 +1,6 @@
 'use client'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { ArrowRight, Calendar, Clock, Tag } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -32,7 +33,7 @@ export default function BlogPageClient({ locale }: { locale: string }) {
       <div className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.length > 0 ? posts.map((post) => (
-            <Link href={`/blog/${post.slug}`} key={post.slug} className="group h-full">
+            <NextLink href={`/blog/${post.slug}`} key={post.slug} className="group h-full">
               <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 h-full flex flex-col">
                 <div className="relative h-56 overflow-hidden bg-slate-200">
                   <Image
@@ -71,7 +72,7 @@ export default function BlogPageClient({ locale }: { locale: string }) {
                   </div>
                 </div>
               </article>
-            </Link>
+            </NextLink>
           )) : (
             <div className="col-span-full flex flex-col items-center justify-center text-center py-24 px-6 bg-slate-50 rounded-2xl border border-slate-200">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-codelabz-dark mb-4">

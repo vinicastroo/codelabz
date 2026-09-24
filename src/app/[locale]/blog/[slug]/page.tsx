@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
-import Link from 'next/link'
+import NextLink from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight, Calendar, Clock, Share2, Tag, User } from 'lucide-react'
 import { JsonLd } from '@/components/JsonLd'
-import { articleJsonLd, breadcrumbJsonLd, buildAlternates, buildOpenGraph } from '@/lib/seo'
+import { articleJsonLd, breadcrumbJsonLd, buildOpenGraph, buildPtOnlyAlternates } from '@/lib/seo'
 import type { Locale } from '@/i18n/routing'
 import { getPostBySlug, posts } from '@/data/posts'
 
@@ -26,7 +27,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>
 }): Promise<Metadata> {
-  const { locale, slug } = (await params) as { locale: Locale; slug: string }
+  const { slug } = await params
   const post = getPostBySlug(slug)
 
   if (!post) {
@@ -38,9 +39,9 @@ export async function generateMetadata({
   return {
     title: `${seoTitle} | Codelabz`,
     description: post.excerpt,
-    alternates: buildAlternates(locale, `/blog/${post.slug}`),
+    alternates: buildPtOnlyAlternates(`/blog/${post.slug}`),
     openGraph: buildOpenGraph({
-      locale,
+      locale: 'pt',
       path: `/blog/${post.slug}`,
       title: seoTitle,
       description: post.excerpt,
@@ -84,7 +85,7 @@ export default async function BlogPost({
             { name: post.title, path: `/blog/${post.slug}` },
           ]),
           articleJsonLd({
-            locale,
+            locale: 'pt',
             slug: post.slug,
             title: post.title,
             description: post.excerpt,
@@ -166,7 +167,7 @@ export default async function BlogPost({
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {moreArticles.map((related) => (
-              <Link href={`/blog/${related.slug}`} key={related.slug} className="group h-full">
+              <NextLink href={`/blog/${related.slug}`} key={related.slug} className="group h-full">
                 <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 h-full flex flex-col">
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <Image
@@ -193,7 +194,7 @@ export default async function BlogPost({
                     </div>
                   </div>
                 </article>
-              </Link>
+              </NextLink>
             ))}
           </div>
         </section>

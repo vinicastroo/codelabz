@@ -42,7 +42,9 @@
     "projects": "Projects",
     "contact": "Contact",
     "blog": "Blog",
-    "startProject": "Start a project"
+    "startProject": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "header": {
     "badge": "Software house focused on digital products",
@@ -182,7 +184,15 @@
     "ctaTitle": "Have an amazing idea?",
     "ctaSubtitle": "We have the technology and expertise to make it real. Let's talk?",
     "ctaButton": "Request a Quote",
-    "viewProject": "View project"
+    "viewProject": "View project",
+    "aboutTitle": "About the project",
+    "challengeTitle": "The challenge",
+    "solutionTitle": "The solution",
+    "deliverablesTitle": "What we delivered",
+    "readCase": "Read the full case study on our blog (in Portuguese)",
+    "similarTitle": "Have a similar project?",
+    "similarText": "Tell us what you need and we will put together a tailored proposal for your business, from planning to launch.",
+    "caseSuffix": "Case Study"
   },
   "contactPage": {
     "tag": "Contact",
@@ -211,7 +221,26 @@
       "emailInvalid": "Please enter a valid email",
       "phoneMin": "Please enter a valid phone number",
       "messageMin": "Message must be at least 10 characters"
-    }
+    },
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "How long does it take to build a website or system?",
+        "a": "An institutional website usually takes 3 to 6 weeks. Web systems and custom platforms vary with scope, and we define the timeline with you before we start."
+      },
+      {
+        "q": "How does the quote work?",
+        "a": "After the first contact, we schedule a call to understand your business and the project goals. Then we send a no obligation proposal with scope, timeline and investment."
+      },
+      {
+        "q": "Do you work with companies outside Brazil?",
+        "a": "Yes. We are based in Balneário Camboriú, Brazil, but we work with clients across the country and abroad through online meetings and close follow up at every stage."
+      },
+      {
+        "q": "Do you offer support after delivery?",
+        "a": "Yes. We offer maintenance and continuous improvement plans, including hosting, monitoring, adjustments and new features as your business grows."
+      }
+    ]
   },
   "projects": {
     "rafahelena": "We developed architect Rafaela Helena's website with a focus on conveying sophistication, personality and creativity. The platform showcases the portfolio, presents services elegantly and offers a fluid experience.",
@@ -264,7 +293,10 @@
     "t7Name": "Ricardo Grahl",
     "t7Role": "TB Motors",
     "t7Company": "TB Motors",
-    "t7Content": "A serious and committed company — service and problem resolution are immediate."
+    "t7Content": "A serious and committed company — service and problem resolution are immediate.",
+    "prev": "Previous testimonial",
+    "next": "Next testimonial",
+    "goTo": "Go to testimonial group {index}"
   },
   "blogPage": {
     "tag": "Blog & Insights",
@@ -274,5 +306,150 @@
     "emptyText": "We don't have any articles published yet, but we're already preparing content about technology, website creation, web systems, design and digital strategies to help your company grow online.",
     "emptyButton": "Talk to specialists",
     "readMore": "Read full article"
+  },
+  "caseStudies": {
+    "rafahelena": {
+      "metaDescription": "Rafa Helena Arquitetura case study: an institutional website that organizes the architect's portfolio and turns visits into quote requests.",
+      "challenge": "The architect's projects were scattered across social media and loose files, with no single place presenting the work with the sophistication it deserves. She needed her own channel, easy to browse, that showcased the portfolio and led visitors to get in touch.",
+      "solution": "We built a website with a clean visual identity where project images take center stage. We organized the portfolio by project, presented the services objectively and placed contact calls to action at strategic points of the navigation, all responsive and optimized for fast loading.",
+      "deliverables": [
+        "Custom design aligned with the brand identity",
+        "Portfolio organized by project",
+        "Services and contact pages focused on conversion",
+        "Responsive website with technical SEO set up"
+      ]
+    },
+    "sdl": {
+      "metaDescription": "SDL Consultoria case study: a modern institutional website presenting occupational safety, environmental and training services.",
+      "challenge": "SDL Consultoria works in technical fields such as occupational safety, environment and training, and needed to explain these services clearly to companies looking for advisory. The previous website did not convey the firm's solidity or make the first contact easy.",
+      "solution": "We structured the content by practice area, with direct copy and a visual hierarchy that helps visitors find the right service quickly. The modern layout reinforces the brand's credibility and contact channels are always within reach.",
+      "deliverables": [
+        "Content architecture by service area",
+        "Modern, responsive institutional layout",
+        "Contact form and shortcuts",
+        "Performance optimization and on page SEO"
+      ]
+    },
+    "lovegoods": {
+      "metaDescription": "Lovegoods case study: an e-commerce store for creative gifts and collectibles built for mobile experience and conversion.",
+      "challenge": "Lovegoods sells creative gifts and collectibles to an audience that shops mostly on mobile and decides fast. The store needed to highlight products, cut steps before payment and build trust at every stage of the purchase.",
+      "solution": "We developed an online store with a dynamic layout, a catalog with fast filters and optimized images. We integrated payments and real time shipping quotes, and designed a short checkout built for small screens first.",
+      "deliverables": [
+        "Online store with a filterable catalog",
+        "Lean, mobile first checkout",
+        "Payment and shipping integration",
+        "Optimized images and solid performance"
+      ]
+    },
+    "cloock": {
+      "metaDescription": "Cloock case study: a complete online scheduling web system with control over time slots, services, blocks and bookings.",
+      "challenge": "Appointment based businesses waste time with paper schedules, scattered messages and double bookings. Cloock needed a platform that centralized the calendar and let customers book on their own, without manual handling.",
+      "solution": "We built a SaaS system where businesses register services, set opening hours and blocks, and end customers book online in a few steps. The dashboard displays bookings clearly and prevents overlapping time slots.",
+      "deliverables": [
+        "Online booking for end customers",
+        "Management of services, hours and blocks",
+        "Bookings admin dashboard",
+        "SaaS architecture ready for multiple businesses"
+      ]
+    },
+    "guilherme": {
+      "metaDescription": "Guilherme Schulze case study: a custom portfolio website for a photographer and videographer with a modern visual experience.",
+      "challenge": "For a photographer and videographer, the portfolio is the main sales pitch. Guilherme needed a website that displayed photos and videos in high quality without getting heavy, and that reflected his style instead of looking like a generic template.",
+      "solution": "We developed a tailor made website with galleries that highlight each piece of work, progressive media loading and simple navigation between projects. The design keeps visual content front and center and guides visitors to get in touch.",
+      "deliverables": [
+        "Custom design for a visual portfolio",
+        "Optimized photo and video galleries",
+        "Navigation by project",
+        "Responsive website focused on performance"
+      ]
+    },
+    "auros": {
+      "metaDescription": "Auros Corretora case study: a search optimized real estate website integrated with an internal property management system.",
+      "challenge": "Auros needed to list properties online while also organizing its internal portfolio records. Keeping the website and internal control separate caused rework and outdated information for people searching for a property.",
+      "solution": "We delivered an integrated solution: an internal system to register and manage properties, and a responsive website that displays that portfolio automatically, with search filters and pages optimized to rank on Google.",
+      "deliverables": [
+        "Internal property management system",
+        "Responsive real estate website",
+        "Filtered search and property pages",
+        "Technical SEO for property pages"
+      ]
+    },
+    "fidliz": {
+      "metaDescription": "Fidliz case study: a 100% digital loyalty platform that replaces physical cards and lets customers earn points on their phone.",
+      "challenge": "Paper loyalty cards get lost, torn and forgotten at home, and store owners have no data on who comes back to buy. Fidliz wanted to digitize this process without forcing customers to install yet another heavy app.",
+      "solution": "We developed a mobile first web platform where customers earn points on their own phone. For store owners, we built a simple dashboard to manage points, rules and campaigns, plus notifications that encourage customers to return.",
+      "deliverables": [
+        "Mobile first web app for customers",
+        "Store dashboard with rules and campaigns",
+        "Points and rewards notifications",
+        "Centralized repeat purchase data"
+      ]
+    },
+    "minhareserva": {
+      "metaDescription": "Minha Reserva case study: UNIDAVI's internal classroom booking system, with control over schedules and equipment.",
+      "challenge": "At UNIDAVI, teachers booked rooms and equipment through manual processes, which led to scheduling conflicts and little visibility into how spaces were used. The institution needed a single, reliable workflow.",
+      "solution": "We built Minha Reserva, a web system where teachers check availability and book rooms and equipment in a few clicks. The administration tracks occupancy in real time and the system prevents conflicting bookings.",
+      "deliverables": [
+        "Online room and equipment booking",
+        "Automatic conflict validation",
+        "Occupancy overview for administration",
+        "Role based user access"
+      ]
+    },
+    "minhaprova": {
+      "metaDescription": "Minha Prova case study: UNIDAVI's system to build and run online exams, with automatic grading and real time scores.",
+      "challenge": "Building, running and grading exams by hand took teachers hours and delayed score releases. UNIDAVI wanted to automate this cycle without losing the flexibility to create personalized assessments.",
+      "solution": "We developed Minha Prova, a system where teachers build assessments easily, run them online and get scores calculated automatically. Students take the exam in a simple interface and results are available immediately.",
+      "deliverables": [
+        "Personalized exam builder",
+        "Online exam delivery for students",
+        "Real time grading and scoring",
+        "Teacher dashboard with results"
+      ]
+    },
+    "apjesc": {
+      "metaDescription": "APJESC case study: an institutional website and internal system for managing courses, members and administrative content.",
+      "challenge": "APJESC managed courses, members and content through separate processes, with little autonomy to update information. The institutional website also needed to better represent the organization and make access easier for members.",
+      "solution": "We developed the new institutional website together with an integrated internal system. The team now manages courses, members and content in one place and publishes website updates without relying on technical support.",
+      "deliverables": [
+        "Responsive institutional website",
+        "Course and member management system",
+        "Content publishing dashboard",
+        "Role based access control"
+      ]
+    },
+    "magaventures": {
+      "metaDescription": "Magaventures case study: an internal system with dashboards to track revenue and growth metrics of portfolio startups.",
+      "challenge": "Magaventures follows several startups and received each one's numbers in different spreadsheets and formats. Comparing performance and making quick decisions was hard without a consolidated view of the portfolio.",
+      "solution": "We built an internal system where each startup reports revenue and metrics in a single standard. Strategic dashboards consolidate this data and show the progress of each company and of the ecosystem as a whole.",
+      "deliverables": [
+        "Standardized metrics input per startup",
+        "Revenue and growth dashboards",
+        "Consolidated portfolio view",
+        "Separate access for startups and managers"
+      ]
+    },
+    "patrono": {
+      "metaDescription": "Patrono Jr. case study: the institutional website of UESC's first law junior enterprise, focused on credibility and contact.",
+      "challenge": "A law junior enterprise needs to convey the same seriousness as an established firm. Patrono Jr. had no website of its own to present its legal services and make it easy for potential clients to reach out.",
+      "solution": "We developed an institutional website with a sophisticated look, clear copy about each practice area and a team presentation. Contact channels appear throughout the navigation to turn visits into client requests.",
+      "deliverables": [
+        "Sober, sophisticated institutional design",
+        "Legal services pages",
+        "Team presentation",
+        "Easy contact and responsive website"
+      ]
+    },
+    "tbmotors": {
+      "metaDescription": "TB Motors case study: an online showroom for premium pre-owned vehicles with full inventory, search filters and WhatsApp contact.",
+      "challenge": "TB Motors sells premium pre-owned cars and motorcycles and needed to show its full inventory online, with enough information for buyers to decide and a quick path to the salesperson.",
+      "solution": "We built an online showroom with detailed listings for each vehicle, photo galleries and search filters by type, brand and price range. Every listing has direct WhatsApp contact, with the vehicle already identified in the message.",
+      "deliverables": [
+        "Car and motorcycle showroom",
+        "Detailed listings with photo gallery",
+        "Search filters",
+        "Direct WhatsApp contact per vehicle"
+      ]
+    }
   }
 }

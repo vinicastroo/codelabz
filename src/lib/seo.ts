@@ -41,6 +41,21 @@ export function buildAlternates(locale: Locale, path: string = '') {
   }
 }
 
+/**
+ * For content that only exists in Portuguese (e.g. blog posts): every locale
+ * canonicalizes to the pt URL and no English alternate is advertised, so the
+ * /en copy is not indexed as a duplicate.
+ */
+export function buildPtOnlyAlternates(path: string) {
+  return {
+    canonical: absoluteUrl('pt', path),
+    languages: {
+      'pt-BR': absoluteUrl('pt', path),
+      'x-default': absoluteUrl('pt', path),
+    },
+  }
+}
+
 export function buildOpenGraph({
   locale,
   path,
@@ -164,40 +179,6 @@ export function breadcrumbJsonLd(locale: Locale, items: BreadcrumbEntry[]) {
   }
 }
 
-export type TestimonialItem = {
-  author: string
-  reviewBody: string
-}
-
-export function aggregateRatingJsonLd(testimonials: TestimonialItem[]) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
-    name: BUSINESS.name,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      reviewCount: testimonials.length,
-    },
-    review: testimonials.map((testimonial) => ({
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: testimonial.author,
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: testimonial.reviewBody,
-    })),
-  }
-}
-
 export function articleJsonLd({
   locale,
   slug,
@@ -237,5 +218,25 @@ export function articleJsonLd({
     publisher: {
       '@id': `${SITE_URL}/#organization`,
     },
+  }
+}
+
+export type FaqItem = {
+  q: string
+  a: string
+}
+
+export function faqJsonLd(items: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
   }
 }

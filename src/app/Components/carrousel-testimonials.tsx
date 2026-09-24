@@ -154,6 +154,7 @@ export const Carousel: React.FC = () => {
 
       <button
         onClick={prevSlide}
+        aria-label={t('prev')}
         className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 bg-white text-codelabz-dark rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-codelabz-accent hover:text-white transition-all z-20 opacity-0 group-hover:opacity-100"
       >
         <ChevronLeft size={20} />
@@ -161,21 +162,29 @@ export const Carousel: React.FC = () => {
 
       <button
         onClick={nextSlide}
+        aria-label={t('next')}
         className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 bg-white text-codelabz-dark rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-codelabz-accent hover:text-white transition-all z-20 opacity-0 group-hover:opacity-100"
       >
         <ChevronRight size={20} />
       </button>
 
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center">
         {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+          // Padding gives a 24px touch target around the small visual dot.
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx
-              ? "w-8 bg-codelabz-accent"
-              : "w-2 bg-slate-300 hover:bg-codelabz-accent/50"
-              }`}
-          />
+            aria-label={t('goTo', { index: idx + 1 })}
+            aria-current={currentIndex === idx ? 'true' : undefined}
+            className="group/dot flex h-6 items-center px-2"
+          >
+            <span
+              className={`block h-2 rounded-full transition-all duration-300 ${currentIndex === idx
+                ? "w-8 bg-codelabz-accent"
+                : "w-2 bg-slate-300 group-hover/dot:bg-codelabz-accent/50"
+                }`}
+            />
+          </button>
         ))}
       </div>
     </div>

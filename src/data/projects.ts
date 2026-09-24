@@ -2,13 +2,20 @@ export type Project = {
   id: number
   slug: string
   title: string
-  /** Key in the "projects" i18n namespace with the full-length case study text. */
+  /** Shorter name for <title>/OG when `title` would push the tag past ~60 chars. */
+  seoTitle?: string
+  /**
+   * Key in the "projects" i18n namespace with the full-length case study text.
+   * Also keys the "caseStudies" namespace (meta description, challenge, solution, deliverables).
+   */
   descriptionKey: string
   /** Key in the "projects" i18n namespace with the short card text, when available. */
   shortDescriptionKey?: string
   image: string
   link?: string
   tags: string[]
+  /** Slug of the blog post that tells this case in depth. */
+  relatedPostSlug?: string
 }
 
 export const projects: Project[] = [
@@ -21,6 +28,7 @@ export const projects: Project[] = [
     image: '/banner-rafa.png',
     link: 'http://rafahelena.com.br/',
     tags: ['Site Institucional', 'Design'],
+    relatedPostSlug: 'rafa-helena-arquitetura-caso-de-sucesso',
   },
   {
     id: 2,
@@ -41,6 +49,7 @@ export const projects: Project[] = [
     image: '/banner-lovegoods.png',
     link: 'https://lovegoods.com.br/',
     tags: ['E-commerce', 'Vendas'],
+    relatedPostSlug: 'lovegoods-ecommerce-foco-em-conversao',
   },
   {
     id: 4,
@@ -79,6 +88,7 @@ export const projects: Project[] = [
     image: '/banner-fidliz.png',
     link: 'https://fideliz-web.vercel.app/',
     tags: ['App Web', 'Fidelização'],
+    relatedPostSlug: 'fidliz-programa-de-fidelizacao-digital',
   },
   {
     id: 8,
@@ -87,6 +97,7 @@ export const projects: Project[] = [
     descriptionKey: 'minhareserva',
     image: '/banner-minha-reserva.png',
     tags: ['Educacional', 'Sistema'],
+    relatedPostSlug: 'minha-reserva-sistema-de-reservas-unidavi',
   },
   {
     id: 9,
@@ -95,11 +106,13 @@ export const projects: Project[] = [
     descriptionKey: 'minhaprova',
     image: '/banner-minha-prova.png',
     tags: ['Educacional', 'Sistema'],
+    relatedPostSlug: 'minha-prova-sistema-de-avaliacoes-unidavi',
   },
   {
     id: 10,
     slug: 'apjesc',
     title: 'APJESC - Site Institucional e Sistema Interno',
+    seoTitle: 'APJESC',
     descriptionKey: 'apjesc',
     image: '/banner-apjesc.png',
     tags: ['Institucional', 'Sistema'],
@@ -108,6 +121,7 @@ export const projects: Project[] = [
     id: 11,
     slug: 'magaventures',
     title: 'Magaventures - Sistema Interno de Gestão',
+    seoTitle: 'Magaventures',
     descriptionKey: 'magaventures',
     image: '/banner-magaventures.png',
     tags: ['Sistema', 'Dashboard', 'Startups'],
@@ -121,6 +135,7 @@ export const projects: Project[] = [
     image: '/banner-patrono.png',
     link: 'https://www.patronojunior.com.br/',
     tags: ['Jurídico', 'Institucional'],
+    relatedPostSlug: 'patrono-jr-consultoria-juridica-caso-de-sucesso',
   },
   {
     id: 13,

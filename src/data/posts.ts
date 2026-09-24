@@ -71,6 +71,7 @@ export const posts: Post[] = [
   {
     slug: 'fidliz-programa-de-fidelizacao-digital',
     title: 'Fidliz: substituindo cartões físicos por um programa de fidelização 100% digital',
+    metaTitle: 'Fidliz: Programa de Fidelização 100% Digital',
     excerpt:
       'Como desenvolvemos a plataforma mobile-first da Fidliz, permitindo que clientes acumulem pontos direto pelo celular, sem depender de cartões físicos.',
     date: '2026-03-20',

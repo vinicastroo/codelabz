@@ -51,6 +51,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })
     }
 
+    // Blog posts are Portuguese-only; the /en copies canonicalize to pt.
+    if (locale !== 'pt') continue
+
     for (const post of posts) {
       entries.push({
         url: absoluteUrl(locale, `/blog/${post.slug}`),

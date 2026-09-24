@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { ProjectCard } from '../../Components/project-card'
 import { projects } from '@/data/projects'
 
