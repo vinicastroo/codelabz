@@ -1,6 +1,5 @@
 'use client'
-import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowRight, BrainCircuit, CloudCog, Globe, PanelsTopLeft, PlugZap, ShoppingCart, Workflow } from 'lucide-react'
 import Link from 'next/link'
 import { ServiceCard } from './service-card'
 import { useTranslations } from 'next-intl'
@@ -9,7 +8,7 @@ export function ServicesContainer() {
   const t = useTranslations('services')
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-codelabz-dark backdrop-blur-md shadow-lg">
+    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-codelabz-dark overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
@@ -18,41 +17,82 @@ export function ServicesContainer() {
           opacity: 0.05,
         }}
       />
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[300px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse, rgba(224,2,77,0.18) 0%, transparent 70%)', filter: 'blur(60px)' }}
+      />
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between sm:items-center lg:items-start mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between sm:items-center lg:items-end mb-16 gap-6">
           <div>
-            <span className="text-codelabz-accent font-bold uppercase sm:text-start lg:text-start tracking-widest text-sm block mb-2">
+            <span className="text-codelabz-accent font-bold uppercase sm:text-start lg:text-start tracking-widest text-sm block mb-3">
               {t('tag')}
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white">{t('title')}</h2>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">{t('title')}</h2>
           </div>
           <Link href="/servicos">
             <button
-              className="px-2 py-1.5 lg:px-6 lg:py-3 sm:text-sm rounded-full border border-white text-white hover:scale-105 cursor-pointer transition-all font-medium flex items-center gap-2"
+              className="px-6 py-3 text-sm rounded-full border border-white/20 text-white hover:bg-white/10 hover:-translate-y-0.5 cursor-pointer transition-all font-bold flex items-center gap-2 whitespace-nowrap"
             >
               {t('seeAll')} <ArrowRight size={18} />
             </button>
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-12 lg:gap-6">
           <ServiceCard
-            id="sites"
+            index="01"
             title={t('card1Title')}
             desc={t('card1Desc')}
-            icon={<Image src="/illustration-seo.svg" alt={t('card1Alt')} width={200} height={200} />}
+            icon={<Globe size={26} />}
+            learnMoreLabel={t('learnMore')}
+            featured
           />
           <ServiceCard
-            id="systems"
+            index="02"
             title={t('card2Title')}
             desc={t('card2Desc')}
-            icon={<Image src="/illustration-api.svg" alt={t('card2Alt')} width={200} height={200} />}
+            icon={<BrainCircuit size={26} />}
+            learnMoreLabel={t('learnMore')}
           />
           <ServiceCard
-            id="ecommerce"
+            index="03"
             title={t('card3Title')}
             desc={t('card3Desc')}
-            icon={<Image src="/illustration-ecommerce.svg" alt={t('card3Alt')} width={200} height={200} />}
+            icon={<ShoppingCart size={26} />}
+            learnMoreLabel={t('learnMore')}
+            compact
+          />
+          <ServiceCard
+            index="04"
+            title={t('card4Title')}
+            desc={t('card4Desc')}
+            icon={<PlugZap size={26} />}
+            learnMoreLabel={t('learnMore')}
+            compact
+          />
+          <ServiceCard
+            index="05"
+            title={t('card5Title')}
+            desc={t('card5Desc')}
+            icon={<CloudCog size={26} />}
+            learnMoreLabel={t('learnMore')}
+            compact
+          />
+          <ServiceCard
+            index="06"
+            title={t('card6Title')}
+            desc={t('card6Desc')}
+            icon={<Workflow size={24} />}
+            learnMoreLabel={t('learnMore')}
+            wide
+          />
+          <ServiceCard
+            index="07"
+            title={t('card7Title')}
+            desc={t('card7Desc')}
+            icon={<PanelsTopLeft size={24} />}
+            learnMoreLabel={t('learnMore')}
+            wide
           />
         </div>
       </div>

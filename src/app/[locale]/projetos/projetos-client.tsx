@@ -1,53 +1,77 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
 import { ProjectCard } from '../../Components/project-card'
-import { projects } from '@/data/projects'
+import { Cta } from '../../Components/Cta'
+import { localizeProject, projects } from '@/data/projects'
 
 export default function ProjetosPageClient() {
   const t = useTranslations('projectsPage')
   const p = useTranslations('projects')
+  const locale = useLocale()
+  const orderedProjects = [
+    projects.find((project) => project.slug === 'tb-motors')!,
+    ...projects.filter((project) => project.slug !== 'tb-motors'),
+  ]
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <div className="bg-codelabz-dark py-20 border-b border-white/5 pt-32">
-        <div className="container mx-auto px-6 text-center">
-          <span className="text-codelabz-accent font-bold uppercase tracking-widest text-sm mb-4 block">{t('tag')}</span>
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">{t('title')}</h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">{t('subtitle')}</p>
+      <header className="relative overflow-hidden bg-codelabz-dark pb-20 pt-36 lg:pb-28 lg:pt-44">
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-codelabz-accent/10 blur-[120px]" />
+
+        <div className="container relative mx-auto px-6">
+          <span className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-codelabz-accent">
+            <span className="h-px w-8 bg-codelabz-accent" />
+            {t('tag')}
+          </span>
+
+          <div>
+            <h1 className="max-w-[10ch] font-display text-5xl font-bold leading-[0.98] tracking-[-0.055em] text-white sm:text-6xl lg:text-8xl">
+              {t('title')}
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-7 text-slate-300/75 sm:text-lg">
+              {t('subtitle')}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              id={project.id}
-              title={project.title}
-              description={p(project.descriptionKey as any)}
-              image={project.image}
-              link={project.link}
-              tags={project.tags}
-              viewProjectLabel={t('viewProject')}
-              headingLevel="h2"
-            />
-          ))}
-        </div>
-      </div>
-      <div className="py-12 text-center bg-codelabz-light">
+      </header>
+
+      <main className="bg-codelabz-dark pb-24 lg:pb-32">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-display font-bold text-codelabz-dark mb-6">{t('ctaTitle')}</h2>
-          <p className="text-slate-600 mb-8 max-w-lg mx-auto">{t('ctaSubtitle')}</p>
-          <Link
-            href="/contato"
-            className="px-10 py-4 bg-codelabz-accent text-white hover:bg-codelabz-accent cursor-pointer hover:scale-105 rounded-full font-bold transition-all uppercase tracking-wide text-sm"
-          >
-            {t('ctaButton')}
-          </Link>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[360px] lg:gap-6">
+            {orderedProjects.map((source) => {
+              const project = localizeProject(source, locale)
+
+              return (
+                <ProjectCard
+                  key={project.id}
+                  slug={project.slug}
+                  title={project.title}
+                  description={p((project.shortDescriptionKey ?? project.descriptionKey) as any)}
+                  image={project.image}
+                  link={project.link}
+                  tags={project.tags}
+                  viewProjectLabel={t('viewProject')}
+                  headingLevel="h2"
+                  variant="showcase"
+                  showDescription
+                  className="lg:min-h-0"
+                />
+              )
+            })}
+          </div>
         </div>
-      </div>
+      </main>
+
+      <Cta />
     </motion.div>
   )
 }
