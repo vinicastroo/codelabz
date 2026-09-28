@@ -11,10 +11,10 @@ export function Header() {
   const t = useTranslations('header')
 
   return (
-    <header className="relative flex h-screen w-full max-w-full items-center overflow-hidden bg-white pt-16">
+    <header className="relative flex min-h-screen w-full max-w-full items-start lg:items-center overflow-hidden bg-white pt-20 pb-12 lg:pt-16 lg:pb-0">
       <LightBeams variant="light" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-10 lg:gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export function Header() {
           </div>
         </motion.div>
 
-        <div className="order-1 lg:order-2 lg:col-span-5 relative h-[280px] sm:h-[420px] lg:h-[560px] w-full lg:w-[140%]">
+        <div className="order-1 lg:order-2 lg:col-span-5 relative h-[240px] sm:h-[420px] lg:h-[560px] w-full lg:w-[140%]">
           <div
             className="absolute inset-0 m-auto w-[70%] h-[70%] rounded-full pointer-events-none"
             style={{ background: 'radial-gradient(circle, rgba(3,37,80,0.16) 0%, transparent 70%)', filter: 'blur(50px)' }}

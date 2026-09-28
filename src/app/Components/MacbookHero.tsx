@@ -178,7 +178,8 @@ function FloatingRig() {
   const floatRef = useRef<THREE.Group>(null)
   const canvasWidth = useThree((state) => state.size.width)
   const [isDesktop, setIsDesktop] = useState(false)
-  const modelScale = isDesktop ? 6.1 : canvasWidth < 640 ? 3.9 : 4.7
+  const modelScale = isDesktop ? 6.1 : canvasWidth < 640 ? 4.6 : 4.7
+  const modelX = isDesktop ? -0.7 : 0
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 1024px)')
@@ -197,7 +198,7 @@ function FloatingRig() {
   })
 
   return (
-    <group ref={floatRef} rotation={[0.1, -0.3, -0.08]} position={[-0.7, MODEL_BASE_Y, 0]}>
+    <group ref={floatRef} rotation={[0.1, -0.3, -0.08]} position={[modelX, MODEL_BASE_Y, 0]}>
       <group scale={modelScale}>
         <MacbookModel />
       </group>
