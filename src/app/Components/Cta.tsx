@@ -34,8 +34,8 @@ export function Cta() {
               {t('subtitle')}
             </p>
 
-            <div className="mt-12 flex items-center gap-4 border-t border-slate-200 pt-6 lg:mt-auto">
-              <div className="flex -space-x-3">
+            <div className="mt-12 flex flex-col items-start gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:gap-4 lg:mt-auto">
+              <div className="flex shrink-0 -space-x-3">
                 {AVATARS.map((src, index) => (
                   <Image
                     key={src}
