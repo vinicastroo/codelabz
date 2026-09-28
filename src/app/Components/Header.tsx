@@ -11,7 +11,7 @@ export function Header() {
   const t = useTranslations('header')
 
   return (
-    <header className="relative flex h-screen w-full max-w-full items-center overflow-hidden bg-white pt-16">
+    <header className="relative flex min-h-screen w-full max-w-full items-center overflow-hidden bg-white pt-16">
       <LightBeams variant="light" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
