@@ -6,7 +6,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'var(--font-poppins)'
+        sans: 'var(--font-geist)',
+        display: 'var(--font-display)'
       },
       backgroundImage: {
         'gradient-linear': 'linear-gradient(94.3deg,  rgb(224, 2, 77) 1%, rgba(26,33,64,1) 99% );'

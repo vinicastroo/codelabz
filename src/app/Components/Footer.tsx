@@ -2,10 +2,11 @@
 import { ChevronRight, Instagram, Linkedin, Mail, Phone, Users } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export function Footer() {
   const t = useTranslations('footer')
+  const locale = useLocale()
 
   return (
     <>
@@ -15,7 +16,7 @@ export function Footer() {
             <div>
               <div className='flex flex-col gap-2'>
                 <Link className="mb-2 cursor-pointer" href="/">
-                  <Image width={150} height={40} src="/logo-code.svg" alt="Logo Codelabz" />
+                  <Image width={150} height={40} src="/logo-code.svg" alt="Codelabz" />
                 </Link>
                 <p className="text-sm leading-relaxed mb-6 max-w-xs">
                   {t('description')}
@@ -26,7 +27,7 @@ export function Footer() {
                   href="https://www.instagram.com/code.labz/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram da Codelabz"
+                  aria-label={locale === 'pt' ? 'Instagram da Codelabz' : 'Codelabz on Instagram'}
                   className="w-10 h-10 rounded-full bg-codelabz-accent/30 hover:bg-white/30 flex items-center justify-center hover:text-white transition-colors group"
                 >
                   <Instagram size={20} className="group-hover:scale-110 transition-transform stroke-codelabz-accent group-hover:stroke-white" />
@@ -35,7 +36,7 @@ export function Footer() {
                   href="https://www.linkedin.com/company/code-labz/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn da Codelabz"
+                  aria-label={locale === 'pt' ? 'LinkedIn da Codelabz' : 'Codelabz on LinkedIn'}
                   className="w-10 h-10 rounded-full bg-codelabz-accent/30 hover:bg-white/30 flex items-center justify-center hover:text-white transition-colors group"
                 >
                   <Linkedin size={20} className="group-hover:scale-110 transition-transform stroke-codelabz-accent group-hover:stroke-white" />
