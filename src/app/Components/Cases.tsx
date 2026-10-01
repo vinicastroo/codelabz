@@ -1,49 +1,26 @@
 'use client'
 import Link from 'next/link'
 import { ProjectCard } from './project-card'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { localizeProject, projects } from '@/data/projects'
 
 export function Cases() {
   const t = useTranslations('cases')
   const p = useTranslations('projects')
+  const locale = useLocale()
 
-  const casesData = [
-    {
-      id: 1,
-      title: "Rafa Helena Arquitetura",
-      description: p('rafahelenaShort'),
-      image: "/banner-rafa.png",
-      link: "http://rafahelena.com.br/",
-      tags: ["Site Institucional", "Design"],
-    },
-    {
-      id: 6,
-      title: "Auros Corretora Imob",
-      description: p('aurosShort'),
-      image: "/banner-auros.png",
-      link: "https://www.aurosimobiliaria.com.br/",
-      tags: ["Imobiliária", "Sistema Interno"],
-    },
-    {
-      id: 12,
-      title: "Patrono Jr.",
-      description: p('patronoShort'),
-      image: "/banner-patrono.png",
-      link: "https://www.patronojunior.com.br/",
-      tags: ["Jurídico", "Institucional"],
-    },
-    {
-      id: 13,
-      title: "TB Motors",
-      description: p('tbmotorsShort'),
-      image: "/banner-tbmotors.png",
-      link: "https://www.tbmotorssc.com.br/",
-      tags: ["Automotivo", "Vitrine Online"],
-    },
-  ]
+  const featuredSlugs = ['tb-motors', 'auros-corretora', 'patrono-jr', 'rafa-helena-arquitetura']
+  const casesData = featuredSlugs.map((slug) => {
+    const project = localizeProject(projects.find((item) => item.slug === slug)!, locale)
+
+    return {
+      ...project,
+      description: p((project.shortDescriptionKey ?? project.descriptionKey) as any),
+    }
+  })
 
   return (
-    <section className="relative pt-16 pb-16 lg:pt-16 lg:pb-16 bg-codelabz-dark backdrop-blur-md shadow-lg">
+    <section className="relative py-24 lg:py-32 bg-codelabz-dark overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
@@ -53,21 +30,42 @@ export function Cases() {
         }}
       />
       <div className="container mx-auto px-6 z-index-10 relative">
-        <h2 className="text-3xl md:text-4xl font-display font-bold mb-16 text-center text-white">
-          {t('title')} <span className="text-codelabz-accent">{t('titleAccent')}</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 items-center justify-center">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end lg:mb-14">
+          <div>
+            <span className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-codelabz-accent">
+              <span className="h-px w-8 bg-codelabz-accent" />
+              {t('tag')}
+            </span>
+            <h2 className="font-display text-4xl font-bold tracking-[-0.04em] text-white md:text-5xl">
+              {t('title')} <span className="text-codelabz-accent">{t('titleAccent')}</span>
+            </h2>
+          </div>
+
+          <Link href="/projetos" className="hidden items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition-all hover:border-codelabz-accent hover:bg-codelabz-accent sm:inline-flex">
+            {t('seeAll')}
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-[repeat(2,280px)] lg:gap-6">
           {casesData.map((project, idx) => (
-            <ProjectCard key={idx} {...project} viewProjectLabel={t('viewProject')} />
+            <ProjectCard
+              key={project.slug}
+              {...project}
+              variant="showcase"
+              featured={idx === 0}
+              className={idx === 0
+                ? 'md:col-span-2 lg:col-span-6 lg:row-span-2 lg:min-h-0'
+                : idx === 3
+                  ? 'lg:col-span-6 lg:min-h-0'
+                  : 'lg:col-span-3 lg:min-h-0'}
+              viewProjectLabel={t('viewProject')}
+            />
           ))}
         </div>
-        <div className="text-center">
-          <Link href="/projetos">
-            <button
-              className="px-10 py-4 bg-codelabz-accent text-white hover:bg-codelabz-accent cursor-pointer hover:scale-105 rounded-full font-bold transition-all uppercase tracking-wide text-sm"
-            >
+
+        <div className="mt-8 text-center sm:hidden">
+          <Link href="/projetos" className="inline-flex rounded-full bg-codelabz-accent px-8 py-4 text-sm font-bold text-white shadow-xl shadow-codelabz-accent/20">
               {t('seeAll')}
-            </button>
           </Link>
         </div>
       </div>

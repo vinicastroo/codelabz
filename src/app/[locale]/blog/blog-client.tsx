@@ -37,7 +37,7 @@ export default function BlogPageClient({ locale }: { locale: string }) {
                 <div className="relative h-56 overflow-hidden bg-slate-200">
                   <Image
                     src={post.image}
-                    alt={`Imagem de capa do artigo "${post.title}"`}
+                    alt={locale === 'pt' ? `Capa do artigo "${post.title}"` : `Cover image for "${post.title}"`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

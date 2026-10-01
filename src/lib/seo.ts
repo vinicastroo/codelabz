@@ -115,10 +115,6 @@ export function localBusinessJsonLd() {
       },
     ],
     sameAs: [BUSINESS.linkedin, BUSINESS.instagram],
-    areaServed: {
-      '@type': 'Country',
-      name: 'Brasil',
-    },
   }
 }
 
@@ -138,10 +134,6 @@ export function servicesJsonLd(locale: Locale, services: ServiceItem[]) {
     provider: {
       '@id': `${SITE_URL}/#organization`,
     },
-    areaServed: {
-      '@type': 'Country',
-      name: 'Brasil',
-    },
     url: absoluteUrl(locale, '/servicos'),
   }))
 }
@@ -160,40 +152,6 @@ export function breadcrumbJsonLd(locale: Locale, items: BreadcrumbEntry[]) {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(locale, item.path),
-    })),
-  }
-}
-
-export type TestimonialItem = {
-  author: string
-  reviewBody: string
-}
-
-export function aggregateRatingJsonLd(testimonials: TestimonialItem[]) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
-    name: BUSINESS.name,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      reviewCount: testimonials.length,
-    },
-    review: testimonials.map((testimonial) => ({
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: testimonial.author,
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: testimonial.reviewBody,
     })),
   }
 }

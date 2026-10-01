@@ -18,7 +18,7 @@ function buildLlmsTxt() {
 
   const projectLinks = projects.map((project) => {
     const text = projectTexts[project.shortDescriptionKey ?? project.descriptionKey]
-    return `- [${project.title}](${absoluteUrl('pt', `/projetos/${project.id}`)}): ${text} (${project.tags.join(', ')})`
+    return `- [${project.title}](${absoluteUrl('pt', `/projetos/${project.slug}`)}): ${text} (${project.tags.join(', ')})`
   })
 
   const postLinks = [...posts]
