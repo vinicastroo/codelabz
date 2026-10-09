@@ -1,8 +1,9 @@
 'use client'
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Environment, useGLTF, useTexture } from '@react-three/drei'
-import { Suspense, useEffect, useRef, useState } from 'react'
+import { Environment, useGLTF, useProgress, useTexture } from '@react-three/drei'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 
 const MODEL_URL = '/models/modelo.glb'
@@ -206,23 +207,87 @@ function FloatingRig() {
   )
 }
 
-export function MacbookHero() {
+function SceneReady({ onReady }: { onReady: () => void }) {
+  useEffect(() => {
+    onReady()
+  }, [onReady])
+
+  return null
+}
+
+function MacbookLoader() {
+  const { progress } = useProgress()
+  const radius = 26
+  const circumference = 2 * Math.PI * radius
+
   return (
-    <Canvas
-      camera={{ position: [2.2, 1.1, 3.2], fov: 32 }}
-      dpr={[1, 1.5]}
-      gl={{ alpha: true, antialias: true }}
-      style={{ background: 'transparent' }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, scale: 0.96 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3"
+      role="status"
+      aria-live="polite"
     >
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[3, 4, 2]} intensity={1.4} />
-      <directionalLight position={[-3, -2, -2]} intensity={0.4} />
-      <Suspense fallback={null}>
-        <FloatingRig />
-        <Environment preset="apartment" environmentIntensity={0.6} />
-      </Suspense>
-    </Canvas>
+      <div className="relative h-16 w-16">
+        <svg viewBox="0 0 64 64" className="h-full w-full -rotate-90">
+          <circle cx="32" cy="32" r={radius} fill="none" stroke="#0b2e59" strokeOpacity={0.12} strokeWidth={3} />
+          <circle
+            cx="32"
+            cy="32"
+            r={radius}
+            fill="none"
+            stroke="#0b2e59"
+            strokeWidth={3}
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={circumference * (1 - progress / 100)}
+            className="transition-[stroke-dashoffset] duration-300 ease-out"
+          />
+        </svg>
+        <span className="absolute inset-0 flex items-center justify-center text-xs font-bold tabular-nums text-[#0b2e59]">
+          {Math.round(progress)}%
+        </span>
+      </div>
+      <span className="sr-only">Carregando modelo 3D</span>
+    </motion.div>
+  )
+}
+
+export function MacbookHero() {
+  const [ready, setReady] = useState(false)
+  const handleReady = useCallback(() => setReady(true), [])
+
+  return (
+    <div className="absolute inset-0">
+      <motion.div
+        className="h-full w-full"
+        initial={{ opacity: 0, scale: 0.97 }}
+        animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.97 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <Canvas
+          camera={{ position: [2.2, 1.1, 3.2], fov: 32 }}
+          dpr={[1, 1.5]}
+          gl={{ alpha: true, antialias: true }}
+          style={{ background: 'transparent' }}
+        >
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[3, 4, 2]} intensity={1.4} />
+          <directionalLight position={[-3, -2, -2]} intensity={0.4} />
+          <Suspense fallback={null}>
+            <FloatingRig />
+            <Environment preset="apartment" environmentIntensity={0.6} />
+            <SceneReady onReady={handleReady} />
+          </Suspense>
+        </Canvas>
+      </motion.div>
+
+      <AnimatePresence>{!ready && <MacbookLoader key="macbook-loader" />}</AnimatePresence>
+    </div>
   )
 }
 
 useGLTF.preload(MODEL_URL)
+useTexture.preload(SCREENS)
