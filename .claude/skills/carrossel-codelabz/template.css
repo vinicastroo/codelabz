@@ -87,6 +87,7 @@ p + p { margin-top: 26px; }
 
 /* número */
 .numero .valor {
+  white-space: nowrap; overflow: hidden;
   font-size: 260px; line-height: .95; font-weight: 800;
   background: linear-gradient(94.3deg, #ff2e67 1%, #ff9cb2 99%);
   -webkit-background-clip: text; background-clip: text; color: transparent;

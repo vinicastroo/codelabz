@@ -1,0 +1,22 @@
+{
+  "pauta": "giro-tech-01",
+  "fonte": "openai.com/index/introducing-gpt-6-2-astra-sol · blog.google (Introducing Gemini 4 Neon) · cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html · blogs.microsoft.com/blog/2026/11/17 · status.search.google.com (core update nov/2026)",
+  "slides": [
+    { "tipo": "capa", "kicker": "Giro Tech #01 · 17 a 24/11", "titulo": "O que rolou no mundo **tech** essa semana", "subtitulo": "5 notícias em 1 minuto, e o que muda pra você" },
+    { "tipo": "texto", "kicker": "IA · 17/11", "titulo": "OpenAI lança o **GPT-6.2**", "corpo": ["Dois modelos: **Astra**, pras tarefas pesadas, e **Sol**, pro dia a dia.", "O Sol custa **4x menos** na API e chega perto do Astra em código. Pra automação de empresa, é ele que interessa."] },
+    { "tipo": "texto", "kicker": "IA · 19/11", "titulo": "Google responde com o **Gemini 4 Neon**", "corpo": ["Modelo intermediário: mais rápido e barato que o topo de linha, com contexto de **1 milhão de tokens**.", "Já está na API, no AI Studio e no app do Gemini."] },
+    { "tipo": "numero", "kicker": "Mercado · 19/11", "valor": "US$93,5bi", "legenda": "Anthropic, criadora do Claude, estreia na Nasdaq com o **maior IPO da história**.", "fonte": "CNBC, 18/11/2026" },
+    { "tipo": "lista", "kicker": "Microsoft Ignite · 17 a 20/11", "titulo": "Agentes de IA em tudo", "itens": [
+      { "titulo": "Agente com **crachá**", "texto": "Agentes de IA ganham identidade própria no Entra, como um funcionário." },
+      { "titulo": "**Code 2**", "texto": "Nova família de modelos da Microsoft feita pra programar." },
+      { "titulo": "GPT-6.2 no **Azure**", "texto": "Os modelos novos da OpenAI chegam ao Foundry." }
+    ]},
+    { "tipo": "texto", "kicker": "SEO · 24/11", "titulo": "Update do Google **concluído**", "corpo": ["O core update de novembro terminou de rodar hoje, depois de 2 semanas.", "Seu site subiu ou caiu? Espera **1 semana** e compara no Search Console com a semana antes de 10/11."] },
+    { "tipo": "lista", "titulo": "O que isso muda pra você", "itens": [
+      { "titulo": "IA ficou **mais barata**", "texto": "Automatizar atendimento e processo já cabe no bolso de empresa pequena." },
+      { "titulo": "Modelo médio **resolve**", "texto": "Nem toda tarefa precisa do modelo mais caro." },
+      { "titulo": "Olha o **Search Console**", "texto": "Semana que vem dá pra ver o efeito do update no seu site." }
+    ]},
+    { "tipo": "cta", "titulo": "Toda semana tem **giro tech** aqui", "texto": "Segue a Code Labz pra não perder o próximo. E se quiser colocar IA pra trabalhar na sua empresa, chama a gente.", "botao": "Segue a @code.labz" }
+  ]
+}

@@ -18,7 +18,8 @@ Regra: cada post escolhe UM público. Post pra empresário não tem jargão sem 
 | Pilar | Público | Exemplo | Fonte |
 |---|---|---|---|
 | Educação de negócio | Empresário | "Quanto custa um site em 2026", "Landing page ou site?" | `blog-drafts/*.md` |
-| Novidades tech | Dev e empresário curioso | Lançamento de framework, IA nova, mudança no Google | pesquisa na web (sempre com fonte e data) |
+| **Giro Tech da semana (carro-chefe)** | Empresário curioso e dev | 4 a 6 notícias da semana + "o que muda pra você" | pesquisa na web, fonte primária e data |
+| Novidades tech avulsas | Dev e empresário curioso | Lançamento de framework, IA nova, mudança no Google | pesquisa na web (sempre com fonte e data) |
 | Dica prática dev | Dev | Snippet Next.js, performance, boa prática | experiência do time |
 | Case / bastidor | Empresário | Projeto entregue, antes e depois | `public/banner-*.png`, `src/data/projects` |
 

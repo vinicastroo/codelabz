@@ -2,6 +2,13 @@
 
 Backlog de carrosséis e Reels. Ao produzir, mude para `[~]` (rascunho em `content/`) e para `[x]` quando o usuário aprovar. Formato da linha: `- [ ] <formato> · <pilar> · <ideia> · fonte`.
 
+## Giro Tech da semana (fixo, toda segunda ou terça)
+
+Numeração contínua. Janela: segunda a segunda anterior à publicação.
+
+- [~] Carrossel · Giro Tech #01 · 17 a 24/11/2026 · `content/2026-11-24-giro-tech-01/`
+- [ ] Carrossel · Giro Tech #02 · 24/11 a 01/12/2026
+
 ## Do blog (`blog-drafts/`)
 
 - [~] Carrossel · Educação · Sites rápidos vendem mais (Core Web Vitals em 1 minuto) · `sites-rapidos-vendem-mais.md` → `content/2026-11-24-sites-rapidos-vendem-mais/`

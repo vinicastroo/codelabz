@@ -151,10 +151,21 @@ function page(s, i) {
     fs.writeFileSync(htmlPath, page(slides[i], i))
     await pg.goto(pathToFileURL(htmlPath).href)
     await pg.evaluate(() => document.fonts.ready)
-    // avisa se algum texto estourou a área útil
+    // número grande encolhe até caber na largura
+    await pg.evaluate(() => {
+      const v = document.querySelector('.valor')
+      if (!v) return
+      let size = parseFloat(getComputedStyle(v).fontSize)
+      while (v.scrollWidth > v.clientWidth + 1 && size > 80) {
+        size -= 6
+        v.style.fontSize = `${size}px`
+      }
+    })
+    // avisa se algum texto estourou a área útil (altura ou largura)
     const overflow = await pg.evaluate(() => {
       const m = document.querySelector('main')
-      return m.scrollHeight > m.clientHeight + 2
+      if (m.scrollHeight > m.clientHeight + 2) return true
+      return [...m.querySelectorAll('h1,h2,h3,.valor,pre,strong')].some((el) => el.scrollWidth > el.clientWidth + 2)
     })
     if (overflow) console.warn(`AVISO: slide ${i + 1} (${slides[i].tipo}) estourou a altura, corte texto`)
     const out = path.join(outDir, `slide-${String(i + 1).padStart(2, '0')}.png`)
