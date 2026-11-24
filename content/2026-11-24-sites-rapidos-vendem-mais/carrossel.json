@@ -1,0 +1,17 @@
+{
+  "pauta": "sites-rapidos-vendem-mais",
+  "fonte": "blog-drafts/sites-rapidos-vendem-mais.md",
+  "slides": [
+    { "tipo": "capa", "kicker": "Performance", "titulo": "Seu site lento está **espantando cliente**", "subtitulo": "3 métricas do Google que dizem se você está perdendo venda (e como medir em 1 minuto)" },
+    { "tipo": "texto", "titulo": "Velocidade não é detalhe técnico", "corpo": ["É decisão de negócio.", "Site lento gera **3 problemas ao mesmo tempo**: menos vendas, experiência ruim e pior posição no Google."] },
+    { "tipo": "lista", "kicker": "Core Web Vitals", "titulo": "O que o Google mede", "itens": [
+      { "titulo": "LCP: até **2,5 s**", "texto": "Tempo até o conteúdo principal aparecer. A vitrine da loja." },
+      { "titulo": "INP: até **200 ms**", "texto": "Quanto o site demora pra reagir a um clique ou toque." },
+      { "titulo": "CLS: abaixo de **0,1**", "texto": "Botão que pula de lugar bem na hora do clique." }
+    ]},
+    { "tipo": "numero", "valor": "2,5s", "legenda": "é o limite do Google pro conteúdo principal aparecer na tela.", "fonte": "Google, Core Web Vitals" },
+    { "tipo": "comparacao", "titulo": "Lento x rápido", "esquerda": { "titulo": "Site lento", "itens": ["Visitante desiste antes de ver a oferta", "Anúncio pago some no ralo", "Cai no ranking do Google"] }, "direita": { "titulo": "Site rápido", "itens": ["Mais gente chega até o botão", "Cada clique pago rende mais", "Ponto a favor no SEO"] } },
+    { "tipo": "texto", "kicker": "Teste agora", "titulo": "Mede o seu em 1 minuto", "corpo": ["Abre o `PageSpeed Insights`, cola a URL do seu site e olha os 3 números no topo.", "Vermelho em algum? Tem cliente indo embora."] },
+    { "tipo": "cta", "titulo": "Quer um site **rápido de verdade**?", "texto": "A gente cria sites e sistemas feitos pra carregar rápido e converter.", "botao": "Chama no direct" }
+  ]
+}
